@@ -1,0 +1,264 @@
+guiTypes = {
+	containerWindowType = {
+		name = "monthly_trade_view"
+		size = { width = 320 height = 390 }
+		position = { x = -80 y = -330 }
+		moveable = yes
+		orientation = center
+
+		background = {
+			name = "background"
+			spriteType = "GFX_tile_outliner_bg_solid"
+		}
+
+		instantTextBoxType = {
+				name = "monthly_trade_header"
+				font = "malgun_goth_24"
+				position = { x = 20 y = 10 }
+				text = "MONTHLY_TRADE"
+				maxWidth = 200
+				maxHeight = 200
+				fixedSize = yes
+				format = left
+		}
+
+		iconType = {
+			name = "header_line"
+			quadTextureSprite = "GFX_line_short"
+			position = { x = 10 y = 27 }
+		}
+
+		iconType = {
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg"
+			position = { x = -10 y = -10 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "trade_text"
+			font = "cg_16b"
+			position = { x = 30 y = 65 }
+			text = "TRADE"
+			maxWidth = 100
+			maxHeight = 50
+			fixedSize = yes
+		}
+
+		buttonType = {
+			name = "buy"
+			font = "cg_16b"
+			spriteType = "GFX_button_75_24"
+			buttonText = "MARKET_BUY"
+			position = { x = 125 y = 52 }
+			oversound = mouse_over
+		}
+
+		buttonType = {
+			name = "sell"
+			font = "cg_16b"
+			spriteType = "GFX_button_75_24"
+			buttonText = "MARKET_SELL"
+			position = { x = 205 y = 52 }
+			oversound = mouse_over
+		}
+
+		instantTextBoxType = {
+			name = "resource_text"
+			font = "cg_16b"
+			position = { x = 30 y = 105 }
+			text = "RESOURCE_TEXT"
+			maxWidth = 100
+			maxHeight = 50
+			fixedSize = yes
+		}
+
+		gridBoxType = {
+			name = "monthly_trade_resources_grid"
+			position = { x = 124 y = 110 }
+			size = { width = 60 height = 120 }
+			slotsize = {
+				width = 35
+				height = 35
+			}
+			max_slots_horizontal = 4
+		}
+
+		instantTextBoxType = {
+			name = "amount_text"
+			font = "cg_16b"
+			position = { x = 30 y = 220 }
+			text = "AMOUNT"
+			maxWidth = 100
+			maxHeight = 50
+			fixedSize = yes
+		}
+
+		instantTextBoxType = {
+			name = "price_text"
+			font = "cg_16b"
+			position = { x = 30 y = 252 }
+			text = "PRICE"
+			maxWidth = 100
+			maxHeight = 50
+			fixedSize = yes
+		}
+
+		instantTextBoxType = {
+			name = "per_unit_text"
+			font = "cg_16b"
+			position = { x = 245 y = 252 }
+			text = "MONTHLY_TRADE_PER_UNIT"
+			maxWidth = 100
+			maxHeight = 50
+			fixedSize = yes
+		}
+
+		instantTextBoxType = {
+			name = "total_price_text"
+			font = "cg_16b"
+			position = { x = 30 y = 312 }
+			text = "TOTAL"
+			maxWidth = 100
+			maxHeight = 50
+			fixedSize = yes
+		}
+
+		containerWindowType = {
+			name = "total_price_amount"
+			size = { width = 200 height = 28 }
+			position = { x = -109 y = 305 }
+
+			iconType = {
+				name = "value_bg"
+				spriteType = "GFX_value_bg"
+				position = { x = 245 y = 2 }
+			}
+
+			instantTextBoxType = {
+				name = "amount"
+				font = "cg_16b"
+				position = { x = 269 y = 5 }
+				maxWidth = 50
+				maxHeight = 20
+				format = center
+			}
+		}
+
+		containerWindowType = {
+			name = "editable_amount"
+			size = { width = 200 height = 28 }
+			position = { x = -109 y = 215 }
+
+			iconType = {
+				name = "value_bg"
+				spriteType = "GFX_value_bg"
+				position = { x = 245 y = 22 }
+			}
+
+			instantTextBoxType = {
+				name = "amount"
+				font = "cg_16b"
+				position = { x = 269 y = 25 }
+				maxWidth = 50
+				maxHeight = 20
+				format = center
+			}
+
+			buttonType = {
+				name = "decrease_amount"
+				quadTextureSprite = "GFX_topbar_date_minus"
+				position = { x= 245 y = 25 }
+				clicksound = decrement_click
+			}
+
+			buttonType ={
+				name = "increase_amount"
+				quadTextureSprite = "GFX_topbar_date_plus"
+				position = { x= 318 y = 25  }
+				clicksound = increment_click
+			}
+		}
+
+		containerWindowType = {
+			name = "editable_price"
+			size = { width = 200 height = 28 }
+			position = { x = -109 y = 247 }
+
+			iconType = {
+				name = "value_bg"
+				spriteType = "GFX_value_bg"
+				position = { x = 245 y = 22 }
+			}
+
+			instantTextBoxType = {
+				name = "price"
+				font = "cg_16b"
+				position = { x = 269 y = 25 }
+				maxWidth = 50
+				maxHeight = 20
+				format = center
+			}
+
+			buttonType = {
+				name = "decrease_price"
+				quadTextureSprite = "GFX_topbar_date_minus"
+				position = { x= 245 y = 25 }
+				clicksound = decrement_click
+			}
+
+			buttonType ={
+				name = "increase_price"
+				quadTextureSprite = "GFX_topbar_date_plus"
+				position = { x= 318 y = 25  }
+				clicksound = increment_click
+			}
+		}
+
+		buttonType = {
+			name = "cancel"
+			font = "cg_16b"
+			spriteType = "GFX_standard_button_142_34_button"
+			buttonText = "CANCEL_REMOVE"
+			position = { x = 3 y = 330 }
+			oversound = mouse_over
+			clicksound = back_click
+		}
+
+		buttonType = {
+			name = "add"
+			font = "cg_16b"
+			spriteType = "GFX_standard_button_142_34_button"
+			buttonText = "ADD_EDIT"
+			position = { x = 153 y = 330 }
+			oversound = mouse_over
+			clicksound = confirm_click
+		}
+	}
+
+	containerWindowType = {
+		name = "monthly_trade_resource_grid_entry"
+		size = {
+			width = 30
+			height = 30
+		}
+
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_button_light"
+			clicksound = "outliner_click_tab"
+		}
+
+		background = {
+			name = "selected_overlay"
+			spriteType = "GFX_glow_tile_orange_no_padding"
+		}
+
+		iconType = {
+			name = "resource_icon"
+			spriteType = "GFX_resource_minerals"
+			position = { x = 6 y = 5 }
+			alwaysTransparent = yes
+		}
+	}
+}
