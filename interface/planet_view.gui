@@ -3793,7 +3793,7 @@ guiTypes = {
 					name = "recruitment_list"
 					position = { x = 15 y = 60 }
 					background = ""
-					size = { x = 250 y = 500 }
+					size = { x = 250 y = 770 }
 					scrollbarType = "standardlistbox_slider"
 					borderSize = { x = 0 y = 0 }
 					orientation = "UPPER_LEFT"
