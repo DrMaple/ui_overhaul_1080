@@ -556,7 +556,7 @@ guiTypes = {
 				scrollbartype = "standardlistbox_slider"
 				orientation = "UPPER_LEFT"
 				autohide_scrollbar = yes
-				spacing = 4
+				spacing = -1
 				defaultSelection = yes
 			}
 		}

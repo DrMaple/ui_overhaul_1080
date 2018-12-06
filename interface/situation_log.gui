@@ -6,8 +6,8 @@ guiTypes = {
 		moveable = no
 		orientation = upper_left
 		
-		position = { x=5 y=40 }
-		show_position = { x = 4 y = 40 }
+		position = { x=35 y=40 }
+		show_position = { x = 35 y = 40 }
         hide_position = { x = -808 y = 40 }
         animation_time = 100
         animation_type = decelerated
@@ -45,7 +45,7 @@ guiTypes = {
 			maxHeight = 40
 			fixedSize = yes
 			format = left
-			alwaysTransparent = yes
+			alwaysTransparent = no
 		}
 		
 		buttonType = {
@@ -74,7 +74,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "currently_selected"
-				size = { width = 584 height = 810 }
+				size = { width = 584 height = 510 }
 				position = { x = 310 y = 45 }
 				
 				background = {
@@ -113,7 +113,7 @@ guiTypes = {
 					text = "DESCRIPTION"
 					position = { x = 20 y = 210 }
 					maxWidth = 550
-					maxHeight = 450
+					maxHeight = 150
 					format = left
 					text_color_code = "E"
 					scrollbartype = "standardtext_slider"
@@ -122,7 +122,7 @@ guiTypes = {
 				
 				containerWindowType = {
 					name = "wrapper"
-					position = { x = 55 y = 485 }
+					position = { x = 55 y = 405 }
 
 					smoothListBoxType = {
 						name = "counters"
@@ -138,9 +138,9 @@ guiTypes = {
 					instantTextBoxType={
 						name = "requirements"
 						#orientation = "LOWER_RIGHT"
-						position = { x = 325 y = 636 }
+						position = { x = 325 y = 336 }
 						font = "cg_16b"
-						maxWidth = 300
+						maxWidth = 245
 						maxHeight = 80
 						format = left
 						vertical_alignment = bottom
@@ -151,7 +151,7 @@ guiTypes = {
 					buttonType = {
 						name = "focus_on"
 						orientation = "LOWER_LEFT"
-						position = { x = 5 y = 237 }
+						position = { x = 5 y = -63 }
 						quadTextureSprite = "GFX_standard_button_142_34_button"
 						font = "cg_16b"
 						text = "FOCUS"
@@ -162,7 +162,7 @@ guiTypes = {
 					buttonType = {
 						name = "cancel"
 						orientation = "LOWER_RIGHT"
-						position = { x = -171 y = 237 }
+						position = { x = -171 y = -63 }
 						quadTextureSprite = "GFX_standard_button_142_34_button"
 						font = "cg_16b"
 						text = "CANCEL"
@@ -172,7 +172,7 @@ guiTypes = {
 
 					instantTextBoxType={
 						name = "times_out_in"
-						position = { x = -160 y = 215 }
+						position = { x = -160 y = -85 }
 						orientation = "LOWER_RIGHT"
 						font = "cg_16b"
 						text = ""
@@ -184,7 +184,7 @@ guiTypes = {
 					
 					instantTextBoxType={
 						name = "time_left"
-						position = { x = -160 y = 230 }
+						position = { x = -160 y = -70 }
 						orientation = "LOWER_RIGHT"
 						font = "cg_16b"
 						text = ""
@@ -197,13 +197,13 @@ guiTypes = {
 					iconType = {
 						name = "cost_icon"
 						spriteType = "GFX_resource_physics"
-						position = { x = -38 y = 194 }
+						position = { x = 68 y = -46 }
 						orientation = "LOWER_RIGHT"
 					}
 					
 					instantTextBoxType={
 						name = "cost_value"
-						position = { x = -144 y = 195 }
+						position = { x = -37 y = -45 }
 						orientation = "LOWER_RIGHT"
 						font = "cg_16b"
 						text = "100"
@@ -216,7 +216,7 @@ guiTypes = {
 					buttonType = {
 						name = "research"
 						orientation = "LOWER_RIGHT"
-						position = { x = -171 y = 237 }
+						position = { x = -171 y = -63 }
 						quadTextureSprite = "GFX_standard_button_142_34_button"
 						font = "cg_16b"
 						text = "RESEARCH"
@@ -240,7 +240,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "entries"
 				position = { x = 6 y = 45 }
-				size = { width = 308 height = 810 }
+				size = { width = 308 height = 820 }
 				
 				background = {
 					name = "situation_log_entries_background_2"
@@ -263,7 +263,7 @@ guiTypes = {
 				smoothListBoxType = {
 					name = "entries"
 					position = { x = 5 y = 10 }
-					size = { x = 285 y = 790 }
+					size = { x = 285 y = 799 }
 					scrollbarType = "standardlistbox_slider"
 				}
 			}
@@ -279,7 +279,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "entries"
 				position = { x = 6 y = 45 }
-				size = { width = 308 height = 510 }
+				size = { width = 308 height = 820 }
 				
 				background = {
 					name = "situation_log_entries_background_2"
@@ -290,7 +290,7 @@ guiTypes = {
 				smoothListBoxType = {
 					name = "list"
 					position = { x = 5 y = 10 }
-					size = { x = 285 y = 490 }
+					size = { x = 285 y = 799 }
 					scrollbarType = "standardlistbox_slider"
 				}
 			}
@@ -772,7 +772,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "entries"
 				position = { x = 6 y = 45 }
-				size = { width = 308 height = 810 }
+				size = { width = 308 height = 820 }
 				
 				background = {
 					name = "situation_log_entries_background_2"
@@ -783,7 +783,7 @@ guiTypes = {
 				smoothListBoxType = {
 					name = "list"
 					position = { x = 5 y = 10 }
-					size = { x = 285 y = 490 }
+					size = { x = 285 y = 799 }
 					scrollbarType = "standardlistbox_slider"
 				}
 			}
@@ -795,7 +795,6 @@ guiTypes = {
 				background = {
 					name = "situation_log_selected_background"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
-				#	alwaysTransparent = yes
 				}
 				
 				iconType = {
@@ -893,7 +892,6 @@ guiTypes = {
 			Orientation = "LOWER_LEFT"
 			oversound = no_sound
 		}
-		
 		buttonType = {
 			name = "tab_log_active"
 			quadTextureSprite = "GFX_tab_1_active"
@@ -1216,18 +1214,11 @@ guiTypes = {
 		}
 	}
 	
-	### VICTORY CONDITION ITEM
+	### VICTORY CONDITION EMPIRE ITEM
 	containerWindowType = {
-		name = "victory_condition_item"
+		name = "victory_empire_item"
 		size = { width = 300 height = 48 }
 		
-		iconType = {
-			name = "progressbar"
-			spriteType = "GFX_situation_log_progressbar"
-			frame = 0
-			position = { x = 14 y = 5 }
-			alwaysTransparent = yes
-		}
 		buttonType = {
 			name = "button"
 			quadTextureSprite = "GFX_long_button"
@@ -1237,6 +1228,12 @@ guiTypes = {
 			oversound = no_sound
 		}
 		
+		buttonType = {
+			name = "empire_flag"
+			quadTextureSprite = "GFX_empire_flag_32"
+			position = { x = 18 y = 10 }
+		}		
+				
 		iconType = {
 			name = "selected"
 			spriteType = "GFX_long_button_selected"
@@ -1246,13 +1243,25 @@ guiTypes = {
 		
 		instantTextBoxType={
 			name = "name"
-			font = "malgun_goth_24"
+			font = "cg_16b"
 			text = "TITLE"
-			position = { x = 20 y = 12 }
+			position = { x = 55 y = 10 }
+			maxWidth = 200
+			maxHeight = 10
+			fixedSize = yes
+			format = left
+			alwaysTransparent = yes
+		}
+		
+		instantTextBoxType={
+			name = "score"
+			font = "cg_16b"
+			text = "250"
+			position = { x = 55 y = 25 }
 			maxWidth = 260
 			maxHeight = 40
 			fixedSize = yes
-			format = centre
+			format = left
 			alwaysTransparent = yes
 		}
 	}

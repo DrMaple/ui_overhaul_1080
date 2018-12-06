@@ -29,7 +29,7 @@ guiTypes = {
 		instantTextBoxType={
 			name = "header"
 			font = "malgun_goth_24"
-			text = "UI Overhaul 1080 v5.1.0"
+			text = "UI Overhaul 1080 v6.0.0 for Stellaris 2.2"
 			position = { x = 19 y = 5 }
 			maxWidth = 800
 			maxHeight = 40

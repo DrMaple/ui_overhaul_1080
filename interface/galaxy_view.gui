@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "galaxy_view"
-		show_position = { x = 4 y = 40 }
+		show_position = { x = 35 y = 40 }
 		hide_position = { x = -1272 y = 40 }
 		animation_time = 100 #mod
 		animation_type = decelerated
@@ -485,7 +485,24 @@ guiTypes = {
 				text_color_code = "H"
 				alwaystransparent = yes
 			}
-				
+			checkboxType = {
+				name = "filter_checkbox_non_player"
+				position = { x = 1062 y = 10 }
+				quadTextureSprite = "GFX_checkbox_20_20_01"
+			}
+
+			instantTextBoxType = {
+				name = "filter_label_non_player"
+				font = "cg_16b"
+				text = "COUNTRY_NON_PLAYER"
+				position = { x = 1094 y = 16 }
+				maxWidth = 150
+				maxHeight = 20
+				format = left
+				fixedsize = yes
+				text_color_code = "H"
+				alwaystransparent = yes
+			}				
 			
 			buttonType={
 				name = "name"

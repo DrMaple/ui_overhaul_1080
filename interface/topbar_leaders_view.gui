@@ -4,7 +4,7 @@ guiTypes = {
 		size = { width=1272 height=940 } 
 		
 		position = { x = -1270 y = 40 }
-		show_position = { x = 4 y = 40 }
+		show_position = { x = 35 y = 40 }
         hide_position = { x = -1270 y = 40 }
         animation_time = 100
         animation_type = decelerated
@@ -188,17 +188,6 @@ guiTypes = {
 			fixedSize = yes
 			format = left
 			alwaysTransparent = yes
-		}
-        
-		instantTextBoxType = {
-			name = "leader_capacity"
-			font = "cg_16b"
-			text = "LEADER_CAPACITY"
-			position = { x = 1000 y = 25 }
-			maxWidth = 200
-			maxHeight = 20
-			fixedSize = yes
-			format = right
 		}
         
 		containerWindowType = {

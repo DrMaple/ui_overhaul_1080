@@ -22,7 +22,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "ship_designer"
 		position = { x = -1280 y = 40 }
-		show_position = { x = 4 y = 40 }
+		show_position = { x = 35 y = 40 }
 		hide_position = { x = -1280 y = 40 }
 		animation_time = 100 #mod
 		animation_type = decelerated
@@ -209,8 +209,8 @@ guiTypes = {
 				#text_color_code = "H"
 			}
 
-			@label_x = -800
-			@value_x = -680
+			@label_x = -820
+			@value_x = -720
 			@value_x2 = -500
 			@label_x2 = -600
 			
@@ -223,7 +223,7 @@ guiTypes = {
 					name = "production"
 					font = "malgun_goth_24"
 					text = "PRODUCTION_COST"
-					position = { x= -800 y= 680 }
+					position = { x= -820 y= 680 }
 					maxWidth = 230
 					maxHeight = 20
 					fixedsize = yes
@@ -251,6 +251,7 @@ guiTypes = {
 					maxHeight = 20
 					fixedsize = yes
 					format = left
+					text_color_code = "Y"
 				}
 
 				instantTextBoxType={
@@ -273,10 +274,11 @@ guiTypes = {
 					maxHeight = 20
 					fixedsize = yes
 					format = left
+					text_color_code = "Y"
 				}
 
 				instantTextBoxType={
-					name = "energy_maintenance"
+					name = "upkeep"
 					font = "cg_16b"
 					text = "SHIP_STAT_ENERGY_MAINTENENCE"
 					position = { x= @label_x y= 755 }
@@ -287,31 +289,10 @@ guiTypes = {
 				}
 
 				instantTextBoxType={
-					name = "energy_maintenance_value"
+					name = "upkeep_value"
 					font = "cg_16b"
 					text = ""
 					position = { x= @value_x y= 755 }
-					maxWidth = 95
-					maxHeight = 20
-					fixedsize = yes
-					format = left
-				}
-				
-				instantTextBoxType={
-					name = "mineral_maintenance"
-					font = "cg_16b"
-					position = { x= @label_x y= 755 }
-					maxWidth = 95
-					maxHeight = 20
-					fixedsize = yes
-					format = left
-				}
-
-				instantTextBoxType={
-					name = "mineral_maintenance_value"
-					font = "cg_16b"
-					text = ""
-					position = { x= @value_x y= 775 }
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
@@ -608,39 +589,7 @@ guiTypes = {
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
 		}
-
-		containerWindowType = {
-			name = "graphical_culture_window"
-			position = { x=870 y=10 }
-			size = { width = 398 height = 20 }
-			moveable = no
-			orientation = upper_left
-
-			instantTextBoxType={
-				position = {x = 170 y = 0 }
-				name = "culture"
-				font = "cg_16b"
-				borderSize = {x = 0 y = 0}
-				maxWidth = 200
-				text = "mammalian"
-				orientation = "UPPER_LEFT"
-				format = center
-				alwaystransparent = yes
 			}
-
-			buttonType = {
-				name = "decrease_button"
-				position = { x = 150 y = -10 }
-				quadTextureSprite ="GFX_button_back"
-			}
-
-			buttonType = {
-				name = "increase_button"
-				position = { x = 350 y = -10 }
-				quadTextureSprite ="GFX_fleet_order_button_move"
-			}
-		}
-	}
 
 	# Ship Design Size Action menu
 	containerWindowType = {

@@ -3,7 +3,7 @@ guiTypes = {
 		name = "technology_view_window"
 		size = { width=595 height=682 } 
 		
-		show_position = { x = -1 y = 35 }
+		show_position = { x = 30 y = 35 }
         hide_position = { x = -1070 y = 35 }
         animation_time = 100
         animation_type = decelerated
@@ -878,7 +878,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "technology_view_unlock_entry_tile_blocker"
+		name = "technology_view_unlock_entry_deposit_blocker"
 		size = { width = 340 height = 60 }
 		position = { x = 0 y = 0 }
 		clipping = yes
@@ -960,13 +960,13 @@ guiTypes = {
 	}	
 
 	containerWindowType = {
-		name = "technology_view_tile_blocker"
+		name = "technology_view_deposit_blocker"
 		size = { width = 50 height = 50 }
 		position = { x = 0 y = 0 }
 
 		iconType = {
 			name = "icon"
-			spriteType = "GFX_tile_frame_blocker"
+			spriteType = "GFX_planet_background_frame_blocker"
 			position = { x = 0 y = 0 }
 			scale = 0.5
 		}				

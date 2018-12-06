@@ -6,7 +6,7 @@ guiTypes = {
 		size = { width = 1272 height = 940 } 
 		
 		position = { x = -1270 y = 40 }
-		show_position = { x = 4 y = 40 }
+		show_position = { x = 35 y = 40 }
         hide_position = { x = -1270 y = 40 }
         animation_time = 100
         animation_type = decelerated

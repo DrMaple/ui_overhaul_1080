@@ -1,15 +1,16 @@
 guiTypes = {
 	containerWindowType = {
 		name = "policies_view"
-		size = { width = 595 height = 940 } 
+		size = { width = 595 height = 640 } 
 		position = { x = -595 y = 40 }
-		show_position = { x = 4 y = 40 }
+		show_position = { x = 35 y = 40 }
         hide_position = { x = -595 y = 40 }
         animation_time = 100
         animation_type = decelerated
 		orientation = upper_left
 		moveable = no
 		clipping = no
+		show_sound = "interface"
 		
 		background = {
 			name = "background"
@@ -54,7 +55,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "policy_list_window"
 			position = { x = 6 y = 55 }
-			size = { width = 583 height = 420 }
+			size = { width = 583 height = 565 }
 			moveable = no
         
 			background = {
@@ -66,81 +67,11 @@ guiTypes = {
 				name = "policy_list"
 				position = { x = 10 y = 10 }
 				backGround=""
-				size = { x = 550 y=402 }
-				spacing = 1
+				size = { x = 550 y=547 }
+				spacing = -2
 				scrollbartype = "standardlistbox_slider"
 				borderSize = { x = 0 y = 0 }
 				orientation = "UPPER_LEFT"
-			}
-		}
-		
-		iconType = {
-			name = "hex_bg2"
-			spriteType = "GFX_hex_bg"
-			position = { x = -5 y = 480 }
-			alwaysTransparent = yes
-		}
-		
-		iconType = {
-			name = "edicts_header_line"
-			quadTextureSprite = "GFX_line"
-			position = { x = 11 y = 516 }
-			alwaystransparent = yes
-		}
-		
-		instantTextBoxType = {
-			name = "edicts_header"
-			font = "malgun_goth_24"
-			text = "EDICTS"
-			position = { x = 30 y = 498 }
-			maxWidth = 300
-			maxHeight = 20
-			fixedSize = yes
-			format = left
-		}
-        
-		containerWindowType = {
-			name = "edict_list_window"
-			position = { x=6 y=535 }
-			size = { width = 583 height = 350 }
-			dontRender = ""
-        
-			background = {
-				name = "background"
-				spriteType = "GFX_tiles_frame_light"
-			}
-        
-			smoothListboxType = {
-				name = "edict_list"
-				position = { x = 10 y = 8 }
-				backGround=""
-				size = { x = 550 y = 333 }
-				spacing = 1
-				scrollbartype = "standardlistbox_slider"
-				borderSize = { x = 0 y = 0 }
-				orientation = "UPPER_LEFT"
-				autohide_scrollbar = yes
-			}
-		}
-		
-		containerWindowType = {
-			name = "effects_window"
-			position = { x=395 y=325 }
-			size = { width = 286 height = 200 }
-			verticalScrollbar = "right_vertical_slider"
-
-			background = {
-				name = "background"
-				quadTextureSprite = "gfx_transparency"
-				alwaystransparent = yes
-			}
-
-			gridBoxType = {
-				position = { x = 12 y = 0 }
-				name = "grid"
-				slotSize = { width = 90 height = 40 }
-				max_slots_horizontal = 2
-				format = "UPPER_LEFT"
 			}
 		}
 	}
@@ -177,14 +108,14 @@ guiTypes = {
 			position = { x = 26 y = 5 }
 			fixedSize = yes
 			format = left
-			maxWidth = 260
+			maxWidth = 240
 			alwaysTransparent = yes
 		}
 		
 		instantTextBoxType = {
 			name = "selected_option_name"
 			font = "cg_16b"
-			position = { x = 230 y = 5 }
+			position = { x = 255 y = 5 }
 			fixedSize = yes
 			maxWidth = 260
 			format = right
@@ -242,111 +173,5 @@ guiTypes = {
 			frame = 1
 			scale = 0.8
 		}
-	}
-
-	###############################
-	# Empire Edicts Entry
-	###############################
-
-	containerWindowType = {
-		name = "empire_edicts_entry"
-		position = { x=0 y=0 }
-		size = { width = 550 height = 36 }
-		moveable = no
-		
-		containerWindowType = {
-			name = "leader_frame_box"
-			size = { width = 550 height = 32 }
-			position = { x=0 y=3 }
-			
-			background = {
-				name = "background"
-				quadTextureSprite = "GFX_tiles_dark_area_cut_8"
-			}
-		}
-
-
-		instantTextBoxType = {
-			name = "edicts_name"
-			font = "cg_16b"
-			position = { x = 34 y = 9 }
-			maxWidth = 300
-			format = left
-			alwaysTransparent = yes
-		}
-
-		instantTextBoxType = {
-			name = "cost"
-			font = "cg_16b"
-			position = { x = 478 y = 10 }
-			maxWidth = 60
-			fixedSize = yes
-			format = right
-		}
-
-		instantTextBoxType = {
-			name = "active"
-			font = "cg_16b"
-			position = { x = 350 y = 10 }
-			maxWidth = 100
-			fixedSize = yes
-			format = left
-			text = "ACTIVE_GREEN"
-		}
-
-		buttonType = {
-			name = "select_button"
-			quadTextureSprite = "GFX_checkbox_20_20_01"
-			position = { x = 2 y = 2  }
-		}
-	}
-	
-	containerWindowType = {
-		name = "edict_effect_entry"
-		size = { width = 100 height = 70 }
-
-		#containerWindowType = {
-		#	name = "bg_box"
-		#	size = { width = 35 height = 35 }
-		#	position = { x=0 y=0 }
-		#	
-		#	background = {
-		#		name = "background"
-		#		quadTextureSprite = "GFX_tiles_dark_area_cut_8"
-		#	}
-		#}
-		
-		iconType = {
-			name = "icon"
-			spriteType = "GFX_modifier_unknown"
-			position = { x = 15 y = 185 }
-			orientation = "LEFT"
-			centerPosition = yes
-		}
-		
-		#containerWindowType = {
-		#	name = "bg_box_1"
-		#	size = { width = 45 height = 35 }
-		#	position = { x=40 y=0 }
-		#	
-		#	background = {
-		#		name = "background"
-		#		quadTextureSprite = "GFX_tiles_dark_area_cut_8"
-		#	}
-		#}
-
-		instantTextBoxType={
-			name = "value"
-			font = "cg_16b"
-			position = { x = 45 y = 180 }
-			maxWidth = 50
-			maxHeight = 20
-			fixedSize = yes
-			format = left
-			text = ""
-			fixedsize = yes
-			Orientation = "UPPER_LEFT"
-			text_color_code = "G"
-		}	
 	}
 }
