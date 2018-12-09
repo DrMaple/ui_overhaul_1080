@@ -168,7 +168,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "info_bg_box"
-				size = { width = 462 height = 230 }
+				size = { width = 542 height = 230 }
 				position = { x = -833 y = 680 }
 
 					background = {
@@ -211,8 +211,8 @@ guiTypes = {
 
 			@label_x = -820
 			@value_x = -720
-			@value_x2 = -500
-			@label_x2 = -600
+			@value_x2 = -400
+			@label_x2 = -540
 			
 			
 			containerWindowType = {
@@ -247,7 +247,7 @@ guiTypes = {
 					font = "cg_16b"
 					text = ""
 					position = { x= @value_x y= 705 }
-					maxWidth = 95
+					maxWidth = 165
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -270,7 +270,7 @@ guiTypes = {
 					font = "cg_16b"
 					text = ""
 					position = { x= @value_x y= 730 }
-					maxWidth = 95
+					maxWidth = 165
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -293,7 +293,7 @@ guiTypes = {
 					font = "cg_16b"
 					text = ""
 					position = { x= @value_x y= 755 }
-					maxWidth = 95
+					maxWidth = 165
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -303,7 +303,7 @@ guiTypes = {
 					name = "combat"
 					font = "malgun_goth_24"
 					text = "SHIP_STATS"
-					position = { x=-600 y= 680 }
+					position = { x=-540 y= 680 }
 					maxWidth = 230
 					maxHeight = 20
 					fixedsize = yes
@@ -330,7 +330,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -352,7 +352,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -374,7 +374,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -396,7 +396,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -418,7 +418,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -440,7 +440,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -462,7 +462,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 20
 					fixedsize = yes
-					format = right
+					format = left
 				}
 
 				instantTextBoxType={
@@ -484,7 +484,7 @@ guiTypes = {
 					maxWidth = 95
 					maxHeight = 2000
 					fixedsize = yes
-					format = right
+					format = left
 				}
 			}
 		}
