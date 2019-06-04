@@ -224,7 +224,69 @@ guiTypes = {
 						#actionshortcut = "accept" #Causes conflict with the "cancel" button. Handled in view code instead.
 					}
 				}
-				
+
+				containerWindowType = {
+					name = "archaeological_site_info"
+					size = { width = 485 height = 510 }
+					position = { x = 0 y = 0 }
+
+					instantTextBoxType={
+						name = "requirements"
+						position = { x = 325 y = 376 }
+						font = "cg_16b"
+						maxWidth = 245
+						maxHeight = 80
+						fixedSize = yes
+						format = left
+						text = ""
+					}
+
+					buttonType = {
+						name = "focus_on"
+						orientation = "LOWER_LEFT"
+						position = { x = 5 y = -63 }
+						quadTextureSprite = "GFX_standard_button_142_34_button"
+						font = "cg_16b"
+						text = "FOCUS"
+						format = center
+					}
+					
+					instantTextBoxType={
+						name = "time_left"
+						position = { x = -160 y = -70 }
+						orientation = "LOWER_RIGHT"
+						font = "cg_16b"
+						text = ""
+						maxWidth = 200
+						maxHeight = 20
+						fixedSize = yes
+						format = left
+					}
+
+					iconType = {
+						name = "progress_bar"
+						spriteType = "GFX_queue_progressbar_150"
+						position = { x = -160 y = -83 }
+						orientation = "LOWER_RIGHT"
+					}			
+					
+					iconType = {
+						name = "time_icon"
+						spriteType = "GFX_resource_time"
+						position = { x = -8 y = -85 }
+						orientation = "LOWER_RIGHT"
+					}
+					
+					buttonType = {
+						name = "view_site"
+						orientation = "LOWER_RIGHT"
+						position = { x = -171 y = -63 }
+						quadTextureSprite = "GFX_standard_button_142_34_button"
+						font = "cg_16b"
+						text = "VIEW_SITE"
+						format = center
+					}
+				}			
 				buttonType = {
 					name = "track"
 					orientation = "LOWER_LEFT"

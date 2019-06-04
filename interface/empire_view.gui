@@ -63,6 +63,122 @@ guiTypes = {
 		}
 
 		containerWindowType = {
+			name = "shared_stockpile"
+			position = { x = 605 y = 0 }
+			size = { width = 100%% height = 100% }
+
+			@labelWindowWidth = 142
+			@labelWindowHeight = 28
+			@labelPosY = 15
+
+			containerWindowType = {
+				name = "shared_stockpile_title"
+				size = { width = @labelWindowWidth height = @labelWindowHeight }
+				position = { x = 170 y = @labelPosY }
+
+				background = {
+					name = "bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+
+				instantTextBoxType = {
+					name = "shared_stockpile_title"
+					font = "cg_16b"
+					position = { x = 0 y = 5 }
+					maxWidth = @labelWindowWidth
+					maxHeight = @labelWindowHeight
+					fixedSize = yes
+					text = "SHARED_SECTOR_RESOURCES"
+					format = center
+					text_color_code = "H"
+					alwaysTransparent = no
+				}
+			}
+
+			containerWindowType = {
+				name = "shared_stockpile_monthly"
+				size = { width = @labelWindowWidth height = @labelWindowHeight }
+				position = { x = 320 y = @labelPosY }
+
+				background = {
+					name = "bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+
+				instantTextBoxType = {
+					name = "shared_stockpile_monthly"
+					font = "cg_16b"
+					position = { x = 0 y = 5 }
+					maxWidth = @labelWindowWidth
+					maxHeight = @labelWindowHeight
+					fixedSize = yes
+					text = "SHARED_SECTOR_MONTHLY"
+					format = center
+					text_color_code = "H"
+					alwaysTransparent = no
+				}
+			}
+
+			containerWindowType = {
+				name = "shared_stockpile_stockpile"
+				size = { width = @labelWindowWidth height = @labelWindowHeight }
+				position = { x = 470 y = @labelPosY }
+
+				background = {
+					name = "bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+
+				instantTextBoxType = {
+					name = "shared_stockpile_stockpile"
+					font = "cg_16b"
+					position = { x = 0 y = 5 }
+					maxWidth = @labelWindowWidth
+					maxHeight = @labelWindowHeight
+					fixedSize = yes
+					text = "SHARED_SECTOR_STOCKPILE"
+					format = center
+					text_color_code = "H"
+					alwaysTransparent = no
+				}
+			}
+
+			buttonType = {
+				name = "shared_transfer_resources"
+				quadTextureSprite = "GFX_standard_button_142_34_button"
+				position = { x = 460 y = 42 }
+				pdx_tooltip = "SHARED_SECTOR_STOCKPILE_DESC"
+				font = "cg_16b"
+			}
+
+			instantTextBoxType = {
+				name = "amount"
+				font = "cg_16b"
+				position = { x = 472 y = 62 }
+				maxWidth = 140
+				maxHeight = 34
+				fixedSize = yes
+				format = center
+				text_color_code = "E"
+				alwaysTransparent = yes
+			}
+
+			containerWindowType = {
+				name = "monthly_resources_transfer"
+				size = { width = 100 height = 100%% }
+				position = { x = 340 y = 48 }
+
+				gridBoxType = {
+					name = "resources_grid"
+					slotSize = { width = 100 height = 25 }
+					format = "UPPER_LEFT"
+					max_slots_horizontal = 1
+					add_horizontal = no
+				}
+			}
+		}
+
+		containerWindowType = {
 			name = "planets_window"
 			position = { x = 0 y = 0 }
 
@@ -745,7 +861,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "stockpile_label"
 				font = "cg_16b"
-				text = "SECTOR_STOCKPILE_LABEL"
+				text = "LOCAL_SECTOR_STOCKPILE"
 				position = { x = 70 y = 22 }
 				maxWidth = 100
 				maxHeight = 20
@@ -763,7 +879,7 @@ guiTypes = {
 				background = {
 					name = "amount_bg_1"
 					spriteType = "GFX_tiles_dark_area_cut_8"
-					pdx_tooltip = "SECTOR_STOCKPILE_DESC"
+					pdx_tooltip = "LOCAL_SECTOR_STOCKPILE_DESC"
 				}
 			}
 
@@ -790,6 +906,13 @@ guiTypes = {
 		}
 
 		buttonType = {
+			name = "delete_sector"
+			quadTextureSprite = "GFX_button_sector_delete"
+			position = { x = 1183 y = 12 }
+			buttonFont = "cg_16b"
+		}
+		
+		buttonType = {		
 			name = "create_vassal"
 			quadTextureSprite = "GFX_standard_button_200_34_button"
 			position = { x = 1005 y = 45 }

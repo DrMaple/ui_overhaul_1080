@@ -124,10 +124,10 @@ guiTypes = {
 
 			smoothListBoxType = {
 				name = "list"
-				position = { x = 2 y= 40 }
+				position = { x = 0 y= 40 }
 				orientation = "UPPER_LEFT"
 				priority = 100
-				size = { x = 240 y = 0 }
+				size = { x = 250 y = 0 }
 				borderSize = { x=0 y=0 }
 				scrollbartype = "standardlistbox_slider"
 				spacing = -1
@@ -1703,7 +1703,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "background"
-			quadTextureSprite = "GFX_outliner_member_bg"
+			quadTextureSprite = "GFX_list_hover"
 			position = { x = -3 y = -5 }
 			clicksound = "click_outliner"
 			oversound = no_sound
