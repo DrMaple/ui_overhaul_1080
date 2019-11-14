@@ -3,7 +3,7 @@ guiTypes = {
 		name = "galaxy_view"
 		show_position = { x = 35 y = 40 }
 		hide_position = { x = -1272 y = 40 }
-		animation_time = 100 #mod
+		animation_time = 100
 		animation_type = decelerated
 
 		size = { width= 1042 height= 637 }
@@ -11,7 +11,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "galaxy_view_background_box"
-			size = { width = 1272 height = 945 } #mod
+			size = { width = 1272 height = 945 }
 			position = { x = 0 y = 0 }
 
 			background = {
@@ -313,7 +313,7 @@ guiTypes = {
 					iconType = {
 						name = "value_slot_3"
 						spriteType = "GFX_value_slot_2"
-						position = { x = -4 y = 150					}
+						position = { x = -4 y = 150	}
 						alwaystransparent = yes
 					}
 
