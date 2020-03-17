@@ -157,6 +157,7 @@ guiTypes = {
 						text = "FOCUS"
 						format = center
 						actionshortcut = "focus_camera"
+						shortcut = "q"
 					}
 					
 					buttonType = {
@@ -167,6 +168,7 @@ guiTypes = {
 						font = "cg_16b"
 						text = "CANCEL"
 						format = center
+						shortcut = "RETURN"
 						#actionshortcut = "accept" #Causes conflict with the "research" button. Handled in view code instead.
 					}
 
@@ -221,6 +223,7 @@ guiTypes = {
 						font = "cg_16b"
 						text = "RESEARCH"
 						format = center
+						shortcut = "RETURN"
 						#actionshortcut = "accept" #Causes conflict with the "cancel" button. Handled in view code instead.
 					}
 				}
@@ -249,6 +252,7 @@ guiTypes = {
 						font = "cg_16b"
 						text = "FOCUS"
 						format = center
+						shortcut = "q"
 					}
 					
 					instantTextBoxType={
@@ -285,6 +289,7 @@ guiTypes = {
 						font = "cg_16b"
 						text = "VIEW_SITE"
 						format = center
+						shortcut = "RETURN"
 					}
 				}			
 				buttonType = {
@@ -757,6 +762,7 @@ guiTypes = {
 					borderSize = { x = 12 y = 12 }
 					multiline = yes
 					format = center
+					shortcut = "q"
 				}
 				# scientist
 				buttonType = {
@@ -781,6 +787,7 @@ guiTypes = {
 					multiline = yes
 					text = "RESEARCH"
 					format = center
+					shortcut = "RETURN"
 				}
 			}
 
@@ -1239,6 +1246,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_long_button"
 			size = { x = 272 y = 40 }
 			position = { x = 9 y = 0 }
+			clicksound = "select_click"
 		}
 
 		iconType = {

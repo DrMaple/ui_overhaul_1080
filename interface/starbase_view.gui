@@ -207,6 +207,7 @@ guiTypes = {
 					text = "STARBASE_DETAILS_LABEL"
 					font = "cg_16b"
 					pdx_tooltip = "STARBASE_DETAILS"
+				    shortcut = "K"
 				}
 
 				buttonType = {
@@ -217,6 +218,7 @@ guiTypes = {
 					buttonFont = "cg_16b"
 					text = "STARBASE_DISMANTLE_LABEL"
 					font = "cg_16b"
+					shortcut = "del"
 				}
 			}
 
@@ -1157,7 +1159,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name = "name"
+			name = "title"
 			font = "cg_16b"
 			text = ""
 			position = { x = 36 y = 3 }
@@ -1169,7 +1171,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name = "right_text"
+			name = "time"
 			font = "cg_16b"
 			text = ""
 			position = { x = 146 y = 0 }
@@ -1187,7 +1189,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType = {
-			name = "type"
+			name = "name"
 			font = "cg_16b"
 			text = ""
 			position = { x = 36 y = 18 }
@@ -1197,6 +1199,14 @@ guiTypes = {
 			format = left
 			alwaysTransparent = yes
 			text_color_code = "E"
+		}
+
+		buttonType = {
+			name = "cancel_button"
+			position = { x=-1 y=-1 }
+			size = { x = 250 y = 57 }
+			quadTextureSprite = "GFX_button_light"
+			clicksound = "back_click"
 		}
 
 		buttonType = {

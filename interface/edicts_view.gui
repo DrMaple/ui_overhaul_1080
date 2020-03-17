@@ -134,6 +134,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_checkbox_20_20_01"
 			position = { x = 2 y = 2  }
 			oversound = "no_sound"
+			clicksound = "select_click"
 		}
 	}
 	

@@ -522,9 +522,10 @@ guiTypes = {
 
 			iconType ={
 				name ="their_opinion_icon"
-				spriteType = "GFX_their_opinion"
+				spriteType = "GFX_diplomacy_opinion"
 				position = { x = 636 y = 45 }
 				alwaystransparent = yes
+				scale = .85
 			}
 			
 			buttonType={
@@ -586,6 +587,34 @@ guiTypes = {
 				}
 			}
 		}
+
+		# tabs ----------------------------------------------
+		#@tabheight = 305 
+		#
+		#buttonType = {
+		#	name = "tab_galaxy"
+		#	quadTextureSprite = "GFX_tab_1_inactive"
+		#	position = { x= -20 y = @tabheight }
+		#	font = "cg_16b"
+		#	buttonText = "topbar_button_contacts_name"
+		#	buttonFont = "cg_16b"
+		#	shortcut = "z"
+		#	clicksound = "tab_click"
+		#	Orientation = "LOWER_LEFT"
+		#	oversound = no_sound
+		#}
+		#buttonType = {
+		#	name = "tab_galaxy_active"
+		#	quadTextureSprite = "GFX_tab_1_active"
+		#	position = { x= -20 y = @tabheight }
+		#	font = "cg_16b"
+		#	buttonText = "topbar_button_contacts_name"
+		#	buttonFont = "cg_16b"
+		#	clicksound = "tab_click"
+		#	shortcut = "z"
+		#	Orientation = "LOWER_LEFT"
+		#	oversound = no_sound
+		#}
 	}
 
 	containerWindowType = {

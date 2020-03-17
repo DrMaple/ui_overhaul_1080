@@ -688,6 +688,16 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "ai_fleet_status_entry"
+		size = { width = 15 height = 15 }
+
+		iconType = {
+			name = "status"
+			spriteType = "GFX_debug_ai_strategy"
+		}		
+	}
+
+	containerWindowType = {
 		name = "outliner_member_planet_entry_window"
 		size = { width = 318 height = 41 }
 		position = { x = 0 y = 0 }
@@ -1825,5 +1835,215 @@ guiTypes = {
 			spriteType = "GFX_outliner_status"
 			alwaysTransparent = no
 		}		
+	}
+	
+	### SHIPYARD ###
+	containerWindowType = {
+		name = "outliner_member_shipyard_entry_window"
+		size = { width = 318 height = 41 }
+		position = { x = 0 y = 0 }
+		orientation = upper_right
+		moveable = no
+
+		buttonType = {
+			name = "background"
+			quadTextureSprite = "GFX_outliner_member_bg"
+			position = { x = -3 y = -5 }
+			clicksound = "click_outliner"
+			oversound = no_sound
+		}
+
+		containerWindowType = {
+			name = "selected_overlay"
+			position = { x = 0 y = 0 }
+			size = { width = 248 height = 100% }
+			background = {
+				name = "selected_bg"
+				spriteType = "GFX_glow_tile_orange_no_padding"
+				alwaysTransparent = yes
+			}
+		}
+
+		iconType = {
+			name = "type"
+			position = { x = 8 y = 2 }
+			spriteType = "GFX_starbase_outliner"
+			frame = 6
+		}
+
+		instantTextBoxType = {
+			name = "name"
+			font = "cg_16b"
+			text = "0"
+			position = { x = 46 y = 3 }
+			maxWidth = 127
+			maxHeight = @text_max_height
+			fixedSize = yes
+			orientation = "UPPER_LEFT"
+			format = left
+			text_color_code = "E"
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "shipyard_type"
+			font = "cg_16b"
+			text = "MEGASTRUCTURE"
+			position = { x = 46 y = @text_bottom_y }
+			maxWidth = 132
+			maxHeight = @text_max_height
+			fixedSize = yes
+			orientation = "UPPER_LEFT"
+			format = left
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "system"
+			font = "cg_16b"
+			text = ""
+			position = { x = -145 y = 3 }
+			maxWidth = 65
+			maxHeight = @text_max_height
+			fixedSize = yes
+			orientation = "UPPER_RIGHT"
+			format = right
+		}
+
+		containerWindowType = {
+			name = "constructions"
+			size = { width = 200 height = 20 }
+			position = { x = 41 y = 20 }
+			clipping = no
+
+			background = {
+				name = "bg"
+				spriteType = "gfx_transparency_button"
+			}
+
+			iconType = {
+				name = "shipyard"
+				position = { x = 0 y = -2 }
+				spriteType = "GFX_ship_class_small"
+				frame = 3
+				scale = 0.8
+			}
+
+			overlappingElementsBoxType = {
+				name = "progress_bars"
+				position = { x = 18 y = 3 }
+				size = { x = 180 y = 30 }
+				spacing = 2.0
+				format = left
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "outliner_member_shipyard_construction_entry_progress_bar_window"
+		# Should be as wide as the largest progress bar
+		size = { width = 180 height = 50 }
+		position = { x = 0 y = 0 }
+
+		iconType = {
+			name = "progress_bar_1"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_1"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_2"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_2"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_3"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_3"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_4"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_4"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_5"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_5"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_6"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_6"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_7"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_7"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_8"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_8"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_9"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_9"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_10"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_10"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_11"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_11"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_12"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_12"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_13"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_13"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_14"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_14"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_15"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_15"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_16"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_16"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_17"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_17"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_18"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_18"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_19"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_19"
+			alwaysTransparent = yes
+		}
+		iconType = {
+			name = "progress_bar_20"
+			spriteType = "GFX_outliner_shipyard_construction_progressbar_20"
+			alwaysTransparent = yes
+		}
 	}
 }

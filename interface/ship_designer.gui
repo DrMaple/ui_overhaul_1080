@@ -19,6 +19,12 @@ guiTypes = {
 		position = { x= 7 y= 205 }#X decides how many weapon components needed for text to move. Will also move when "Select a Section" is visible
 		
 	}
+	
+	positionType = {
+		name = "min_component_slots"
+		position = { x = 3 y = 3 }#min slots for utilities and weapons
+	}
+
 	containerWindowType = {
 		name = "ship_designer"
 		position = { x = -1280 y = 40 }

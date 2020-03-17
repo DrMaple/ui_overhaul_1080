@@ -41,6 +41,50 @@ guiTypes = {
 			fixedSize = yes
 			format = left
 		}
+
+		containerWindowType = {
+			name = "in_breach_container"
+			position = { x = 325 y = 5 }
+			size = { width = 195 height = 50 }
+			moveable = no
+			clipping = no
+
+			#background = {
+			#	name = "background"
+			#	spriteType = "GFX_dark_area_cut"
+			#}
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiles_frame_light"
+			}
+
+			
+			iconType = {
+				name = "red_hex"
+				alwaysTransparent = yes
+				position = { x = -18 y = -8 }
+				quadTextureSprite = "GFX_in_breach_hex_bg"
+			}
+
+			instantTextBoxType = {
+				name = "in_breach_header"
+				font = "cg_16b"
+				text = "IN_BREACH"
+				text_color_code = "R"
+				position = { x = -130 y = 5 }
+				format = right
+				maxWidth = 120
+				maxHeight = 20
+				alwaysTransparent = yes
+			}
+
+			OverlappingElementsBoxType = {
+				name = "in_breach_box"	
+				position = { x = -5 y = -5 }
+				size = { x = 190 y = 45 }
+			}
+		}
 		
 		buttonType = {
 			name = "close"
@@ -173,5 +217,17 @@ guiTypes = {
 			frame = 1
 			scale = 0.8
 		}
+	}
+
+	containerWindowType = {
+		name = "in_breach_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 25 height = 25 }
+
+		background = {
+			name = "background_button"
+			quadTextureSprite = "GFX_message_event_ruler"
+		}
+
 	}
 }
