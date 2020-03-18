@@ -299,7 +299,7 @@ guiTypes = {
 				
 				containerWindowType = {
 					name = "detailed_diplomacy_window"
-					size = { width = 285 height = 343}
+					size = { width = 285 height = 385}
 					position = { x = 25 y = 360 }
 					clipping = yes
 
@@ -313,7 +313,19 @@ guiTypes = {
 					iconType = {
 						name = "value_slot_3"
 						spriteType = "GFX_value_slot_2"
-						position = { x = -4 y = 150	}
+						position = { x = -4 y = 145	}
+						alwaystransparent = yes
+					}
+					iconType = {
+						name = "value_slot_4"
+						spriteType = "GFX_value_slot_2"
+						position = { x = -4 y = 257	}
+						alwaystransparent = yes
+					}
+					iconType = {
+						name = "value_slot_5"
+						spriteType = "GFX_value_slot_2"
+						position = { x = -4 y = 369	}
 						alwaystransparent = yes
 					}
 
@@ -330,7 +342,7 @@ guiTypes = {
 					smoothListboxType = {
 						name = "detailed_diplomacy_list"
 						position = { x = 5 y = 31 }
-						size = { x = 280 y = 311 }
+						size = { x = 280 y = 351 }
 						scrollbarType = "standardlistbox_slider"
 					}
 				}
@@ -340,7 +352,7 @@ guiTypes = {
 					font = "cg_16b"
 					spriteType = "GFX_standard_button_142_34_button"
 					buttonText = "GALAXY_VIEW_EMPIRE_DIPLOMACY"
-					position = { x = 155 y = 700 }
+					position = { x = 156 y = 740 }
 				}
 			}
 

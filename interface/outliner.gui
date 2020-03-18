@@ -1618,6 +1618,11 @@ guiTypes = {
 		name = "outliner_member_starbase_construction_entry_window"
 		size = { width = 65 height = 22 }
 		position = { x = 0 y = 0 }
+		clipping = no
+		background = {
+			name = "bg"
+			spriteType = "gfx_transparency_button"
+		}
 
 		iconType = {
 			name = "shipyard"

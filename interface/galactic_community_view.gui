@@ -1,0 +1,1632 @@
+guiTypes = {
+	# Dynamic positions and sizes for the members and council containers
+	positionType = {
+		name = "members_container_position_default"
+		position = { x = 940 y = 420 }
+	}
+	positionType = {
+		name = "members_container_position_large"
+		position = { x = 940 y = 340 }
+	}
+
+	positionType = {
+		name = "members_container_size_default"
+		position = { x = 314 y = 112 }
+	}
+	positionType = {
+		name = "members_container_size_large"
+		position = { x = 314 y = 192 }
+	}
+
+	positionType = {
+		name = "members_box_container_size_default"
+		position = { x = 280 y = 68 }
+	}
+	positionType = {
+		name = "members_box_container_size_large"
+		position = { x = 280 y = 192 }
+	}
+
+	# Button in the lower right of the main view, to open the Galactic Community
+	containerWindowType = {
+		name = "galactic_community_button_window"
+		position = { x=-150 y=135 }
+		size = { width= 70 height= 40 }
+		orientation = upper_right
+		moveable = yes
+
+		buttonType = {
+			name = "galactic_community_button"
+			spriteType = "GFX_galactic_community_button"
+			position = { x= -318 y = 874 }
+		}
+
+		iconType = {
+			name = "unread_icon"
+			spriteType = "GFX_unread_bg"
+			position = { x= -24 y = -69 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "unread_text"
+			font = "cg_16b"
+			maxWidth = 30
+			maxHeight = 20
+			position = { x= -22 y = -60 }
+			format = center
+			text = "20"
+		}
+	}
+
+	containerWindowType = {
+		name = "galactic_community_view"
+		position = { x = 35 y = 40 }
+		size = { width= 1272 height= 600 }
+		moveable = yes
+		clipping = no
+
+		background = {
+			name = "galactic_community_view_background"
+			spriteType = "GFX_tile_large_bg"
+		}
+
+		iconType = {
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg"
+			position = { x = 30 y = -12 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType={
+			name = "header"
+			font = "malgun_goth_24"
+			position = { x = 40 y = 4 }
+			text = "GALACTIC_COMMUNITY"
+			format = left
+		}
+
+		iconType = {
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_long"
+			position = { x = 6 y = 21 }
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_close_button_galaxy"
+			position = { x= -45 y = 16  }
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE_TITLE"
+			clicksound = "back_click"
+		}
+
+		# Currently proposed resolutions
+		containerWindowType = {
+			name = "proposed_container"
+			position = { x = 10 y = 50 }
+			size = { width = 320 height = 540 }
+
+			background = {
+				name = "proposed_bg"
+				spriteType = "GFX_tiles_frame"
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType={
+				name = "resolution_queue_text"
+				font = "cg_16b"
+				position = { x = 10 y = 13 }
+				maxWidth = 175
+				maxHeight = 20
+				text = "RESOLUTION_QUEUE"
+				format = left
+			}
+
+			instantTextBoxType={
+				name = "resolution_queue_desc"
+				font = "cg_16b"
+				position = { x = 60 y = 60 }
+				maxWidth = 175
+				maxHeight = 20
+				text = "RESOLUTION_QUEUE_DESC"
+				format = left
+				alwaystransparent = yes
+			}
+
+			smoothListboxType = {
+				name = "proposed_list"
+				position = { x = 5 y = 40 }
+				size = { x = 300 y = 490 }
+				scrollbarType = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				spacing = 6
+			}
+
+			instantTextBoxType={
+				name = "diplomatic_weight_number"
+				font = "cg_16b"
+				position = { x = -190 y = 13 }
+				maxWidth = 175
+				maxHeight = 20
+				text = "MY DIPLO NUM"
+				format = right
+				orientation = upper_right
+			}			
+		}
+
+		# Join/Leave button
+		buttonType = {
+			name = "join_leave_button"
+			position = { x = -150 y = -50 }
+			spriteType = "GFX_button_116_24"
+			buttonFont = "cg_16b"
+			text = "JOIN OR LEAVE"
+			font = "cg_16b"
+			orientation = "LOWER_RIGHT"
+		}
+
+		# Community Window ----------------------------------------------------------
+		containerWindowType = {
+			name = "community_window"
+			position = { x = 4 y = 16 }
+			size = { width = 1042 height = 572 }
+			moveable = no
+
+			containerWindowType = {
+				name = "community_portrait_window"
+				position = { x = 338 y = 34 }
+				size = { width = 910 height = 264 }
+
+				iconType ={
+					name ="galacticcommunity_bg"
+					quadTextureSprite = "GFX_galactic_community_portrait_bg" # will change when council is formed, through code!
+					position = { x = 1 y = 0 }
+				}
+			}
+
+			## Portrait That Greets You - Hej Hej
+			containerWindowType = {
+				name = "portrait_greeting_window"
+				position = { x = 350 y = 32 }
+				size = { width = 650 height = 264 }
+
+				iconType = {
+					name = "portrait"
+					quadTextureSprite = "GFX_portrait_character"
+					position = { x = 60 y = 18 }
+					scale = 0.65
+					alwaysTransparent = yes
+				}
+
+				iconType ={
+					name ="galacticcommunity_shadow"
+					quadTextureSprite = "GFX_galactic_community_portrait_shadow"
+					position = { x = -10 y = 0 }
+				}
+
+
+				iconType = {
+					name = "stripes_1"
+					spriteType = "GFX_galactic_community_stripes"
+					position = { x = -16 y = -3 }
+					orientation = upper_left
+					alwaysTransparent = yes
+				}
+
+				iconType ={
+					name ="galacticcommunity_frame"
+					quadTextureSprite = "GFX_galacticcommunity_largeportrait_frame"
+					position = { x = -15 y = -4 }
+				}
+
+				buttonType = {
+					name = "portrait_flag"
+					quadTextureSprite = "GFX_empire_flag_64"
+					position = { x = -5  y = 210 }
+					scale = .9
+				}
+
+				iconType ={
+					name ="federation_type"
+					quadTextureSprite = "GFX_default_federation"
+					position = { x = 34 y = 240 }
+					scale = 0.6
+				}
+
+				instantTextBoxType = {
+						name = "flag_name"
+						font = "cg_16b"
+						maxWidth = 300
+						maxHeight = 20
+						position = { x =5 y =40 }
+						format = left
+						text = "EMPIRE NAME HERE"
+						text_color_code = "E"
+				}
+
+				instantTextBoxType = {
+						name = "flag_government"
+						font = "cg_16b"
+						maxWidth = 300
+						maxHeight = 20
+						position = { x =5 y =60 }
+						format = left
+						text = "AUTHORITY_HERE"
+						text_color_code = "Y"
+				}
+
+				instantTextBoxType = {
+						name = "flag_personality"
+						font = "cg_16b"
+						maxWidth = 300
+						maxHeight = 20
+						position = { x =5 y =80 }
+						format = left
+						text = "PERSONALITY_HERE"
+				}
+
+				# opinion diplomacy
+				containerWindowType = {
+					name = "flag_stats_window"
+					position = { x = 0 y = 110 }
+					size = { width = 94 height = 60 }
+
+					iconType = {
+						name = "opinion_icon"
+						spriteType = "GFX_diplomacy_opinion"
+						position = { x = 3 y = 9 }
+						scale = .85
+					}
+
+					instantTextBoxType = {
+						name = "opinion_text"
+						font = "cg_16b"
+						maxWidth = 200
+						maxHeight = 20
+						position = { x = 30 y = 10 }
+						format = left
+						text = "OPINION"
+					}
+
+					iconType = {
+						name = "relative_power_icon"
+						spriteType = "GFX_relative_power_icon"
+						position = { x = 6 y = 33 }
+						scale = .8
+					}
+
+					instantTextBoxType = {
+						name = "relative_strength_text"
+						font = "cg_16b"
+						maxWidth = 140
+						maxHeight = 20
+						position = { x = 30 y = 35 }
+						format = left
+						text = "RELATIVE_STRENGTH"
+					}
+
+					iconType = {
+						name = "diplomacy_icon"
+						spriteType = "GFX_diplomatic_weight_normal"
+						position = { x = 5 y = 56 }
+						scale = 1
+					}
+
+					instantTextBoxType = {
+						name = "diplomacy_text"
+						font = "cg_16b"
+						maxWidth = 120
+						maxHeight = 20
+						position = { x = 30 y = 57 }
+						format = left
+						text = "DIPLO ##"
+						#text_color_code = "Y"
+					}
+				}
+
+				containerWindowType = {
+					name = "flag_chat_window"
+					position = { x = 280 y = 170 }
+					size = { width = 350 height = 90 }
+
+					containerWindowType = {
+						name = "start_screen_frame_bg"
+						position = { x=-15 y= 0 }
+						size = { width = 400 height = 80}
+
+						background = {
+							name = "start_screen_frame"
+							quadTextureSprite = "GFX_diplomacy_empire_chat_box"
+							alwaysTransparent = yes
+						}
+					}
+
+					instantTextBoxType = {
+						name = "chat_text"
+						font = "cg_16b"
+						position = { x = 20 y = 20 }
+						maxWidth = 360
+						maxHeight = 60
+						format = left
+						alwaysTransparent = yes
+						vertical_alignment = center
+						text = "CHAT WINDOW TEXT"
+					}
+				}	
+			}
+
+			# Currently proposed resolutions
+			containerWindowType = {
+				name = "insession_summary_container"
+				position = { x = 345 y = 25 }
+				size = { width = 228 height = 54 }
+
+				iconType ={
+						name ="bg"
+						quadTextureSprite = "GFX_senate_progress_bg"
+						position = { x = -7 y = -2 }
+				}
+
+
+				instantTextBoxType={
+					name = "insession_status_text"
+					font = "cg_16b"
+					position = { x = 10 y = 2 }
+					text = "SENATE IS IN SESSION"
+					format = left
+					maxWidth = 200
+					maxHeight = 20
+				}
+
+				iconType = {
+					name = "insession_progressbar_small"
+					spriteType = "GFX_senatefloor_small_bar"
+					position = { x = 10 y = 18 }
+				}
+
+				#iconType ={
+				#		name ="resolution_insession_icon"
+				#		quadTextureSprite = "GFX_tile_production_error" # TODO!
+				#		position = { x = 5 y = 5 }
+				#}
+			}
+
+			containerWindowType = {
+				name = "council_container"
+				position = { x = 940 y = 340 }
+				size = { width = 314 height = 76 }
+
+				containerWindowType = {
+				name = "council_flag_bg"
+				position = { x = 0 y = 0 }
+				size = { width = 314 height = 76 }
+
+					background = {
+						name = "council_bg"
+						spriteType = "GFX_dark_area_cut"
+						alwaysTransparent = yes
+					}
+				}
+
+				iconType ={
+					name ="council_bg"
+					quadTextureSprite = "GFX_hex_bg"
+					position = { x = -16 y = -12 }
+					alwaysTransparent = yes
+				}
+
+				## Image with frames, update it as council increases
+				#iconType ={
+				#	name ="council_counter"
+				#	quadTextureSprite = "GFX_councilmember_counter"
+				#	position = { x = -120 y = 6 }
+				#	orientation = upper_right
+				#}
+					
+				instantTextBoxType={
+					name = "council_text"
+					font = "cg_16b"
+					position = { x = 10 y = 10 }
+					maxWidth = 150
+					maxHeight = 20
+					text = "GALACTIC_COUNCIL"
+					format = left
+				}
+
+				instantTextBoxType={
+					name = "council_number"
+					font = "cg_16b"
+					position = { x = 150 y = 10 }
+					maxWidth = 200
+					maxHeight = 20
+					text = "NEXT COUNCIL ELECTION"
+					format = left
+					pdx_tooltip = "alert_council_election_delayed"
+				}
+
+				gridBoxType = {
+					name = "council_gridbox"
+					position = { x = 10 y = 34 }
+					size = { width = 256 height = 32 }
+					slotsize = { width = 36 height = 40 }
+					max_slots_horizontal = 8
+					max_slots_vertical = 1
+					format = UPPER_LEFT
+				}
+			}
+
+			# Member list, click to bring up diplomacy
+			# NOTE: Size and position of these elements are determined by 
+			#		the position_types at the top of the file!
+			containerWindowType = {
+				name = "members_container"
+				position = { x = 940 y = 420 }
+				size = { width = 314 height = 110 } 
+
+				background = {
+					name = "members_bg"
+					spriteType = "GFX_dark_area_cut"
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType={
+					name = "community_text"
+					font = "cg_16b"
+					position = { x = 10 y = 10 }
+					maxWidth = 250
+					maxHeight = 20
+					text = "GALACTIC_COMMUNITY"
+					format = left
+				}
+
+				containerWindowType = {
+					name = "members_box_container"
+					position = { x = 10 y = 34 }
+					size = { width = 280 height = 150 }
+					clipping = yes
+
+					gridBoxType = {
+						name = "members_gridbox"
+						position = { x = 0 y = 0 }
+						size = { width = 280 height = 150 }
+						slotsize = { width = 34 height = 34 }
+						max_slots_horizontal = 8
+						scrollbartype = "standardtext_slider_small"	
+						format = UPPER_LEFT
+					}
+				}
+			}
+
+			containerWindowType = {
+				name = "delegates_container"
+				position = { x = 338 y = 534 }
+				size = { width = 235 height = 44 }
+
+				containerWindowType = {
+					name = "delegates_bg"
+					position = { x = 0 y = 6 }
+					size = { width = 70 height = 34 }
+
+					background = {
+						name = "delegates_bg"
+						spriteType = "GFX_dark_area_cut"
+						alwaysTransparent = yes
+					}
+				}
+
+				instantTextBoxType = {
+					name = "delegates_text"
+					font = "cg_16b"
+					position = { x = 38 y = 15 }
+					maxWidth = 175
+					maxHeight = 20
+					text = "DELEGATES: ##"
+					format = left
+				}
+
+				iconType = {
+					name = "envoy_icon"
+					quadTextureSprite = "GFX_envoy_icon"
+					position = { x = 12 y = 11 }
+					scale = .8
+					alwaysTransparent = yes
+				}
+
+				buttonType = {
+					name = "assign_button"
+					position = { x = -168 y = -45 }
+					spriteType = "GFX_button_150_24"
+					buttonFont = "cg_16b"
+					text = "ASSIGN_ENVOY"
+					font = "cg_16b"
+					orientation = "LOWER_RIGHT"
+				}
+			}
+
+			containerWindowType = {
+				name = "highlighted_resolution_container"
+				position = { x = 338 y = 308 }
+				size = { width = 585 height = 224 }
+				clipping = no
+
+				background = {
+					name = "highlighted_bg"
+					spriteType = "GFX_dark_area_cut"
+					alwaysTransparent = yes
+				}
+
+				iconType ={
+					name ="highlighted_type_background"
+					quadTextureSprite = "GFX_resolution_senate_group"
+					position = { x = 3 y = -7 }
+					alwaysTransparent = yes
+				}
+
+				
+				iconType ={
+					name ="highlighted_icon"
+					quadTextureSprite = "GFX_government_civic"
+					position = { x = 10 y = 5 }
+					scale = .8
+				}
+
+				instantTextBoxType={
+					name = "highlighted_name"
+					font = "cg_16b"
+					position = { x = 58 y = 18 }
+					maxWidth = 180
+					maxHeight = 20
+					text = "RESOLUTION_NAME_HERE"
+					format = left
+					vertical_alignment = center
+				}
+				
+				instantTextBoxType={
+					name = "propose_resolution_name"
+					font = "cg_16b"
+					position = { x = 58 y = 18 }
+					maxWidth = 180
+					maxHeight = 20
+					text = "PROPOSE_RESOLUTION_NAME"
+					text_color_code = "H"
+					format = left
+					vertical_alignment = center
+				}
+
+
+				## Details Button
+				buttonType = {
+					name = "button_details"
+					quadTextureSprite = "GFX_resolution_view_supporters_button"
+					position = { x = -340 y = 10 }
+					clicksound = "click"
+					scale = 1
+					pdx_tooltip = "DETAILS"
+					orientation = upper_right
+				}
+
+				#iconType = {
+				#	name = "icon_details"
+				#	spriteType = "GFX_map_mode_neighbours"
+				#	alwaysTransparent = yes
+				#	position = { x = 55 y = 30 }
+				#}
+
+				## Supports Button
+				buttonType = {
+					name = "button_supports"
+					quadTextureSprite = "GFX_resolution_details_button"
+					position = { x = -304 y = 10 }
+					clicksound = "click"
+					scale = 1
+					pdx_tooltip = "SUPPORTERS"
+					orientation = upper_right
+				}
+
+				#iconType = {
+				#	name = "icon_supporters"
+				#	spriteType = "GFX_map_mode_neighbours"
+				#	alwaysTransparent = yes
+				#	position = { x = 85 y = 30 }
+				#}
+
+				containerWindowType = {
+					name = "details_container"
+					position = { x = 10 y = 45 }
+					size = { width = 360 height = 160 }
+
+					instantTextBoxType={
+						name = "details_text"
+						font = "cg_16b"
+						position = { x = 5 y = 15 }
+						maxWidth = 300
+						maxHeight = 160
+						text = "DETAILS"
+						format = left
+						scrollbartype = "standardtext_slider"
+					}
+					
+					instantTextBoxType={
+						name = "propose_resolution_details_text"
+						font = "cg_16b"
+						position = { x = 5 y = 15 }
+						maxWidth = 300
+						maxHeight = 160
+						text = "PROPOSE_RESOLUTION_DETAILS"
+						format = left
+						scrollbartype = "standardtext_slider"
+					}
+				}
+
+				containerWindowType = {
+					name = "supported_by_container"
+					position = { x = 5 y = 52 }
+					size = { width = 310 height = 168 }
+					clipping = yes
+
+					#background = {
+					#	name = "supported_bg"
+					#	spriteType = "GFX_dark_area_cut"
+					#}
+
+					instantTextBoxType = {
+						name = "supported_by_header"
+						font = "cg_16b"
+						position = { x = 12 y = 10 }
+						maxWidth = 150
+						maxHeight = 20
+						text = "DIPLOMATIC_SUPPORT"
+						format = left
+					}
+
+					iconType = {
+						name = "diplomacy_icon"
+						spriteType = "GFX_diplomatic_weight_normal"
+						position = { x = 150 y = 8 }
+						scale = 1
+					}
+
+					instantTextBoxType = {
+						name = "supported_by_text"
+						font = "cg_16b"
+						position = { x = 175 y = 10 }
+						maxWidth = 100
+						maxHeight = 20
+						text = "2000"
+						text_color_code = "Y"
+						format = left
+					}
+
+					gridBoxType = {
+						name = "supported_by_gridbox"
+						position = { x = 8 y = 32 }
+						size = { width = 300 height = 110 }
+						slotsize = { width = 34 height = 34 }
+						add_horizontal = yes
+						max_slots_horizontal = 9
+						scrollbartype = "standardtext_slider"
+						format = UPPER_LEFT
+
+					}
+				}
+
+				## Decisions
+
+				containerWindowType = {
+					name = "proposal_decisions_container"
+					position = { x = 335 y = 0 }
+					size = { width = 250 height = 224 }
+					
+					containerWindowType = {
+						name = "proposal_decisions_bg"
+						position = { x = 0 y = 8 }
+						size = { width = 245 height = 210 }
+						background = {
+							name = "highlighted_bg"
+							spriteType = "GFX_dark_area_cut_light"
+						}
+					}
+					
+					instantTextBoxType={
+						name = "resolution_support_desc"
+						font = "cg_16b"
+						position = { x = 40 y = 60 }
+						maxWidth = 175
+						maxHeight = 20
+						text = "RESOLUTION_SUPPORT_DESC"
+						format = left
+						alwaystransparent = yes
+					}
+					
+					instantTextBoxType = {
+						name = "not_in_community_text"
+						font = "cg_16b"
+						position = { x = 10 y = 10 }
+						maxWidth = 230
+						maxHeight = 60
+						text = "MUST_BE_MEMBER"
+						text_color_code = "Y"
+						format = left
+					}
+	
+					smoothListBoxType = {
+						name = "decisions_list"
+						position = { x = -4 y = 3 }
+						size = { x = 252 y = 216 }
+						scrollbartype = "standardlistbox_slider"
+						orientation = "UPPER_LEFT"
+						spacing = 7
+						defaultSelection = yes
+					}	
+				}	
+			}
+
+
+
+			containerWindowType = {
+				name = "members_modifiers_buttons"
+				position = { x = 922 y = 302 }
+				size = { width = 338 height = 222 }
+
+				#background = {
+				#	name = "delegates_bg"
+				#	spriteType = "GFX_dark_area_cut"
+				#	alwaysTransparent = yes
+				#}
+
+				#buttonType={
+				#	name = "news_button"
+				#	font = "cg_16b"
+				#	spriteType = "GFX_button_95_24"
+				#	buttonText = "NEWS"
+				#	position = { x = 5 y = -5 }
+				#}
+				buttonType={
+					name = "members_button"
+					font = "cg_16b"
+					spriteType = "GFX_button_150_24"
+					buttonText = "MEMBERS"
+					position = { x = 10 y = -5 }
+				}
+				buttonType={
+					name = "modifiers_button"
+					font = "cg_16b"
+					spriteType = "GFX_button_150_24"
+					buttonText = "GALACTIC_MODIFIERS"
+					position = { x = -170 y = -5 }
+					orientation = upper_right
+				}
+			}
+
+			containerWindowType = {
+				name = "galactic_modifiers_container"
+				position = { x = 940 y = 340 }
+				size = { width = 314 height = 192 }
+
+				background = {
+					name = "modifiers_bg"
+					spriteType = "GFX_dark_area_cut"
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "modifiers_header"
+					font = "cg_16b"
+					position = { x = 10 y = 8 }
+					maxWidth = 300
+					maxHeight = 20
+					text = "ACTIVE_MODIFIERS"
+					format = left
+					text_color_code = "H"
+				}
+
+				instantTextBoxType = {
+					name = "modifiers_text"
+					font = "cg_16b"
+					position = { x = 10 y = 28 }
+					maxWidth = 290
+					maxHeight = 160
+					text = "GALACTIC_COMMUNITY"
+					format = left
+					scrollbartype = "standardtext_slider"
+				}
+			}
+		}
+
+		# Senate Window -------------------------------------------------------------
+		containerWindowType = {
+			name = "senate_window"
+			position = { x = 4 y = 0 }
+			size = { width = 1042 height = 572 }
+			moveable = no
+
+
+			# Current resolution
+			containerWindowType = {
+				name = "voting_container"
+				position = { x = 338 y = 60 }
+				size = { width = 910 height = 264 }
+				clipping = no
+
+				#background = {
+				#	name = "voting_bg"
+				#	spriteType = "GFX_dark_area_cut"
+				#	alwaysTransparent = yes
+				#}
+
+				containerWindowType = {
+					name = "community_portrait_window"
+					position = { x = 0 y = -10 }
+					size = { width = 910 height = 264 }
+
+					iconType ={
+						name ="senatefloor_bg"
+						quadTextureSprite = "GFX_0_senate_floor_portrait_bg"
+						position = { x = 0 y = 0 }
+					}
+
+					iconType = {
+						name = "stripes_1"
+						spriteType = "GFX_galactic_community_stripes"
+						position = { x = -3 y = -5 }
+						orientation = upper_left
+						alwaysTransparent = yes
+					}
+
+					iconType ={
+						name ="senatefloor_shadow"
+						quadTextureSprite = "GFX_senate_floor_shadow"
+						position = { x =5 y = 20}
+					}
+
+					iconType ={
+						name ="galacticcommunity_frame"
+						quadTextureSprite = "GFX_galacticcommunity_largeportrait_frame"
+						position = { x = -3 y = -6 }
+					}
+				}
+
+				containerWindowType = {
+					name = "voting_resolution_background"
+					position = { x = 20 y = 50 }
+					size = { width = 300 height = 50 }
+					clipping = no
+
+					background = {
+						name = "voting_bg"
+						spriteType = "GFX_resolution_senate_group"
+						alwaysTransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "voting_resolution_help_text"
+						font = "cg_16b"
+						maxWidth = 320
+						maxHeight = 60
+						position = { x =5 y = -15 }
+						format = left
+						text = "SENATE_FLOOR_VOTING"
+						alwaysTransparent = yes
+					}
+				}
+
+				iconType ={
+					name ="senate_progress_bg2"
+					quadTextureSprite = "GFX_senate_progress_bg"
+					position = { x = 0 y =-21 }
+				}
+
+				instantTextBoxType={
+					name = "senate_status_text"
+					font = "cg_16b"
+					position = { x = 17 y = -17 }
+					text = "SENATE IS IN SESSION"
+					format = left
+					maxWidth = 200
+					maxHeight = 20
+				}
+
+				iconType = {
+					name = "senatefloor_progressbar_small"
+					spriteType = "GFX_senatefloor_small_bar"
+					position = { x = 17 y = -1 }
+					alwaysTransparent = yes
+				}
+
+				iconType ={
+					name ="icon"
+					quadTextureSprite = "GFX_tile_production_error"
+					position = { x = 28 y = 56 }
+					scale = 1
+				}
+
+				instantTextBoxType={
+					name = "text"
+					font = "cg_16b"
+					position = { x = 85 y = 67 }
+					maxWidth = 250
+					maxHeight = 40
+					text = "RESOLUTION NAME!"
+					format = left
+					vertical_alignment = center
+				}
+
+				buttonType = {
+					name = "flag"
+					quadTextureSprite = "GFX_empire_flag_32"
+					position = { x = 25 y = 119  }
+				}
+
+				instantTextBoxType = {
+					name = "flag_name"
+					font = "cg_16b"
+					maxWidth = 300
+					maxHeight = 20
+					position = { x =65 y = 125 }
+					format = left
+					text = "EMPIRE NAME HERE"
+					text_color_code = "E"
+					alwaysTransparent = yes
+				}
+			}
+
+			## Voting Tally and Dark box behind Senate Buttons ------------
+			containerWindowType = {
+				name = "background_voting"
+				position = { x = 338 y = 325 }
+				size = { width = 910 height = 265 }
+				clipping = no
+
+					background = {
+						name = "voting_bg"
+						spriteType = "GFX_dark_area_cut"
+						alwaysTransparent = yes
+					}
+
+				iconType = {
+					name = "vote_tally_bg"
+					quadTextureSprite = "GFX_senate_vote_tally_bg"
+					position = { x = 285 y = -70 }
+					alwaysTransparent = yes
+				}
+
+				iconType = {
+					name = "vote_tally_winner"
+					quadTextureSprite = "GFX_senate_vote_tally_winner"
+					position = { x = 385 y = -65 }
+					alwaysTransparent = yes
+				}
+			}
+
+			# Voting power progressbar -----------------------------------------
+
+			iconType = {
+				name ="voting_balance"
+				quadTextureSprite = "GFX_vote_balance_progressbar"
+				position = { x = 657 y = 292 }
+			}
+
+			instantTextBoxType = {
+				name = "supporters_power"
+				font = "malgun_goth_24"
+				position = { x = 725 y = 260 }
+				maxWidth = 75
+				maxHeight = 20
+				text = "TOTAL POWER: 1000000"
+				text_color_code = "E"
+				format = center
+			}
+
+			instantTextBoxType = {
+				name = "opponents_power"
+				font = "malgun_goth_24"
+				position = { x = 796 y = 260 }
+				maxWidth = 75
+				maxHeight = 20
+				text = "TOTAL POWER: 1000000"
+				text_color_code = "R"
+				format = center
+			}
+
+			buttonType = {
+				name = "call_in_favors"
+				quadTextureSprite = "GFX_standard_button_142_34_button"
+				position = { x = 335 y = -250 }
+				Orientation = "LOWER_LEFT"
+				buttonFont = "cg_16b"
+				buttonText = "CALL_IN_FAVOR_ICON"
+				pdx_tooltip = "CALL_IN_FAVOR_TOOLTIP"
+			}
+
+			# Senate Floor with supporters/opponents/abstainees ----------------
+			containerWindowType = {
+				name = "supporters_container"
+				position = { x = 468 y = 328 }
+				size = { width = 316 height = 210 }
+				clipping = no
+
+				background = {
+					name = "background"
+					spriteType = "GFX_senate_vote_yes_button"
+					clicksound = "select_click"
+				}
+
+
+				instantTextBoxType = {
+					name = "supporters_text"
+					font = "cg_16b"
+					position = { x = 65 y = 20 }
+					maxWidth = 250
+					maxHeight = 20
+					text = "SUPPORTERS"
+					format = center
+					text_color_code = "E"
+				}
+
+				gridBoxType = {
+					name = "supporters_gridbox"
+					position = { x = 64 y = 60 }
+					size = { width = 32 height = 105 }
+					slotsize = { width = 35 height = 36 }
+					add_horizontal = yes
+					max_slots_horizontal = 7
+					max_slots_vertical = 3
+				}
+			}
+			containerWindowType = {
+				name = "opponents_container"
+				position = { x = 794 y = 328 }
+				size = { width = 316 height = 210 }
+				clipping = no
+
+				background = {
+					name = "background"
+					spriteType = "GFX_senate_vote_no_button"
+					clicksound = "select_click"
+				}
+
+				instantTextBoxType = {
+					name = "opponents_text"
+					font = "cg_16b"
+					position = { x = 10 y = 20 }
+					maxWidth = 250
+					maxHeight = 20
+					text = "OPPONENTS"
+					format = center
+					text_color_code = "R"
+				}
+
+				gridBoxType = {
+					name = "opponents_gridbox"
+					position = { x = 22 y = 60 }
+					size = { width = 32 height = 105 }
+					slotsize = { width = 35 height = 36 }
+					add_horizontal = yes
+					max_slots_horizontal = 7
+					max_slots_vertical = 3
+				}
+			}
+			containerWindowType = {
+				name = "abstaining_container"
+				position = { x = 443 y = 522 }
+				size = { width = 690 height = 54 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_senate_vote_abstain_button"
+					clicksound = "select_click"
+				}
+
+				instantTextBoxType = {
+					name = "abstaining_text"
+					font = "cg_16b"
+					position = { x = 0 y = 10 }
+					maxWidth = 690
+					maxHeight = 20
+					text = "ABSTAINING"
+					format = center
+					text_color_code = "W"
+				}
+
+				gridBoxType = {
+					name = "abstaining_gridbox"
+					position = { x = 40 y = 16 }
+					size = { width = 32 height = 70 }
+					slotsize = { width = 32 height = 32 }
+					add_horizontal = yes
+					max_slots_horizontal = 24
+					max_slots_vertical = 2
+				}
+
+				instantTextBoxType = {
+					name = "abstaining_power"
+					font = "cg_16b"
+					position = { x = 0 y = 100 }
+					maxWidth = 800
+					maxHeight = 20
+					text = "TOTAL POWER: 1000"
+					format = center
+				}
+			}
+		}
+
+		# Resolutions Window -------------------------------------------------------------
+		containerWindowType = {
+			name = "resolutions_window"
+			position = { x = 0 y = 16 }
+			size = { width = 1042 height = 600 }
+			moveable = no
+
+			containerWindowType = {
+				name = "resolutions_container"
+				position = { x = 340 y = 70 }
+				size = { width = 674 height = 504 }
+
+				background = {
+					name = "resolutions_bg"
+					spriteType = "GFX_tiles_frame"
+					alwaysTransparent = yes
+				}
+
+				smoothListboxType = {
+					name = "resolutions_list"
+					position = { x = 10 y = 10 }
+					size = { x = 648 y = 480 }
+					scrollbarType = "standardlistbox_slider"
+					borderSize = { x = 0 y = 0 }
+					spacing = 2
+				}
+			}
+
+			instantTextBoxType={
+				name = "header_resolution"
+				font = "malgun_goth_24"
+				position = { x = 350 y = 38 }
+				text = "RESOLUTIONS"
+				maxHeight = 30
+				format = left
+			}
+
+			#buttonType = {
+			#		name = "propose_resolution_button"
+			#		position = { x = 328 y = -45 }
+			#		spriteType = "GFX_standard_button_230_34_button"
+			#		buttonFont = "cg_16b"
+			#		text = "PROPOSE RESOLUTION ##"
+			#		font = "cg_16b"
+			#		orientation = "LOWER_LEFT"
+			#}
+			#buttonType = {
+			#		name = "emergency_resolution_button"
+			#		position = { x = 570 y = -45 }
+			#		spriteType = "GFX_standard_button_230_34_button"
+			#		buttonFont = "cg_16b"
+			#		text = "EMERGENCY RESOLUTION ##"
+			#		font = "cg_16b"
+			#		orientation = "LOWER_LEFT"
+			#}
+		}
+
+		# Galactic Focus
+		containerWindowType = {
+			name = "focus_container"
+			size = { width = 214 height = 74 }
+			position = { x = 1025 y = 60 }
+
+			background = {
+				name = "focus_bg"
+				spriteType = "GFX_dark_area_cut"
+				alwaysTransparent = yes
+			}
+
+			iconType ={
+				name ="focus_icon"
+				quadTextureSprite = "GFX_tile_production_error" # TODO!
+				position = { x = 10 y = 24 }
+			}
+
+			instantTextBoxType={
+				name = "focus_title"
+				font = "cg_16b"
+				position = { x = 20 y = 6}
+				maxWidth = 200
+				maxHeight = 20
+				text = "GALACTIC FOCUS"
+				text_color_code = "H"
+				format = left
+			}
+
+			instantTextBoxType={
+				name = "focus_text"
+				font = "cg_16b"
+				position = { x = 60 y = 35 }
+				maxWidth = 130
+				maxHeight = 20
+				text = "STOPPA DUVAN, STOPPA DUVAN!"
+				format = left
+				vertical_alignment = center
+			}
+		}
+
+		# Tabs ----------------------------------------------------------------------
+		@tabheight = -2
+
+		buttonType = {
+			name = "tab_community"
+			quadTextureSprite = "GFX_tab_1_inactive"
+			position = { x= -20 y = @tabheight }
+			font = "cg_16b"
+			buttonText = "COMMUNITY"
+			buttonFont = "cg_16b"
+			clicksound = "tab_click"
+			Orientation = "LOWER_LEFT"
+			oversound = no_sound
+			shortcut = "z"
+		}
+		buttonType = {
+			name = "tab_community_active"
+			quadTextureSprite = "GFX_tab_1_active"
+			position = { x= -20 y = @tabheight }
+			font = "cg_16b"
+			buttonText = "COMMUNITY"
+			buttonFont = "cg_16b"
+			clicksound = "tab_click"
+			Orientation = "LOWER_LEFT"
+			oversound = no_sound
+			shortcut = "z"
+		}
+
+		buttonType = {
+			name = "tab_senate"
+			quadTextureSprite = "GFX_tab_2_inactive"
+			position = { x= 108 y = @tabheight }
+			font = "cg_16b"
+			buttonText = "SENATE_FLOOR"
+			buttonFont = "cg_16b"
+			clicksound = "tab_click"
+			Orientation = "LOWER_LEFT"
+			oversound = no_sound
+			shortcut = "x"
+		}
+		buttonType = {
+			name = "tab_senate_active"
+			quadTextureSprite = "GFX_tab_2_active"
+			position = { x= 108 y = @tabheight }
+			font = "cg_16b"
+			buttonText = "SENATE_FLOOR"
+			buttonFont = "cg_16b"
+			clicksound = "tab_click"
+			Orientation = "LOWER_LEFT"
+			oversound = no_sound
+			shortcut = "x"
+		}
+
+		buttonType = {
+			name = "tab_resolutions"
+			quadTextureSprite = "GFX_tab_2_inactive"
+			position = { x= 244 y = @tabheight }
+			font = "cg_16b"
+			buttonText = "RESOLUTIONS"
+			buttonFont = "cg_16b"
+			clicksound = "tab_click"
+			Orientation = "LOWER_LEFT"
+			oversound = no_sound
+			shortcut = "c"
+		}
+		buttonType = {
+			name = "tab_resolutions_active"
+			quadTextureSprite = "GFX_tab_2_active"
+			position = { x= 244 y = @tabheight }
+			font = "cg_16b"
+			buttonText = "RESOLUTIONS"
+			buttonFont = "cg_16b"
+			clicksound = "tab_click"
+			Orientation = "LOWER_LEFT"
+			oversound = no_sound
+			shortcut = "c"
+		}
+	}
+
+	# Entries ------------------------------------------------------------------------
+	containerWindowType = {
+		name = "proposed_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 300 height = 76 }
+
+		background = {
+			name = "entry_bg"
+			spriteType = "GFX_button_light"
+			clicksound = "click"
+			oversound = "mouse_over"
+		}
+
+		instantTextBoxType = {
+			name = "name"
+			font = "cg_16b"
+			position = { x = 10 y = 50 }
+			maxWidth = 280
+			maxHeight = 20
+			text = "RESOLUTION NAME!"
+			format = center
+			fixedSize = yes
+		}
+
+		iconType = {
+			name ="group_button_background"
+			quadTextureSprite = "GFX_resolution_button_group"
+			alwaysTransparent = yes
+			position = { x = 0 y = 0 }
+		}
+
+		instantTextBoxType = {
+			name = "support"
+			font = "cg_16b"
+			position = { x = -110 y = 8 }
+			text = "SUPPORT"
+			maxWidth = 70
+			maxHeight = 20
+			format = right
+			orientation = upper_right
+		}
+
+		buttonType = {
+			name = "flag"
+			quadTextureSprite = "GFX_empire_flag_32"
+			position = { x = 5 y = 5  }
+		}
+
+		instantTextBoxType={
+			name = "up_next"
+			font = "cg_16b"
+			position = { x = 50 y = 8 }
+			text = "UP_NEXT"
+			maxWidth = 100
+			maxHeight = 20
+			format = left
+			text_color_code = "H"
+		}
+
+		iconType = {
+			name ="icon"
+			quadTextureSprite = "GFX_tile_production_error" # TODO!
+			position = { x = 125 y = 2 }
+			scale = .85
+			alwaystransparent = yes
+		}
+
+
+		iconType = {
+			name ="supporting_icon_bg"
+			quadTextureSprite = "GFX_resolution_proposed_bg"
+			position = { x = 267 y = 6 }
+			scale = .7
+		}
+
+		iconType = {
+			name ="supporting_icon"
+			quadTextureSprite = "GFX_resolution_proposed_status"
+			position = { x = 264 y = 2 }
+			scale = .95
+		}
+	}
+
+	containerWindowType = {
+		name = "member_country_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 30 height = 30 }
+
+		buttonType = {
+			name = "flag"
+			quadTextureSprite = "GFX_empire_flag_32"
+			position = { x = 0 y = 0  }
+		}
+
+		instantTextBoxType={
+			name = "weight"
+			font = "cg_16b"
+			position = { x = -10 y = 20 }
+			maxWidth = 50
+			maxHeight = 20
+			text = "2000"
+			format = center
+		}
+
+		iconType = {
+			name ="status_icon"
+			quadTextureSprite = "GFX_in_breach_icon"
+			position = { x = 16 y = 0 }
+			frame = 2
+		}
+	}
+
+	containerWindowType = {
+		name = "resolution_category_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 380 height = 50 }
+
+		buttonType = {
+			name = "background_button"
+			spriteType = "GFX_button_light"
+			size = { x = 648 y = 40 }
+			clicksound = "select_click"
+		}
+
+		instantTextBoxType = {
+			name = "category_name"
+			font = "cg_16b"
+			position = { x = 55 y = 12 }
+			fixedSize = yes
+			format = left
+			maxWidth = 280
+			maxHeight = 20
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name ="icon"
+			quadTextureSprite = "GFX_message_terraforming"
+			position = { x = 18 y = 2 }
+			scale = 0.6
+		}
+
+		iconType = {
+			name ="notification_icon"
+			quadTextureSprite = "GFX_dot_red_green_icon" 
+			position = { x = 2 y = 12 }
+			#scale = 0.5
+		}
+		
+		iconType = {
+			name = "expand_icon"
+			quadTextureSprite = "GFX_entry_expand"
+			position = { x = 615 y = 8 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "current_resolution"
+			font = "cg_16b"
+			position = { x = 333 y = 12 }
+			text = "CURRENT RESOLUTION"
+			fixedSize = yes
+			format = right
+			maxWidth = 280
+			maxHeight = 20
+			text_color_code = "H"
+		}
+
+		smoothListboxType = {
+			name = "resolutions"
+			position = { x = 15 y = 40 }
+			size = { x = 630 y = 50 }
+			alwaysTransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "resolution_category_divider_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 648 height = 45 }
+
+		buttonType = {
+			name = "background_button"
+			spriteType = "GFX_resolution_group_dividers"
+			size = { x = 648 y = 40 }
+			position = { x = 0 y = 10 }
+			frame = 1
+		}
+
+		instantTextBoxType = {
+			name = "group_name"
+			font = "cg_16b"
+			position = { x = 20 y = 18 }
+			fixedSize = yes
+			format = left
+			maxWidth = 240
+			maxHeight = 20
+			alwaysTransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "resolution_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 630 height = 30 }
+		clipping = no
+
+		background = {
+			name = "entry_bg"
+			spriteType = "GFX_dark_area_button"
+		}
+
+		iconType = {
+			name ="resolution_dropdown_state"
+			quadTextureSprite = "GFX_resolution_dropdown_states" # TODO!
+			position = { x = 13 y = 5 }
+		}
+
+		#iconType = {
+		#	name ="notification_icon"
+		#	quadTextureSprite = "GFX_dot_red_green_icon" 
+		#	position = { x = 2 y = 12 }
+		#	scale = 0.5
+		#}
+
+		instantTextBoxType = {
+			name = "resolution_name"
+			font = "cg_16b"
+			position = { x = 35 y = 6 }
+			maxWidth = 360
+			maxHeight = 10
+			format = left
+			alwaysTransparent = yes
+			fixedSize = yes
+		}
+
+		buttonType = {
+			name = "target_flag"
+			quadTextureSprite = "GFX_empire_flag_32"
+			position = { x = 420 y = 3  }
+			scale = 0.75
+		}
+
+		instantTextBoxType = {
+			name = "support_for_resolution"
+			font = "cg_16b"
+			position = { x = 470 y = 6 }
+			maxWidth = 150
+			maxHeight = 20
+			format = right
+			text_color_code = "Y"
+			text = "-"
+		}
+	}
+
+	## Proposals
+	containerWindowType = {
+		name = "proposal_decision_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 230 height = 34 }
+		clipping = no
+
+		buttonType = {
+			name = "proposal_decision_button"
+			quadTextureSprite = "GFX_standard_button_230_34_button"
+			position = { x = 0 y = 0  }
+			clicksound = "select_click"
+		}
+
+		containerWindowType = {
+			name = "selected_overlay"
+			position = { x = 12 y = 12 }
+
+			size = { width = 100% height = 110% }
+			background = {
+				name = "selected_bg"
+				spriteType = "GFX_glow_tile_orange_no_padding"
+				alwaysTransparent = yes
+			}
+		}
+
+		instantTextBoxType = {
+			name = "proposal_decision_text"
+			font = "cg_16b"
+			position = { x = 10 y = 20 }
+			maxWidth = 230
+			maxHeight = 20
+			format = center
+			text = "COUNCIL VETO!"
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name ="proposal_decision_icon"
+			quadTextureSprite = "GFX_abstain"
+			position = { x = 20 y = 14 }
+			alwaysTransparent = yes
+			scale = 0.6
+		}
+	}	
+}

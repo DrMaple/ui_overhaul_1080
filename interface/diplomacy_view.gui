@@ -928,7 +928,7 @@ guiTypes = {
 				scrollbartype = "standardlistbox_slider"
 				orientation = "UPPER_LEFT"
 				autohide_scrollbar = yes
-				spacing = -3
+				spacing = -5
 				defaultSelection = yes
 			}
 		}
@@ -938,8 +938,8 @@ guiTypes = {
 		##################################
 		containerWindowType = {
 			name = "diplomacy_status_window"
-			size = { width = 484 height = 225}
-			position = { x=486 y=395 }
+			size = { width = 484 height = 175}
+			position = { x=486 y=445 }
 			margin = { top = 5 bottom = 5 }
 
 			background = {
@@ -951,12 +951,12 @@ guiTypes = {
 			smoothListboxType = {
 				id = "diplomacy_status_list"
 				name = "diplomacy_status_list"
-				position = { x = 0 y = 50 }
+				position = { x = 0 y = 0 }
 				backGround = ""
-				size = { x = 722 y = 217 }
+				size = { x = 470 y = 165 }
 				scrollbarType = "standardlistbox_slider"
 				borderSize = { x = 0 y = 0 }
-				spacing = 6
+				spacing = -5
 			}
 		}
 
