@@ -38,13 +38,13 @@ guiTypes = {
 		buttonType = {
 			name = "galactic_community_button"
 			spriteType = "GFX_galactic_community_button"
-			position = { x= -318 y = 874 }
+			position = { x= -180 y = -93 }
 		}
 
 		iconType = {
 			name = "unread_icon"
 			spriteType = "GFX_unread_bg"
-			position = { x= -24 y = -69 }
+			position = { x= -186 y = -99 }
 			alwaysTransparent = yes
 		}
 
@@ -53,7 +53,7 @@ guiTypes = {
 			font = "cg_16b"
 			maxWidth = 30
 			maxHeight = 20
-			position = { x= -22 y = -60 }
+			position = { x= -184 y = -90 }
 			format = center
 			text = "20"
 		}
@@ -486,6 +486,12 @@ guiTypes = {
 					position = { x = 10 y = 34 }
 					size = { width = 280 height = 150 }
 					clipping = yes
+					verticalScrollBar = "right_vertical_slider_s"
+
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiled_window_transparent"
+					}
 
 					gridBoxType = {
 						name = "members_gridbox"
@@ -493,7 +499,6 @@ guiTypes = {
 						size = { width = 280 height = 150 }
 						slotsize = { width = 34 height = 34 }
 						max_slots_horizontal = 8
-						scrollbartype = "standardtext_slider_small"	
 						format = UPPER_LEFT
 					}
 				}
@@ -706,7 +711,6 @@ guiTypes = {
 						slotsize = { width = 34 height = 34 }
 						add_horizontal = yes
 						max_slots_horizontal = 9
-						scrollbartype = "standardtext_slider"
 						format = UPPER_LEFT
 
 					}
@@ -726,6 +730,7 @@ guiTypes = {
 						background = {
 							name = "highlighted_bg"
 							spriteType = "GFX_dark_area_cut_light"
+							alwaystransparent = yes
 						}
 					}
 					
@@ -753,11 +758,11 @@ guiTypes = {
 	
 					smoothListBoxType = {
 						name = "decisions_list"
-						position = { x = -4 y = 3 }
-						size = { x = 252 y = 216 }
+						position = { x = 5 y = 10 }
+						size = { x = 230 y = 208 }
 						scrollbartype = "standardlistbox_slider"
 						orientation = "UPPER_LEFT"
-						spacing = 7
+						spacing = 3
 						defaultSelection = yes
 					}	
 				}	
@@ -862,7 +867,7 @@ guiTypes = {
 					size = { width = 910 height = 264 }
 
 					iconType ={
-						name ="senatefloor_bg"
+						name = "senatefloor_bg"
 						quadTextureSprite = "GFX_0_senate_floor_portrait_bg"
 						position = { x = 0 y = 0 }
 					}
@@ -1030,16 +1035,6 @@ guiTypes = {
 				format = center
 			}
 
-			buttonType = {
-				name = "call_in_favors"
-				quadTextureSprite = "GFX_standard_button_142_34_button"
-				position = { x = 335 y = -250 }
-				Orientation = "LOWER_LEFT"
-				buttonFont = "cg_16b"
-				buttonText = "CALL_IN_FAVOR_ICON"
-				pdx_tooltip = "CALL_IN_FAVOR_TOOLTIP"
-			}
-
 			# Senate Floor with supporters/opponents/abstainees ----------------
 			containerWindowType = {
 				name = "supporters_container"
@@ -1149,6 +1144,16 @@ guiTypes = {
 					text = "TOTAL POWER: 1000"
 					format = center
 				}
+			}
+
+			buttonType = {
+				name = "call_in_favors"
+				quadTextureSprite = "GFX_standard_button_142_34_button"
+				position = { x = 335 y = -250 }
+				Orientation = "LOWER_LEFT"
+				buttonFont = "cg_16b"
+				buttonText = "CALL_IN_FAVOR_ICON"
+				pdx_tooltip = "CALL_IN_FAVOR_TOOLTIP"
 			}
 		}
 
@@ -1588,21 +1593,21 @@ guiTypes = {
 	containerWindowType = {
 		name = "proposal_decision_entry"
 		position = { x = 0 y = 0 }
-		size = { width = 230 height = 34 }
+		size = { width = 230 height = 36 }
 		clipping = no
 
 		buttonType = {
 			name = "proposal_decision_button"
 			quadTextureSprite = "GFX_standard_button_230_34_button"
-			position = { x = 0 y = 0  }
+			position = { x = -12 y = -12  }
 			clicksound = "select_click"
 		}
 
 		containerWindowType = {
 			name = "selected_overlay"
-			position = { x = 12 y = 12 }
+			position = { x = 0 y = 0 }
 
-			size = { width = 100% height = 110% }
+			size = { width = 100% height = 37 }
 			background = {
 				name = "selected_bg"
 				spriteType = "GFX_glow_tile_orange_no_padding"
@@ -1613,7 +1618,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "proposal_decision_text"
 			font = "cg_16b"
-			position = { x = 10 y = 20 }
+			position = { x = 10 y = 8 }
 			maxWidth = 230
 			maxHeight = 20
 			format = center
@@ -1624,7 +1629,7 @@ guiTypes = {
 		iconType = {
 			name ="proposal_decision_icon"
 			quadTextureSprite = "GFX_abstain"
-			position = { x = 20 y = 14 }
+			position = { x = 20 y = 2 }
 			alwaysTransparent = yes
 			scale = 0.6
 		}

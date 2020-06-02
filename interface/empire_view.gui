@@ -61,7 +61,17 @@ guiTypes = {
 			fixedSize = yes
 			alwaysTransparent = yes
 		}
+		
+			containerWindowType = {
+				name = "empire_list"
+				position = { x=11 y=140 }
+				size = { width= 1250 height= 799 }
 
+				background = {
+					name = "area51"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+			}
 		containerWindowType = {
 			name = "shared_stockpile"
 			position = { x = 605 y = 0 }
@@ -274,7 +284,6 @@ guiTypes = {
 		background = {
 			name = "planet_list_leaders_entry_background"
 			quadTextureSprite = "GFX_tiles_frame_light"
-			clicksound = assign_leader_click
 			position = { x = 0 y = 0 }
 		}
 

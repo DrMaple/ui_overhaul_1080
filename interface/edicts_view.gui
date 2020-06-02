@@ -41,7 +41,68 @@ guiTypes = {
 			fixedSize = yes
 			format = left
 		}
+
+		containerWindowType = {
+			name = "background_edict_cap"
+			position = { x = -218 y = 7 }
+			size = { width = 70 height = 48 }
+			orientation = upper_right
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+			}
+		}
+
+		containerWindowType = {
+			name = "background_empire_sprawl"
+			position = { x = -140 y = 7 }
+			size = { width = 70 height = 48 }
+			orientation = upper_right
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+			}
+		}
+			
+
+		iconType = {
+			name = "edict_cap_icon"
+			quadTextureSprite = "GFX_edict_capacity"
+			position = { x = 398 y = 12 }
+			alwaysTransparent = yes
+			scale = .9
+		}
 		
+		instantTextBoxType = {
+			name = "edict_capacity"
+			font = "cg_16b"
+			text = "EDICT_CAP"
+			position = { x = 362 y = 36 }
+			maxWidth = 100
+			maxHeight = 20
+			fixedSize = yes
+			format = center
+		}
+
+		iconType = {
+			name = "edict_sprawl_icon"
+			quadTextureSprite = "GFX_empire_sprawl_icon"
+			position = { x = 476 y = 10 }
+			alwaysTransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "edict_sprawl_impact"
+			font = "cg_16b"
+			text = "SPRAWL_IMPACT"
+			position = { x = 440 y = 36 }
+			maxWidth = 100
+			maxHeight = 20
+			fixedSize = yes
+			format = center
+		}
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
@@ -102,12 +163,19 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "edicts_name"
 			font = "cg_16b"
-			position = { x = 34 y = 9 }
+			position = { x = 64 y = 9 }
 			maxWidth = 300
 			format = left
 			alwaysTransparent = yes
 		}
 
+		iconType = {
+			name = "type_icon"
+			spriteType = "GFX_edict_type_time"
+			position = { x = 45 y = 19 }
+			orientation = "LEFT"
+			centerPosition = yes
+		}
 		instantTextBoxType = {
 			name = "cost"
 			font = "cg_16b"
@@ -121,7 +189,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "active"
 			font = "cg_16b"
-			position = { x = 500 y = 10 }
+			position = { x = 450 y = 10 }
 			maxWidth = 100
 			fixedSize = yes
 			format = left
