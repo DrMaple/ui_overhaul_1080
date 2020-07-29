@@ -3,7 +3,7 @@ guiTypes = {
 	# Box which holds all small icons, one for each war
 	containerWindowType = {
 		name = "waroverview_list"
-		position = { x = 67 y = -110 }
+		position = { x = 61 y = -110 }
 		size = { width = 80 height = 100 }
 		moveable = no
 		orientation = lower_right
@@ -59,7 +59,7 @@ guiTypes = {
 			spriteType = "GFX_waroverview_icon_enemy_surrender_progress"
 			frame = 3
 			centerPosition = yes
-			position = { x = 15 y = 23 }
+			position = { x = 59 y = -2 }
 		}
 
 		instantTextBoxType = {
