@@ -5,7 +5,7 @@ guiTypes = {
 		
 	#	show_position = { x = 5 y = 40 }
     #    hide_position = { x = -1050 y = 40 }
-    #    animation_time = 200
+    #    animation_time = 100
     #    animation_type = decelerated
 		
 		size = { width = 344 height = 850 }
@@ -18,8 +18,8 @@ guiTypes = {
 		}
 			containerWindowType = {
 				name = "start_screen_frame_bg"
-				position = { x=-165 y=-225 }
-				size = { width = 330 height = 643 }
+				position = { x=-165 y=-235 }
+				size = { width = 330 height = 653 }
 				orientation = center
 				
 				background = {
@@ -65,7 +65,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "authority_label"
-			position = { x = 0 y = 120 }
+			position = { x = 0 y = 110 }
 			textureFile = ""
 			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
@@ -78,7 +78,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "civics_label"
-			position = { x = 0 y = 205 }
+			position = { x = 0 y = 195 }
 			textureFile = ""
 			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
@@ -91,11 +91,11 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "points_left"
-			position = { x = -37 y = 222 }
+			position = { x = -37 y = 212 }
 			textureFile = ""
 			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
-			text = "INFLUENCE_COST"
+			text = "UNITY_COST"
 			maxWidth = 344
 			maxHeight = 22
 			fixedSize = yes
@@ -103,12 +103,12 @@ guiTypes = {
 		}
 		
 		instantTextBoxType = {
-			name = "influence_cost"
+			name = "unity_cost"
 			position = { x = 0 y = 760 }
 			textureFile = ""
 			font = "cg_16b"
 			borderSize = {x = 0 y = 0}
-			text = "INFLUENCE_COST"
+			text = "UNITY_COST"
 			maxWidth = 344
 			maxHeight = 22
 			fixedSize = yes
@@ -117,7 +117,7 @@ guiTypes = {
 		
 		overlappingElementsBoxType = {
 			name = "authority_list"
-			position = { x = 20 y = 143 }
+			position = { x = 20 y = 133 }
 			size = { x = 310 y = 32 }
 			spacing = 20
 			format = center
@@ -125,9 +125,9 @@ guiTypes = {
 
 		smoothListboxType = {
 			name = "selected_civics"
-			position = { x = 25 y = 240 }
+			position = { x = 25 y = 230 }
 			size = { x = 294 y = 300 }
-			spacing = 4
+			spacing = 2
 			scrollbarType = "standardlistbox_slider"
 			borderSize = { x = 0 y = 0 }
 			orientation = "UPPER_LEFT"
@@ -136,9 +136,9 @@ guiTypes = {
 
 		smoothListboxType = {
 			name = "available_civics"
-			position = { x = 25 y = 249 }
-			size = { x = 294 y = 510 }
-			spacing = 4
+			position = { x = 25 y = 239 }
+			size = { x = 294 y = 520 }
+			spacing = 2
 			scrollbarType = "standardlistbox_slider"
 			borderSize = { x = 0 y = 0 }
 			orientation = "UPPER_LEFT"

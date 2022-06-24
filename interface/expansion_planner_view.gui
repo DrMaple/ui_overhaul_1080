@@ -1,3 +1,4 @@
+@dynamic_extra = 0.8					
 guiTypes = {
 
 	@SOURCE_W = 483
@@ -204,7 +205,7 @@ guiTypes = {
 		gridBoxType = {
 			size = { width = 65 height = 45 }
 			name = "district0"
-			position = { x = 563 y = 7 }
+			position = { x = 563 y = 9 }
 			slotSize = { width = 15 height = 15 }
 			max_slots_horizontal = 5
 			max_slots_vertical = 3
@@ -215,7 +216,7 @@ guiTypes = {
 		gridBoxType = {
 			size = { width = 65 height = 45 }
 			name = "district1"
-			position = { x = 661 y = 7 }
+			position = { x = 661 y = 9 }
 			slotSize = { width = 15 height = 15 }
 			max_slots_horizontal = 5
 			max_slots_vertical = 3
@@ -226,7 +227,7 @@ guiTypes = {
 		gridBoxType = {
 			size = { width = 65 height = 45 }
 			name = "district2"
-			position = { x = 759 y = 7 }
+			position = { x = 759 y = 9 }
 			slotSize = { width = 15 height = 15 }
 			max_slots_horizontal = 5
 			max_slots_vertical = 3
@@ -294,7 +295,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "expansion_planner_view"
-		size = { width = 1182 height = 945 }
+		size = { width = 1182 height = 940 }
+		dynamic_extra_height = @dynamic_extra							   
 		show_position = { x = 35 y = 40 }
 		hide_position = { x = -1272 y = 40 }
 		animation_time = 100
@@ -312,7 +314,7 @@ guiTypes = {
 		buttonType = {
 			name = "close"
 			spriteType = "GFX_close_button"
-			position = { x = -42 y = 12 }
+			position = { x = -45 y = 16 }
 			orientation = "UPPER_RIGHT"
 			shortcut = "ESCAPE"
 			pdx_tooltip = "CLOSE_TITLE"
@@ -322,7 +324,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = -10 y = -14 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 
@@ -336,7 +338,7 @@ guiTypes = {
 			name = "title"
 			font = "malgun_goth_24"
 			text = "topbar_button_expansion_planner_name"
-			position = { x = 65 y = 5 }
+			position = { x = 35 y = 5 }
 			maxWidth = 1000
 			maxHeight = 20
 			fixedSize = yes
@@ -362,11 +364,11 @@ guiTypes = {
 		containerWindowType = {
 			name = "expansion_target"
 			size = { width = @TARGET_W height = 0 }
-			position = { x = 0 y = 80 }
+			position = { x = 0 y = 83 }
 			clipping = no
 			
-			@sort_button_height = 0
-			@sort_icon_height = 13
+			@sort_button_height = 3
+			@sort_icon_height = 16
 
 			buttonType={
 				name = "class"
@@ -402,7 +404,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_standard_button_190_24"
 				buttonText = "NAME"
-				position = { x = 136 y = 7 }
+				position = { x = 136 y = 10 }
 				orientation = UPPER_LEFT
 				pdx_tooltip = "EXPANSION_PLANNER_SORT_NAME"
 				#format = left
@@ -506,7 +508,7 @@ guiTypes = {
 			buttonType={
 				name = "sort_status"
 				font = "cg_16b"
-				spriteType = "GFX_button_150_24"
+				spriteType = "GFX_button_116_24"
 				buttonText = "STATUS"
 				position = { x = 1010 y = @sort_button_height }
 				orientation = UPPER_LEFT
@@ -516,16 +518,18 @@ guiTypes = {
 			buttonType = {
 				name = "list_bg"
 				spriteType = "GFX_tiles_dark_area_cut_8"
-				size = { x = 1160 y = 801 }
+				size = { x = 1160 y = 800 }
 				position = { x = 11 y = 50 }
 				alwaysTransparent = yes
 			}
 
 			smoothListboxType = {
 				name = "list"
-				size = { x = @TARGET_W y = 794 }
+				size = { x = @TARGET_W y = 795 }
+				dynamic_extra_height = @dynamic_extra						 
 				position = { x = 14 y = 53 }
 				scrollbartype = "standardlistbox_slider"
+				spacing = -2
 			}
 		}
 
@@ -643,7 +647,7 @@ guiTypes = {
 					show_position = { x = 3 y = 40 }
 					show_animation_type = decelerated
 					hide_animation_type = accelerated
-					animation_time = 200
+					animation_time = 100
 					size = { width = 195 height = 250 }
 					#verticalScrollbar = "right_vertical_slider"
 					
@@ -707,7 +711,7 @@ guiTypes = {
 					show_position = { x = 3 y = 40 }
 					show_animation_type = decelerated
 					hide_animation_type = accelerated
-					animation_time = 200
+					animation_time = 100
 					size = { width = 195 height = 250 }
 					verticalScrollbar = "right_vertical_slider"
 					

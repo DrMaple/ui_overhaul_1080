@@ -2,11 +2,11 @@ guiTypes = {
 	containerWindowType = {
 		name = "outliner_toggle_window"
 		size = { width = 32 height = 32 }
-     	position = { x = 200 y = 120 } 
-        show_position = { x = -65 y = 28 }
-        hide_position = { x = 200 y = 24 }
-        animation_time = 100
-        animation_type = decelerated
+		position = { x = 200 y = 120 } 
+		show_position = { x = -65 y = 120 }
+		hide_position = { x = 200 y = 120 }
+		animation_time = 500
+		animation_type = decelerated
 
 		orientation = upper_right
 		moveable = no
@@ -14,7 +14,7 @@ guiTypes = {
 		buttonType = {
 			name = "outliner_toggle"
 			quadTextureSprite = "outliner_button"
-			position = { x = 0 y = 42 }
+			position = { x = 0 y = -50 }
 			Orientation = "UPPER_LEFT"
 			shortcut = "o"
 			clicksound = interface
@@ -24,7 +24,7 @@ guiTypes = {
 		buttonType = {
 			name = "observer_outliner_toggle"
 			quadTextureSprite = "observer_outliner_button"
-			position = { x = 0 y = 42 }
+			position = { x = 0 y = -50 }
 			Orientation = "UPPER_LEFT"
 			#shortcut = "o"
 			clicksound = interface
@@ -35,7 +35,7 @@ guiTypes = {
 	### OUTLINER ###
 	positionType = {
 		name = "outliner_window_margin"
-		position = { x = 0 y = 100 }
+		position = { x = 0 y = 150 }
 	}
 
 	positionType = {
@@ -73,7 +73,7 @@ guiTypes = {
 		position = { x = -260 y = 145 } 
 		#show_position = { x = -260 y = 145 }
 		#hide_position = { x = 20 y = 145 }
-		#animation_time = 200
+		#animation_time = 100
 		#animation_type = decelerated
 		orientation = upper_right
 		#moveable = no
@@ -84,19 +84,19 @@ guiTypes = {
 		#}
 
 		containerWindowType = {
-		name = "outliner_window"
-		size = { width = 260 height = 5 }
-		position = { x = 20 y = -9 } 
-        show_position = { x = -260 y = -75 }
-        hide_position = { x = 20 y = -75 }
-        animation_time = 100
-		animation_type = decelerated
-		orientation = upper_right
-		moveable = no
+			name = "outliner_window"
+			size = { width = 260 height = 2 }
+			position = { x = 0 y = 0 } 
+			show_position = { x = -260 y = -40 }
+			hide_position = { x = 20 y = -40 }
+			animation_time = 100
+			animation_type = decelerated
+			orientation = upper_right
+			moveable = no
 
-		background = {
-			name = "background"
-			quadTextureSprite = "GFX_tile_outliner_bg"
+			background = {
+				name = "background"
+				quadTextureSprite = "GFX_tile_outliner_bg"
 			}
 			
 			iconType = {
@@ -111,38 +111,51 @@ guiTypes = {
 				position = { x = 0 y = 21 }
 			}
 
-		instantTextBoxType = {
-			name = "header"
-			font = "malgun_goth_24"
-			text = "OUTLINER"
-			position = { x = 13 y = 5 }
-			maxWidth = 150
-			maxHeight = 20
-			fixedSize = yes
-			orientation = "UPPER_LEFT"
-			format = left	
-		}
-		
-		buttonType =
-		{
-			name = "options"
-			quadTextureSprite = "GFX_outliner_options_button"
-			position = { x= -90 y = 10  }
-			pdx_tooltip = "OUTLINER_OPTIONS_TOOLTIP"
-			orientation = "UPPER_RIGHT"
-							oversound = "no_sound"
+			instantTextBoxType = {
+				name = "header"
+				font = "malgun_goth_24"
+				text = "OUTLINER"
+				position = { x = 13 y = 5 }
+				maxWidth = 150
+				maxHeight = 20
+				fixedSize = yes
+				orientation = "UPPER_LEFT"
+				format = left	
+			}
+
+			
+			buttonType =
+			{
+				name = "options"
+				quadTextureSprite = "GFX_outliner_options_button"
+				position = { x= -30 y = 17  }
+				pdx_tooltip = "OUTLINER_OPTIONS_TOOLTIP"
+				orientation = "UPPER_RIGHT"
+				oversound = "no_sound"
+				clicksound = "click_outliner"
+			}
+
+			buttonType =
+			{
+				name = "rearrange"
+				quadTextureSprite = "GFX_button_sort_reorder_planets"
+				size = { x = 20 y = 20 }
+				position = { x= -60 y = 12  }
+				pdx_tooltip = "OUTLINER_REARRANGE_TOOLTIP"
+				orientation = "UPPER_RIGHT"
+				oversound = "no_sound"
 				clicksound = "click_outliner"
 			}
 
 			smoothListBoxType = {
 				name = "list"
-				position = { x = 0 y= 40 }
+				position = { x = -3 y= 40 }
 				orientation = "UPPER_LEFT"
 				priority = 100
-				size = { x = 250 y = 0 }
+				size = { x = 252 y = 0 }
 				borderSize = { x=0 y=0 }
 				scrollbartype = "standardlistbox_slider"
-				spacing = -1
+				spacing = -2
 				defaultSelection = yes
 			}
 		}
@@ -151,9 +164,9 @@ guiTypes = {
 			name = "observer_window"
 			size = { width = 260 height = 20 }
 			position = { x = 0 y = 0 } 
-			show_position = { x = -260 y = 0 }
+			show_position = { x = -260 y = -40 }
 			hide_position = { x = 20 y = 0 }
-			animation_time = 200
+			animation_time = 100
 			animation_type = decelerated
 			orientation = upper_right
 			moveable = no
@@ -181,21 +194,21 @@ guiTypes = {
 				position = { x= -60 y = 5  }
 				pdx_tooltip = "OUTLINER_UNOBSERVE_TOOLTIP"
 				orientation = "UPPER_RIGHT"
-			oversound = no_sound
-		}		
+				oversound = no_sound
+			}
 
 			smoothListBoxType = {
 				name = "list"
-				position = { x = 2 y= 42 }
+				position = { x = 2 y= 40 }
 				orientation = "UPPER_LEFT"
 				priority = 100
-				size = { x = 245 y = 0 }
+				size = { x = 240 y = 0 }
 				borderSize = { x=0 y=0 }
 				scrollbartype = "standardlistbox_slider"
 				spacing = -1
 				defaultSelection = yes
 			}
-		}
+		}		
 	}
 	
 	containerWindowType = {
@@ -263,7 +276,7 @@ guiTypes = {
 		smoothListBoxType = {
 			name = "list"
 			id = "list"
-			position = { x = 2 y= 36 }
+			position = { x = 10 y= 36 }
 			orientation = "UPPER_LEFT"
 			priority = 100
 			size = { x = 320 y = 0 }
@@ -275,7 +288,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "outliner_sector_title_entry_window"
-		size = { width = 320 height = 38 }
+		size = { width = 300 height = 38 }
 		position = { x = 0 y = 0 }
 		orientation = upper_right
 		moveable = no
@@ -443,8 +456,9 @@ guiTypes = {
 			alwaysTransparent = yes
 			text_color_code = "Y" 
 		}	
-		
+	
 	}
+	
 	containerWindowType = {
 		name = "outliner_member_army_entry_window"
 		size = { width = 318 height = 41 }
@@ -508,7 +522,7 @@ guiTypes = {
 			frame = 3
 			scale = 0.6
 		}
-
+		
 		instantTextBoxType = {
 			name = "army_power"
 			position = { x = -138 y = 23 }
@@ -664,7 +678,6 @@ guiTypes = {
 			maxWidth = 58
 			maxHeight = 20
 			text = "?"
-			#alwaysTransparent = yes
 			fixedSize = yes
 			text_color_code = "Y" 
 			format = right
@@ -710,6 +723,131 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "outliner_member_situations_entry_window"
+		size = { width = 318 height = 40 }
+		position = { x = 0 y = 0 }
+		orientation = upper_right
+		moveable = no
+
+		buttonType = {
+			name = "background"
+			quadTextureSprite = "GFX_outliner_member_bg"
+			size = { x = 248 y = 49 }
+			position = { x = 0 y = -5 }
+			orientation = "UPPER_LEFT"
+		}
+
+		containerWindowType = {
+			name = "selected_overlay"
+			position = { x = 0 y = 0 }
+			size = { width = 248 height = 100% }
+
+			background = {
+				name = "selected_bg"
+				spriteType = "GFX_glow_tile_orange_no_padding"
+				alwaysTransparent = yes
+			}
+		}
+
+		iconType = {
+			name = "situation_icon_background"
+			position = { x = 21 y = 21 }
+			spriteType = "GFX_invisible"
+			alwaysTransparent = yes
+			centerPosition = yes
+		}
+
+		iconType = {
+			name = "situation_icon"
+			position = { x = 21 y = 21 }
+			spriteType = "GFX_invisible"
+			alwaysTransparent = yes
+			centerPosition = yes
+		}
+
+		instantTextBoxType = {
+			name = "situation_name"
+			position = { x = 40 y = 2 }
+			font = "cg_16b"
+			maxWidth = 200
+			maxHeight = 15
+			text = ""
+			fixedSize = yes
+			format = left
+			alwaystransparent = yes
+		}
+
+		# Dynamic element - See item with same name in situation_log.gui for documentation
+		containerWindowType = {
+			name = "situations_progress_subview"
+			position = { x = 0 y = 0 }
+			size = { width = 248 height = 100% }
+
+			iconType = {
+				name = "middle_indicator"
+				position = { x = 112 y = 21 }
+				spriteType = "GFX_situation_middle_indicator"
+				alwaystransparent = yes
+			}
+
+			containerWindowType = {
+				name = "situations_progress_bar_container_short" # The "_short" postfix makes the progress bar use short gfx variants
+				position = { x = 42 y = 20 }
+				size = { width = 140 height = 13 } # Used to position elements along the progress bar
+
+				iconType = {
+					name = "progress_bar_monodirectional"
+					position = { x = 0  y = 0 }
+					spriteType = "GFX_situation_event_progressbar_monodirectional_neutral_short" # Set in code
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "progress_bar_bidirectional_left"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_situation_event_progressbar_bidirectional_neutral_short_left" # Set in code
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "progress_bar_bidirectional_right"
+					position = { x = 71 y = 0 }
+					spriteType = "GFX_situation_event_progressbar_bidirectional_neutral_short_right" # Set in code
+					alwaystransparent = yes
+				}
+			}
+
+			iconType = {
+				name = "start_indicator"
+				position = { x = 42 y = 21 }
+				spriteType = "GFX_situation_start_indicator"
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "pin_icon"
+				position = { x = 199 y = 28 }
+				spriteType = "GFX_situation_progress_arrows" # Mirrored in code as needed
+				centerPosition = yes
+				alwaystransparent = yes
+			}
+
+			# Shows all numbers as positive. "pin_icon" indicates if it's negative or positive
+			instantTextBoxType = {
+				name = "monthly_change"
+				position = { x = 205 y = 20 }
+				font = "cg_16b"
+				maxWidth = 30
+				maxHeight = 15
+				format = right
+				vertical_alignment = center
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+	}
+
+	containerWindowType = {
 		name = "outliner_member_planet_entry_window"
 		size = { width = 318 height = 41 }
 		position = { x = 0 y = 0 }
@@ -744,6 +882,14 @@ guiTypes = {
 		}
 
 		iconType = {
+			name = "designation_icon"
+			position = { x = 6 y = 5 }
+			spriteType = "GFX_colony_type"
+			frame = 1
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
 			name = "occupied"
 			position = { x = 21 y = 13 }
 			spriteType = "GFX_occupation_flag_big"
@@ -762,12 +908,12 @@ guiTypes = {
 			position = { x = 0 y = 13 }
 			spriteType = "GFX_planet_invasion"
 			alwaysTransparent = no
-		}		
-
+		}
+		
 		containerWindowType = {
 			name = "planet_status_container"
-			size = { width = 45 height = 15 }
-			position = { x = 20 y = 20 }	
+			position = { x = 20 y = 20 }				   
+			size = { width = 75 height = 15 }				
 		
 			gridBoxType = {
 				name = "planet_status_list"
@@ -777,22 +923,22 @@ guiTypes = {
 				format = "UPPER_RIGHT"
 			}	
 		}
+
 		instantTextBoxType = {
 			name = "name"
 			font = "cg_16b"
 			text = "0"
 			position = { x = 44 y = 3 }
-			maxWidth = 140
+			maxWidth = 130
 			maxHeight = 20
 			fixedSize = yes
 			orientation = "UPPER_LEFT"
 			format = left
-			text_color_code = "E"
 			alwaysTransparent = yes
 		}
 
 		buttonType = {
-			name = "branch_office_flag"
+			name = "holding_flag"
 			spriteType = "GFX_empire_flag_32"
 			position = { x = -1 y = -1 }
 			scale = 0.75
@@ -1110,7 +1256,7 @@ guiTypes = {
 			maxWidth = 100
 			maxHeight = 30
 			text_color_code = "Y"
-		}			
+		}		
 		iconType = {
 			name = "faction_icon"
 			quadTextureSprite = "GFX_faction_icon_imperialist"
@@ -1228,8 +1374,8 @@ guiTypes = {
 
     containerWindowType = {
         name = "outliner_options_window"
-        size = { width = 300 height = 650 }
-     	position = { x = -690 y = 145 }  
+        size = { width = 300 height = 580 }
+     	position = { x = -565 y = 145 }  
         orientation = upper_right
         moveable = yes
 
@@ -1249,6 +1395,8 @@ guiTypes = {
 			quadTextureSprite = "GFX_line_short"
 			position = { x = 0 y = 21 }
 		}
+
+		
 		instantTextBoxType = {
 			name = "header"
 			font = "malgun_goth_24"
@@ -1264,7 +1412,7 @@ guiTypes = {
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
-			position = { x = -43 y = 14 }
+			position = { x = -45 y = 16 }
 			orientation = upper_right
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
@@ -1276,22 +1424,22 @@ guiTypes = {
 			position = { x = 5 y= 60 }
 			orientation = "UPPER_LEFT"
 			priority = 100
-			size = { x = 284 y = 525 }
+			size = { x = 279 y = 420 }
 			borderSize = { x=0 y=0 }
 			scrollbartype = "standardlistbox_slider"
 			spacing = 0
-		}				
+		}
 
 		checkboxType = {
 			name = "show_focus_enabled_sectors"
-			position = { x = 5 y= 585 }
+			position = { x = 5 y= 485 }
  			quadTextureSprite = "GFX_checkbox_20_20_01"
 			pdx_tooltip = "OL_TOGGLE_VISIBILITY_SECTORS_WITH_FOCUS_DESC"
  		}
 
 		instantTextBoxType = {
 			name = "show_focus_enabled_sectors_label"
-			position = { x = 35 y= 592 }
+			position = { x = 35 y= 492 }
 			font = "cg_16b"
 			text = "OL_TOGGLE_VISIBILITY_SECTORS_WITH_FOCUS"
 			text_color_code = "E"
@@ -1302,16 +1450,34 @@ guiTypes = {
 
 		checkboxType = {
  			name = "show_focus_disabled_sectors"
-			position = { x = 5 y= 615 }
+			position = { x = 5 y= 515 }
  			quadTextureSprite = "GFX_checkbox_20_20_01"
 			pdx_tooltip = "OL_TOGGLE_VISIBILITY_SECTORS_NO_FOCUS_DESC"
  		}
 
 		instantTextBoxType = {
 			name = "show_focus_disabled_sectors_label"
-			position = { x = 35 y= 622 }
+			position = { x = 35 y= 522 }
 			font = "cg_16b"
 			text = "OL_TOGGLE_VISIBILITY_SECTORS_NO_FOCUS"
+			text_color_code = "E"
+			alwaysTransparent = yes
+			maxWidth = 300
+			format = left
+		}
+
+		checkboxType = {
+ 			name = "show_designation_icon"
+			position = { x = 5 y= 545 }
+ 			quadTextureSprite = "GFX_checkbox_20_20_01"
+			pdx_tooltip = "OL_TOGGLE_DESIGNATION_ICON_DESC"
+ 		}
+
+		instantTextBoxType = {
+			name = "show_designation_icon_label"
+			position = { x = 35 y= 552 }
+			font = "cg_16b"
+			text = "OL_TOGGLE_DESIGNATION_ICON"
 			text_color_code = "E"
 			alwaysTransparent = yes
 			maxWidth = 300
@@ -1378,6 +1544,235 @@ guiTypes = {
 			name = "down"
 			quadTextureSprite = "GFX_button_down"
 			position = { x = -30 y = 5 }
+			orientation = "UPPER_RIGHT"
+			clicksound = decrement_click
+			#rotation = 1.57
+			pdx_tooltip = "OUTLINER_OPTIONS_SORT_DOWN_TOOLTIP"
+		}
+	}
+
+	### REORDER PLANETS ###
+
+    containerWindowType = {
+        name = "outliner_rearrange_window"
+        size = { width = 300 height = 580 }
+     	position = { x = -565 y = 145 }  
+        orientation = upper_right
+        moveable = yes
+
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tile_outliner_bg"
+		}
+
+		iconType = {
+			name = "title_hex"
+			quadTextureSprite = "GFX_hex_bg"
+			position = { x = -17 y = -14 }
+		}
+		
+		iconType = {
+			name = "title_line"
+			quadTextureSprite = "GFX_line_short"
+			position = { x = 0 y = 21 }
+		}
+
+		
+		instantTextBoxType = {
+			name = "header"
+			font = "malgun_goth_24"
+			text = "OUTLINER_REARRANGE_TITLE"
+			position = { x = 13 y = 5 }
+			maxWidth = 150
+			maxHeight = 20
+			fixedSize = yes
+			orientation = "UPPER_LEFT"
+			format = left	
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_close"
+			position = { x = -45 y = 16 }
+			orientation = upper_right
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+			pdx_tooltip = "CLOSE_TITLE"
+		}
+
+		smoothListBoxType = {
+			name = "list"
+			position = { x = 5 y= 136 }
+			orientation = "UPPER_LEFT"
+			priority = 100
+			size = { x = 279 y = 425 }
+			borderSize = { x=0 y=0 }
+			scrollbartype = "standardlistbox_slider"
+			spacing = 0
+		}
+
+		checkboxType = {
+			name = "show_focus_enabled_sectors"
+			position = { x = 5 y= -635 }
+ 			quadTextureSprite = "GFX_checkbox_20_20_01"
+			pdx_tooltip = "OL_TOGGLE_VISIBILITY_SECTORS_WITH_FOCUS_DESC"
+ 		}
+
+		instantTextBoxType = {
+			name = "show_focus_enabled_sectors_label"
+			position = { x = 35 y= -642 }
+			font = "cg_16b"
+			text = "OL_TOGGLE_VISIBILITY_SECTORS_WITH_FOCUS"
+			text_color_code = "E"
+			alwaysTransparent = yes
+			maxWidth = 300
+			format = left
+		}
+
+		checkboxType = {
+ 			name = "show_focus_disabled_sectors"
+			position = { x = 5 y= -665 }
+ 			quadTextureSprite = "GFX_checkbox_20_20_01"
+			pdx_tooltip = "OL_TOGGLE_VISIBILITY_SECTORS_NO_FOCUS_DESC"
+ 		}
+
+		instantTextBoxType = {
+			name = "show_focus_disabled_sectors_label"
+			position = { x = 35 y= -672 }
+			font = "cg_16b"
+			text = "OL_TOGGLE_VISIBILITY_SECTORS_NO_FOCUS"
+			text_color_code = "E"
+			alwaysTransparent = yes
+			maxWidth = 300
+			format = left
+		}
+
+		# Sorting buttons
+		buttonType =
+		{
+			name = "sort_distance"
+			quadTextureSprite = "GFX_button_95_24"
+			position = { x= 0 y = 55 }
+			Orientation = "UPPER_LEFT"
+			buttonText = "OUTLINER_REARRANGE_DISTANCE"
+			buttonFont = "cg_16b"
+			pdx_tooltip = "EXPANSION_PLANNER_SORT_DISTANCE"
+		}
+		buttonType =
+		{
+			name = "sort_name"
+			quadTextureSprite = "GFX_button_95_24"
+			position = { x= 99 y = 55 }
+			Orientation = "UPPER_LEFT"
+			buttonText = "OUTLINER_REARRANGE_NAME"
+			buttonFont = "cg_16b"
+			pdx_tooltip = "EXPANSION_PLANNER_SORT_NAME"
+		}
+		buttonType =
+		{
+			name = "sort_pops"
+			quadTextureSprite = "GFX_button_75_24"
+			position = { x= 198 y = 55 }
+			Orientation = "UPPER_LEFT"
+			buttonText = "OUTLINER_REARRANGE_POPS"
+			buttonFont = "cg_16b"
+			pdx_tooltip = "SORT_BY_POP"
+		}
+		buttonType =
+		{
+			name = "sort_class"
+			quadTextureSprite = "GFX_button_116_24"
+			position = { x= 0 y = 85 }
+			Orientation = "UPPER_LEFT"
+			buttonText = "OUTLINER_REARRANGE_PLANET_CLASS"
+			buttonFont = "cg_16b"
+			pdx_tooltip = "EXPANSION_PLANNER_SORT_CLASS"
+		}
+		buttonType =
+		{
+			name = "sort_designation"
+			quadTextureSprite = "GFX_button_150_24"
+			position = { x= 123 y = 85 }
+			Orientation = "UPPER_LEFT"
+			buttonText = "OUTLINER_REARRANGE_DESIGNATION"
+			buttonFont = "cg_16b"
+			pdx_tooltip = "SORT_BY_DESIGNATION_H"
+		}
+	}
+
+	containerWindowType = {
+		name = "outliner_rearrange_entry_window"
+		size = { width = 282 height = 32 }
+		position = { x = 0 y = 0 }
+		orientation = upper_right
+		moveable = no
+
+		buttonType = {
+			name = "background"
+			quadTextureSprite = "GFX_interface_list_light"
+			size = { x = 279 y = 28 }
+			position = { x = 0 y = 0 }
+		}
+		
+		instantTextBoxType = {
+			name = "title"
+			font = "cg_16b"
+			text = "dsffds"
+			position = { x = 6 y = 6 }
+			maxWidth = 195
+			maxHeight = 20
+			fixedSize = yes
+			orientation = "UPPER_LEFT"
+			format = left
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "below_last_moved"
+			quadTextureSprite = "GFX_button_sort_follow_list"
+			size = { x = 22 y = 22 }
+			position = { x = -78 y = 0 }
+			orientation = "UPPER_RIGHT"
+			clicksound = increment_click
+			pdx_tooltip = "OUTLINER_REARRANGE_MOVE_TO_UNDER"
+		}
+
+		buttonType = {
+			name = "up"
+			quadTextureSprite = "GFX_button_up"
+			position = { x = -55 y = 0 }
+			orientation = "UPPER_RIGHT"
+			clicksound = increment_click
+			#rotation = -1.57
+			pdx_tooltip = "OUTLINER_OPTIONS_SORT_UP_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "top"
+			quadTextureSprite = "GFX_button_up_arrow"
+			position = { x = -570 y = 2 }
+			scale = 0.67
+			orientation = "UPPER_RIGHT"
+			clicksound = increment_click
+			#rotation = -1.57
+			pdx_tooltip = "OUTLINER_OPTIONS_SORT_UP_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "bottom"
+			quadTextureSprite = "GFX_button_down_arrow"
+			position = { x = -548 y = 2 }
+			scale = 0.67
+			orientation = "UPPER_RIGHT"
+			clicksound = decrement_click
+			#rotation = 1.57
+			pdx_tooltip = "OUTLINER_OPTIONS_SORT_DOWN_TOOLTIP"
+		}
+
+		buttonType = {
+			name = "down"
+			quadTextureSprite = "GFX_button_down"
+			position = { x = -33 y = 0 }
 			orientation = "UPPER_RIGHT"
 			clicksound = decrement_click
 			#rotation = 1.57
@@ -1488,8 +1883,8 @@ guiTypes = {
 			format = left
 			text_color_code = "E"
 			alwaysTransparent = yes
-		}
-
+		}	
+		
 		instantTextBoxType = {
 			name = "star"
 			font = "cg_16b"
@@ -1518,6 +1913,7 @@ guiTypes = {
 			frame = 50
 		}									
 	}
+	
 	### STARBASE ###
 	containerWindowType = {
 		name = "outliner_member_starbase_entry_window"
@@ -1639,7 +2035,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "outliner_member_starbase_construction_entry_window"
-		size = { width = 65 height = 22 }
+		size = { width = 70 height = 22 }
 		position = { x = 0 y = 0 }
 		clipping = no
 		background = {
@@ -1704,34 +2100,40 @@ guiTypes = {
 			name = "progress_bar_1"
 			position = { x = @x_pos y = @y_pos }
 			spriteType = "GFX_outliner_starbase_construction_progressbar_1"
+			alwaysTransparent = yes
 		}
 		iconType = {
 			name = "progress_bar_2"
 			position = { x = @x_pos y = @y_pos }
 			spriteType = "GFX_outliner_starbase_construction_progressbar_2"
+			alwaysTransparent = yes
 		}
 		iconType = {
 			name = "progress_bar_3"
 			position = { x = @x_pos y = @y_pos }
 			spriteType = "GFX_outliner_starbase_construction_progressbar_3"
+			alwaysTransparent = yes
 		}
 		iconType = {
 			name = "progress_bar_4"
 			position = { x = @x_pos y = @y_pos }
 			spriteType = "GFX_outliner_starbase_construction_progressbar_4"
+			alwaysTransparent = yes
 		}
 		iconType = {
 			name = "progress_bar_5"
 			position = { x = @x_pos y = @y_pos }
 			spriteType = "GFX_outliner_starbase_construction_progressbar_5"
+			alwaysTransparent = yes
 		}
 		iconType = {
 			name = "progress_bar_6"
 			position = { x = @x_pos y = @y_pos }
 			spriteType = "GFX_outliner_starbase_construction_progressbar_6"
+			alwaysTransparent = yes
 		}
 	}
-	
+
 	containerWindowType = {
 		name = "observer_outliner_country_window"
 		size = { width = 318 height = 56 }
@@ -1742,7 +2144,8 @@ guiTypes = {
 		buttonType = {
 			name = "background"
 			quadTextureSprite = "GFX_list_hover"
-			position = { x = -3 y = -5 }
+			position = { x = -4 y = -4 }
+			size = { x = 251 y = 64 }
 			clicksound = "click_outliner"
 			oversound = no_sound
 		}
@@ -1750,7 +2153,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "selected_overlay"
 			position = { x = 0 y = 0 }
-			size = { width = 248 height = 100% }
+			size = { width = 243 height = 100% }
 			background = {
 				name = "selected_bg"
 				spriteType = "GFX_glow_tile_orange_no_padding"
@@ -1813,7 +2216,7 @@ guiTypes = {
 			name = "might"
 			font = "cg_16b"
 			text = "0"
-			position = { x = 0 y = 35 }
+			position = { x = 3 y = 35 }
 			maxWidth = 90
 			maxHeight = 20
 			fixedSize = yes
@@ -1862,9 +2265,9 @@ guiTypes = {
 			name = "status"
 			spriteType = "GFX_outliner_status"
 			alwaysTransparent = no
-		}		
+		}
 	}
-	
+
 	### SHIPYARD ###
 	containerWindowType = {
 		name = "outliner_member_shipyard_entry_window"

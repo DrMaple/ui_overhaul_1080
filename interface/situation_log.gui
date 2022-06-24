@@ -1,224 +1,286 @@
 guiTypes = {
-	
+	@dynamic_extra_panel_left = 0.8
+	@dynamic_extra_panel_right = 0.8
+	@log_info_width = 398
+	@log_info_margin_left = 30
+
+	# Used to determine extra scale for the active situation stage icon (Example: x = 25 -> scale * 1.25)
+	positionType = {
+		name = "situation_log_situation_stage_icon_active_extra_scale_percent"
+		position = { x = 40 y = 0 } # Y value not used
+	}
+
+	# Used to position the name textbox of situation list entries
+	positionType = {
+		name = "situation_log_situation_entry_name_position"
+		position = { x = 62 y = 6 }
+	}
+
+	# Used to position the project picture in situations entries
+	positionType = {
+		name = "situation_log_situation_project_picture_position"
+		position = { x = 32 y = 46 }
+	}
+
+	# Used to position the project picture frame in situations entries
+	positionType = {
+		name = "situation_log_situation_picture_frame_position"
+		position = { x = 26 y = 42 }
+	}
+
+	# Used to position the title of situations entries
+	positionType = {
+		name = "situation_log_situation_title_position"
+		position = { x = 30 y = 10 }
+	}
+
+	# Used to position the description in the situation variant of the situation log
+	positionType = {
+		name = "situation_log_situation_description_position"
+		position = { x = 30 y = 188 }
+ 	}
+
+	# Used to set max width/height of the description in the situation variant of the situation log
+	positionType = {
+		name = "situation_log_situation_description_size"
+	 	position = { x = 398 y = 100 }
+ 	}
+
+	# Used to position the goto button in the situation variant of the situation log
+	positionType = {
+		name = "situation_log_situation_goto_button_position"
+		position = { x = -330 y = 9 }
+ 	}
+
+	# Used to position the track button in the situation variant of the situation log
+	positionType = {
+		name = "situation_log_situation_track_button_position"
+		position = { x = -290 y = 9 }
+ 	}
+
 	containerWindowType = {
 		name = "situation_log"
-		size = { width = 900 height = 685 }
-		moveable = no
-		orientation = upper_left
-		
-		position = { x=35 y=40 }
+		hide_position = { x = -970 y = 40 }
 		show_position = { x = 35 y = 40 }
-        hide_position = { x = -808 y = 40 }
-        animation_time = 100
-        animation_type = decelerated
-	
+		size = { width = 1008 height = 990 }
+		dynamic_extra_height = @dynamic_extra_panel_left
+		animation_type = decelerated
+        animation_time = 200
+
 		containerWindowType = {
 			name = "galaxy_view_background_box"
-			size = { width = 900 height = 900 }
 			position = { x = 0 y = 0 }
-			
+			size = { width = 1008 height = 900 }
+			dynamic_extra_height = @dynamic_extra_panel_left
+
 			background = {
 				name = "galaxy_view_background"
 				spriteType = "GFX_tile_large_bg"
 			}
 		}
-		
+
 		iconType = {
 			name = "hex_bg"
+			position = { x = 5 y = -12 }
 			spriteType = "GFX_hex_bg"
-			position = { x = 30 y = -12 }
 			alwaysTransparent = yes
 		}
 
 		iconType = {
 			name = "empire_header_line"
+			position = { x = 18 y = 26 }
 			quadTextureSprite = "GFX_line_long"
-			position = { x = 6 y = 21 }
-		}		
-				
+		}
+
 		instantTextBoxType={
 			name = "header"
+			position = { x = 35 y = 5 }
 			font = "malgun_goth_24"
 			text = "SITUATION_LOG_HEADER"
-			position = { x = 65 y = 5 }
-			maxWidth = 800
+			maxWidth = 808
 			maxHeight = 40
 			fixedSize = yes
 			format = left
 			alwaysTransparent = no
 		}
-		
+
+		buttonType = {
+			name = "track_all"
+			orientation = upper_right
+			position = { x = -80 y = 16 }
+			spriteType = "GFX_button_track_all_projects"
+		}
+
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
-			position = { x = -45 y = 11 }
+			position = { x = -44 y = 16 }
 			orientation = upper_right
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
 			actionshortcut = "cancel"
 		}
 
-		buttonType = {
-			name = "track_all"
-			quadTextureSprite = "GFX_track_all_projects_icon"
-			position = { x = -78 y = 11 }
-			orientation = upper_right
-		}
-
 		########################
-		# log_window
+		# general situation log window
 		containerWindowType = {
 			name = "log_window"
 			size = { width = 100% height = 100% }
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 5 }
 
 			containerWindowType = {
 				name = "currently_selected"
-				size = { width = 584 height = 510 }
+				size = { width = 693 height = 840 }
+				dynamic_extra_height = @dynamic_extra_panel_right
 				position = { x = 310 y = 45 }
-				
+
 				background = {
 					name = "situation_log_selected_background"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
-				#	alwaysTransparent = yes
+					alwaysTransparent = yes
 				}
-				
-				iconType = {
-					name = "project_picture"
-					quadTextureSprite = "GFX_evt_landing_ship"
-					position = { x = 67 y = 17 }
-				}
-				
-				iconType = {
-					name = "picture_frame"
-					quadTextureSprite = "GFX_event_frame"
-					position = { x = 61 y = 12 }
-				}
-				
-				instantTextBoxType={
+
+				instantTextBoxType = {
 					name = "title"
 					font = "malgun_goth_24"
 					text = "TITLE"
-					position = { x = 10 y = 180 }
-					maxWidth = 565
-					maxHeight = 40
+					position = { x = 140 y = 10 } # Set to "situation_log_situation_title_position" for situations
+					maxWidth = 340
+					maxHeight = 30
 					fixedSize = yes
-					format = centre
-					#alwaysTransparent = yes
+					format = left
+					vertical_alignment = center
 				}
-				
-				instantTextBoxType={
+
+				iconType = {
+					name = "project_picture"
+					quadTextureSprite = "GFX_evt_landing_ship"
+					position = { x = 140 y = 46 } # Set to "situation_log_situation_project_picture_position" for situations
+					scale = 0.90
+				}
+
+				iconType = {
+					name = "picture_frame"
+					quadTextureSprite = "GFX_event_frame"
+					position = { x = 136 y = 42 } # Set to "situation_log_situation_picture_frame_position" for situations
+					scale = 0.90
+				}
+
+				containerWindowType = {
+					name = "description_bg_container"
+					position = { x = 140 y = 190 }
+					size = { width = 410 height = 200 } # Height automatically adapts to the text content size of the "description" element
+
+					background = {
+						name = "bg"
+						spriteType = "GFX_tiles_dark_area_cut_8"
+					}
+				}
+
+				instantTextBoxType = { # Not a part of "description_bg_container" as that background shouldn't always show when the text shows
 					name = "description"
+					position = { x = 150 y = 200 } # Set to "situation_log_situation_description_position" for situations
 					font = "cg_16b"
 					text = "DESCRIPTION"
-					position = { x = 20 y = 210 }
-					maxWidth = 550
-					maxHeight = 150
+					maxWidth = 384 # Set to X value of "situation_log_situation_description_size" for situations
+					maxHeight = 184 # Set to Y value of "situation_log_situation_description_size" for situations
+					dynamic_extra_height = @dynamic_extra_panel_right
 					format = left
 					text_color_code = "E"
-					scrollbartype = "standardtext_slider"
-					#alwaysTransparent = yes
+					scrollbartype = "standardtext_slider_small"
 				}
-				
+
+				buttonType = {
+					name = "track"
+					orientation = "UPPER_RIGHT"
+					position = { x = -180 y = 9 }
+					spriteType = "GFX_button_track_project"
+					format = center
+					actionshortcut = "track_on_map"
+				}
+
+				buttonType = {
+					name = "goto_target"
+					orientation = upper_right
+					position = { x = -220 y = 9 }
+					spriteType = "GFX_fleetview_focus"
+					shortcut = "q"
+				}
+
 				containerWindowType = {
 					name = "wrapper"
-					position = { x = 55 y = 405 }
+					position = { x = 140 y = 400 } # Y position set in code to be below the description text container
+					size = { width = 410 height = 200 } # Height set in code to match the remaining vertical space after positioning
 
 					smoothListBoxType = {
 						name = "counters"
-						size = { x = 460 y = 200 }
+						position = { x = 0 y = 0 }
+						size = { x = 410 y = 200 } # Height set in code to match the remaining vertical space after wrapper positioning
+						scrollbarType = "standardlistbox_slider"
 					}
 				}
-				
+
 				containerWindowType = {
 					name = "can_research_info"
-					size = { width = 485 height = 510 }
-					position = { x = 0 y = 0 }
+					position = { x = 140 y = 400 }
+					size = { width = 410 height = 120 }
+					clipping = no
 
-					instantTextBoxType={
+					instantTextBoxType = {
 						name = "requirements"
-						#orientation = "LOWER_RIGHT"
-						position = { x = 325 y = 336 }
+						position = { x = 0 y = 0 }
 						font = "cg_16b"
-						maxWidth = 245
+						maxWidth = 300
 						maxHeight = 80
+						fixedSize = yes
 						format = left
-						vertical_alignment = bottom
-						text = ""
-						#scrollbartype = "standardtext_slider"
-					}
-
-					buttonType = {
-						name = "focus_on"
-						orientation = "LOWER_LEFT"
-						position = { x = 5 y = -63 }
-						quadTextureSprite = "GFX_standard_button_142_34_button"
-						font = "cg_16b"
-						text = "FOCUS"
-						format = center
-						actionshortcut = "focus_camera"
-						shortcut = "q"
-					}
-					
-					buttonType = {
-						name = "cancel"
-						orientation = "LOWER_RIGHT"
-						position = { x = -171 y = -63 }
-						quadTextureSprite = "GFX_standard_button_142_34_button"
-						font = "cg_16b"
-						text = "CANCEL"
-						format = center
-						shortcut = "RETURN"
-						#actionshortcut = "accept" #Causes conflict with the "research" button. Handled in view code instead.
 					}
 
 					instantTextBoxType={
 						name = "times_out_in"
-						position = { x = -160 y = -85 }
-						orientation = "LOWER_RIGHT"
+						orientation = "LOWER_LEFT"
+						position = { x = 0 y = -35 }
 						font = "cg_16b"
-						text = ""
 						maxWidth = 200
 						maxHeight = 20
 						fixedSize = yes
 						format = left
+						text_color_code = "R"
 					}
-					
+
 					instantTextBoxType={
 						name = "time_left"
-						position = { x = -160 y = -70 }
-						orientation = "LOWER_RIGHT"
+						position = { x = 0 y = 106 }
 						font = "cg_16b"
-						text = ""
 						maxWidth = 200
 						maxHeight = 20
 						fixedSize = yes
 						format = left
-					}			
-					
+					}
+
 					iconType = {
 						name = "cost_icon"
+						orientation = "UPPER_RIGHT"
+						position = { x = -8 y = 68 }
 						spriteType = "GFX_resource_physics"
-						position = { x = 68 y = -46 }
-						orientation = "LOWER_RIGHT"
+						centerPosition = yes
 					}
-					
+
 					instantTextBoxType={
 						name = "cost_value"
-						position = { x = -37 y = -45 }
-						orientation = "LOWER_RIGHT"
+						orientation = "UPPER_RIGHT"
+						position = { x = -130 y = 60 }
 						font = "cg_16b"
-						text = "100"
-						maxWidth = 100
+						maxWidth = 106
 						maxHeight = 20
 						fixedSize = yes
 						format = right
 					}
-					
+
 					buttonType = {
 						name = "research"
 						orientation = "LOWER_RIGHT"
-						position = { x = -171 y = -63 }
+						position = { x = -154 y = -46 }
 						quadTextureSprite = "GFX_standard_button_142_34_button"
 						font = "cg_16b"
 						text = "RESEARCH"
@@ -226,95 +288,379 @@ guiTypes = {
 						shortcut = "RETURN"
 						#actionshortcut = "accept" #Causes conflict with the "cancel" button. Handled in view code instead.
 					}
+
+					#Shares position with "research" button, they replace each other.
+					buttonType = {
+						name = "cancel"
+						orientation = "LOWER_RIGHT"
+						position = { x = -154 y = -46 }
+						quadTextureSprite = "GFX_standard_button_142_34_button"
+						font = "cg_16b"
+						text = "CANCEL"
+						format = center
+						shortcut = "RETURN"
+						#actionshortcut = "accept" #Causes conflict with the "research" button. Handled in view code instead.
+					}
 				}
 
 				containerWindowType = {
 					name = "archaeological_site_info"
-					size = { width = 485 height = 510 }
-					position = { x = 0 y = 0 }
+					position = { x = 140 y = 400 }
+					size = { width = 410 height = 120 }
 
 					instantTextBoxType={
 						name = "requirements"
-						position = { x = 325 y = 376 }
+						position = { x = 0 y = 0 }
 						font = "cg_16b"
-						maxWidth = 245
+						maxWidth = 410
 						maxHeight = 80
-						fixedSize = yes
-						format = left
-						text = ""
-					}
-
-					buttonType = {
-						name = "focus_on"
-						orientation = "LOWER_LEFT"
-						position = { x = 5 y = -63 }
-						quadTextureSprite = "GFX_standard_button_142_34_button"
-						font = "cg_16b"
-						text = "FOCUS"
-						format = center
-						shortcut = "q"
-					}
-					
-					instantTextBoxType={
-						name = "time_left"
-						position = { x = -160 y = -70 }
-						orientation = "LOWER_RIGHT"
-						font = "cg_16b"
-						text = ""
-						maxWidth = 200
-						maxHeight = 20
 						fixedSize = yes
 						format = left
 					}
 
 					iconType = {
 						name = "progress_bar"
-						spriteType = "GFX_queue_progressbar_150"
-						position = { x = -160 y = -83 }
-						orientation = "LOWER_RIGHT"
-					}			
-					
+						orientation = "LOWER_LEFT"
+						position = { x = 0 y = -12 }
+						spriteType = "GFX_situation_log_progressbar_research"
+					}
+
 					iconType = {
 						name = "time_icon"
 						spriteType = "GFX_resource_time"
-						position = { x = -8 y = -85 }
-						orientation = "LOWER_RIGHT"
+						position = { x = 240 y = -27 }
+						orientation = "LOWER_LEFT"
+						centerPosition = yes
 					}
-					
+
+					instantTextBoxType={
+						name = "time_left"
+						position = { x = 0 y = -36 }
+						orientation = "LOWER_LEFT"
+						font = "cg_16b"
+						maxWidth = 250
+						maxHeight = 20
+						fixedSize = yes
+						format = left
+					}
+
+					### Opens Archaeology UI
 					buttonType = {
 						name = "view_site"
 						orientation = "LOWER_RIGHT"
-						position = { x = -171 y = -63 }
+						position = { x = -154 y = -46 }
 						quadTextureSprite = "GFX_standard_button_142_34_button"
 						font = "cg_16b"
 						text = "VIEW_SITE"
 						format = center
 						shortcut = "RETURN"
 					}
-				}			
-				buttonType = {
-					name = "track"
-					orientation = "LOWER_LEFT"
-					position = { x = 5 y = -108 }
-					quadTextureSprite = "GFX_standard_button_142_34_button"
-					font = "cg_16b"
-					text = "PROJECT_TRACK"
-					format = center
-					actionshortcut = "track_on_map"
+				}
+
+				### "Situations" Info
+				# This item is dynamically handled in code.
+				# All windows with the same name as this one in vanilla will share functionality.
+				# All elements can be removed to ignore them in the UI.
+				containerWindowType = {
+					name = "situations_progress_subview"
+					position = { x = 20 y = 597 }
+					size = { width = 419 height = 100 }
+					clipping = no
+
+					background = {
+						name = "background"
+						quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+					}
+
+					iconType = {
+						name = "middle_indicator"
+						position = { x = 209 y = 41 }
+						spriteType = "GFX_situation_middle_indicator"
+					}
+
+					# If the progress bars are not contained in this element, short progress bars will be used
+					containerWindowType = {
+						name = "situations_progress_bar_container"
+						position = { x = 42 y = 0 }
+						size = { width = 335 height = 14 } # Used to position the progress pin
+
+						iconType = {
+							name = "progress_bar_monodirectional"
+							position = { x = 0 y = 40 }
+							spriteType = "GFX_situation_event_progressbar_monodirectional_neutral" # Set in code
+						}
+
+						iconType = {
+							name = "progress_bar_bidirectional_left"
+							position = { x = 0 y = 40 }
+							spriteType = "GFX_situation_event_progressbar_bidirectional_neutral_left" # Set in code
+						}
+
+						iconType = {
+							name = "progress_bar_bidirectional_right"
+							position = { x = 168 y = 40 }
+							spriteType = "GFX_situation_event_progressbar_bidirectional_neutral_right" # Set in code
+						}
+					}
+
+					# Removing this element will remove stage indicators
+					containerWindowType = { # Gets populated with "situation_stage_entry" elements
+						name = "stage_icon_container"
+						position = { x = 21 y = 30 } # Used as offset for stage icon placement
+						size = { width = 335 height = 22 } # Used to position the stage indicators
+					}
+
+					iconType = {
+						name = "start_indicator"
+						position = { x = 0 y = 41 } # X coordinate set in code 
+						spriteType = "GFX_situation_start_indicator"
+					}
+
+					iconType = {
+						name = "outcome_right"
+						orientation = upper_right
+						position = { x = -26 y = 48 }
+						spriteType = "GFX_invisible"
+						centerPosition = yes
+					}
+
+					iconType = {
+						name = "outcome_right_frame"
+						orientation = upper_right
+						position = { x = -26 y = 48 }
+						spriteType = "GFX_invisible"
+						centerPosition = yes
+					}
+
+					iconType = {
+						name = "outcome_left"
+						position = { x = 26 y = 48 }
+						spriteType = "GFX_invisible"
+						centerPosition = yes
+					}
+
+					iconType = {
+						name = "outcome_left_frame"
+						position = { x = 26 y = 48 }
+						spriteType = "GFX_invisible"
+						centerPosition = yes
+					}
+
+					# If the pin and change text is contained in this window, they will follow the progress bar
+					containerWindowType = {
+						name = "progress_bar_pin_container"
+						position = { x = 190 y = 5 } # Conditionally moved in code to follow the progress bar
+						size = { width = 72 height = 30 }
+						clipping = no
+
+						iconType = {
+							name = "pin_bg"
+							position = { x = 0 y = 8 }
+							quadTextureSprite = "GFX_situation_progress_pin"
+						}
+
+						iconType = {
+							name = "pin_icon"
+							position = { x = 54 y = 20 }
+							spriteType = "GFX_situation_progress_arrows" #Mirrored in code as needed
+							centerPosition = yes
+						}
+
+						# Shows all numbers as positive. "pin_icon" indicates if it's negative or positive
+						instantTextBoxType = {
+							name = "monthly_change"
+							position = { x = 0 y = 12 }
+							font = "cg_16b"
+							maxWidth = 40
+							maxHeight = 30
+							format = right
+						}
+					}
+				}
+
+				containerWindowType = {
+					name = "situations_approach_container"
+					size = { width = 100% height = 125 }
+					position = { x = @log_info_margin_left y = 400 }
+					clipping = no
+
+					instantTextBoxType = {
+						name = "title"
+						position = { x = 0 y = 3 }
+						font = "cg_16b"
+						text = "SITUATION_LOG_SITUATION_APPROACH_HEADER"
+					}
+
+					containerWindowType = {
+						name = "situations_approach_grid_container"
+						position = { x = 0 y = 28 }
+						size = { width = @log_info_width height = 100 }
+						verticalScrollbar = "right_vertical_slider"
+
+						background = {
+							name = "situations_approach_grid_container_bg"
+							spriteType = "GFX_invisible"
+						}
+
+						gridBoxType = {
+							name = "situations_approach_grid" # grid slots called situation_approach_entry
+							position = { x = 0 y = 0 }
+							size = { width = 100% height = 100 }
+							slotSize = { width = 101 height = 100 }
+							max_slots_horizontal = 4
+							max_slots_vertical = 1
+							format = "UPPER_LEFT"
+							add_horizontal = yes
+						}
+					}
 				}
 			}
-		
+
+			### "Situations" Effects
+			containerWindowType = {
+				name = "situations_details_container"
+				position = { x = 762 y = 58 }
+				size = { width = 240 height = 535 }
+
+				@detail_container_width = 220
+				@effects_container_height = 200
+
+				containerWindowType = {
+					name = "target_container"
+					position = { x = 0 y = 8 }
+					size = { width = @detail_container_width height = 60 }
+
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+					}
+
+					iconType = {
+						name = "target_icon"
+						spriteType = "GFX_situation_target_default"
+						position = { x = 28 y = 30 }
+						centerPosition = yes
+					}
+
+					buttonType = {
+						name = "target_country_button"
+						quadTextureSprite = "GFX_empire_flag_48"
+						position = { x = 0 y = 6 }
+					}
+
+					instantTextBoxType={
+						name = "target_name"
+						position = { x = 52 y = 10 }
+						font = "cg_16b"
+						maxWidth = 165
+						maxHeight = 40
+						fixedSize = yes
+						format = left
+						vertical_alignment = center
+						text_color_code = "E"
+					}
+				}
+
+				containerWindowType = {
+					name = "empire_effects"
+					position = { x = 0 y = 76 }
+					size = { width = @detail_container_width height = 200 }
+
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+					}
+
+					instantTextBoxType={
+						name = "situation_effects_title"
+						position = { x = 10 y = 10 }
+						font = "cg_16b"
+						maxWidth = 200
+						maxHeight = 32
+						fixedSize = yes
+						format = left
+					}
+
+					instantTextBoxType={
+						name = "situation_effects"
+						position = { x = 11 y = 46 }
+						font = "cg_16b"
+						maxWidth = 197
+						maxHeight = 145
+						format = left
+						scrollbartype = "standardtext_slider"
+					}
+
+					iconType = {
+						name = "divider"
+						position = { x = 6 y = 26 }
+						quadTextureSprite = "GFX_effects_divider"
+					}
+				}
+
+				containerWindowType = {
+					name = "finisher_effects"
+					position = { x = 0 y = 284 }
+					size = { width = @detail_container_width height = 224 }
+
+					background = {
+						name = "bg"
+						quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+					}
+
+					instantTextBoxType = {
+						name = "situation_finisher_effects_title"
+						position = { x = 10 y = 10 }
+						font = "cg_16b"
+						maxWidth = 140
+						maxHeight = 32
+						fixedSize = yes
+						format = left
+					}
+
+					instantTextBoxType = {
+						name = "situation_finisher_timebox"
+						position = { x = 140 y = 10 }
+						font = "cg_16b"
+						fixedSize = yes
+						format = right
+						maxWidth = 60
+						maxHeight = 20
+					}
+
+					instantTextBoxType = {
+						name = "situation_finisher_effects_text"
+						position = { x = 11 y = 46 }
+						font = "cg_16b"
+						maxWidth = 197
+						maxHeight = 170
+						format = left
+						scrollbartype = "standardtext_slider"
+					}
+
+					iconType = {
+						name = "divider"
+						position = { x = 6 y = 26 }
+						quadTextureSprite = "GFX_effects_divider"
+					}
+				}
+			}
+
+			########################
+			# general situation log entries
+
 			containerWindowType = {
 				name = "entries"
 				position = { x = 6 y = 45 }
-				size = { width = 308 height = 820 }
-				
+				size = { width = 308 height = 840 }
+				dynamic_extra_height = @dynamic_extra_panel_left
+
 				background = {
 					name = "situation_log_entries_background_2"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
 					alwaysTransparent = yes
 				}
-				
+
 				instantTextBoxType={
 					name = "no_entries_tip"
 					font = "cg_16b"
@@ -326,47 +672,50 @@ guiTypes = {
 					fixedSize = yes
 					format = centre
 				}
-				
+
 				smoothListBoxType = {
 					name = "entries"
 					position = { x = 5 y = 10 }
-					size = { x = 285 y = 799 }
+					size = { x = 285 y = 820 }
+					dynamic_extra_height = @dynamic_extra_panel_left
 					scrollbarType = "standardlistbox_slider"
 				}
 			}
 		}
 
 		########################
-		# anomalies
+		# the anomaly tab
 		containerWindowType = {
 			name = "anomalies"
 			size = { width = 100% height = 100% }
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 5 }
 
 			containerWindowType = {
 				name = "entries"
 				position = { x = 6 y = 45 }
-				size = { width = 308 height = 820 }
-				
+				size = { width = 308 height = 840 }
+				dynamic_extra_height = @dynamic_extra_panel_left
+
 				background = {
 					name = "situation_log_entries_background_2"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
 					alwaysTransparent = yes
 				}
-				
+
 				smoothListBoxType = {
 					name = "list"
 					position = { x = 5 y = 10 }
-					size = { x = 285 y = 799 }
+					size = { x = 285 y = 790 }
 					scrollbarType = "standardlistbox_slider"
 				}
 			}
 
 			containerWindowType = {
 				name = "currently_selected_frame"
-				size = { width = 584 height = 510 }
+				size = { width = 693 height = 840 }
 				position = { x = 310 y = 45 }
-				
+				dynamic_extra_height = @dynamic_extra_panel_right
+
 				background = {
 					name = "background"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
@@ -375,10 +724,20 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "currently_selected"
-				size = { width = 584 height = 510 }
+				size = { width = 693 height = 520 }
+				dynamic_extra_height = @dynamic_extra_panel_right
 				position = { x = 310 y = 45 }
 
-				# portrait_window
+				instantTextBoxType = {
+					name = "header"
+					position = { x = 140 y = 13 }
+					font = "malgun_goth_24"
+					maxWidth = 300
+					maxHeight = 30
+					fixedSize = yes
+					format = left
+				}
+
 				containerWindowType = {
 					name = "portrait_window"
 					position = { x= -225 y = 10 }
@@ -401,82 +760,73 @@ guiTypes = {
 						alwaystransparent = yes
 					}
 				}
-				# picture_window
+
 				containerWindowType = {
 					name = "picture_window"
-					position = { x= -235 y = 10 }
-					size = { width = 448 height = 148 }
-					moveable = no
-					clipping = no
-					orientation = center_up
+					position = { x = 136 y = 42 }
+					size = { width = 693 height = 148 }
 
 					iconType = {
-						name ="picture"
+						name = "picture"
+						position = { x = 4 y = 4 }
 						quadTextureSprite = "GFX_evt_landing_ship"
-						position = { x = 10 y = 7 }
-						orientation = "UPPER_LEFT"
-						alwaystransparent = yes
+						scale = 0.9
 					}
+					
 					iconType = {
 						name = "picture_frame"
+						position = { x = 0 y = 0 }
 						quadTextureSprite = "GFX_event_frame"
-						position = { x = 4 y = 2 }
-						alwaystransparent = yes
+						scale = 0.9
 					}
 				}
 
-				# anomaly_window
 				containerWindowType = {
 					name = "anomaly_window"
-					position = { x= -230 y = 165 }
-					size = { width = 462 height = 385 }
-					orientation = center_up
+					position = { x = 140 y = 190 }
+					size = { width = 410 height = 340 }
+					dynamic_extra_height = @dynamic_extra_panel_right
+					clipping = no
 
-					buttonType = {
-						name = "picture_background"
-						position = { x= 92 y = 44 }
-						size = { x = 200 y = 91 }
-						spriteType = "GFX_tiles_dark_area_cut_8"
-						alwaystransparent = yes
-					}
-
-					instantTextBoxType={
-						name = "header"
-						font = "malgun_goth_24"
-						position = { x = -52 y = 15 }
-						maxWidth = 565
-						maxHeight = 40
-						fixedSize = yes
-						format = center
-					}
-
-					buttonType = {
-						name = "desc_background"
-						position = { x = 0 y = 140 }
-						size = { x = 462 y = 150 }
-						spriteType = "GFX_tiles_frame_light"
-						alwaystransparent = yes
+					containerWindowType = {
+						name = "description_bg_container"
+						position = { x = 0 y = 0 }
+						size = { width = 410 height = 120 }
+	
+						background = {
+							name = "bg"
+							spriteType = "GFX_tiles_dark_area_cut_8"
+						}
 					}
 
 					instantTextBoxType = {
 						name = "desc"
+						position = { x = 14 y = 10 }
 						font = "cg_16b"
-						position = { x = 14 y = 152 }
-						maxWidth = 435
-						maxHeight = 85
+						maxWidth = 384
+						maxHeight = 90
+						dynamic_extra_height = @dynamic_extra_panel_right
+						text_color_code = "E"
 						scrollbartype = "standardtext_slider_small"
 					}
 
 					buttonType = {
 						name = "level_background"
 						spriteType = "GFX_value_slot"
-						position = { x = 331 y = 56 }
+						position = { x = 283 y = 145 }
 					}
+
+					buttonType = {
+						name = "level_duration_background"
+						spriteType = "GFX_value_slot"
+						position = { x = 283 y = 195 }
+					}
+
 					instantTextBoxType = {
 						name = "level"
 						font = "cg_16b"
 						text = "5"
-						position = { x = -125 y = 62 }
+						position = { x = -120 y = 152 }
 						maxWidth = 130
 						maxHeight = 20
 						fixedSize = yes
@@ -485,49 +835,13 @@ guiTypes = {
 						text_color_code = "Y"
 						alwaystransparent = yes
 					}
-					instantTextBoxType = {
-						name = "level_label"
-						font = "cg_16b"
-						text = "ANOMALY_LEVEL"
-						position = { x = -131 y = 40 }
-						maxWidth = 140
-						maxHeight = 20
-						fixedSize = yes
-						Orientation = "UPPER_RIGHT"
-						alwaystransparent = yes
-					}
-					
-					# lower
-					instantTextBoxType = {
-						name = "research_time_label"
-						font = "cg_16b"
-						text = "ANOMALY_TIME"
-						position = { x = -131 y = 89 }
-						maxWidth = 140
-						maxHeight = 20
-						fixedSize = yes
-						Orientation = "UPPER_RIGHT"
-						alwaystransparent = yes
-					}
-					iconType = {
-						name = "level_icon"
-						spriteType = "GFX_discovery_level_icon"
-						position = { x = 295 y = 58 }
-						alwaystransparent = yes
-					}
-					
-					buttonType = {
-						name = "level_duration_background"
-						spriteType = "GFX_value_slot"
-						position = { x = 331 y = 105 }
-					}
-					
+
 					instantTextBoxType = {
 						name = "level_duration"
 						font = "cg_16b"
 						text = "5"
-						position = { x = -125 y = 111 }
-						maxWidth = 100
+						position = { x = -120 y = 200 }
+						maxWidth = 120
 						maxHeight = 20
 						fixedSize = yes
 						Orientation = "UPPER_RIGHT"
@@ -536,35 +850,60 @@ guiTypes = {
 						alwaystransparent = yes
 					}
 
+					instantTextBoxType = {
+						name = "level_label"
+						Orientation = "UPPER_RIGHT"
+						position = { x = -127 y = 128 }
+						font = "cg_16b"
+						text = "ANOMALY_LEVEL"
+						maxWidth = 140
+						maxHeight = 20
+						fixedSize = yes
+						alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "research_time_label"
+						Orientation = "UPPER_RIGHT"
+						position = { x = -127 y = 176 }
+						font = "cg_16b"
+						text = "ANOMALY_TIME"
+						maxWidth = 140
+						maxHeight = 20
+						fixedSize = yes
+						alwaystransparent = yes
+					}
+
+					iconType = {
+						name = "level_icon"
+						position = { x = 254 y = 145 }
+						spriteType = "GFX_discovery_level_icon"
+						alwaystransparent = yes
+					}
+
 					iconType = {
 						name = "level_duration_icon"
+						position = { x = 254 y = 197 }
 						spriteType = "GFX_mod_ship_anomaly_research_speed"
-						position = { x = 300 y = 107 }
 						alwaystransparent = yes
 					}
 
 					containerWindowType = {
 						name = "leader_window"
-						position = { x= 8 y = 34 }
-						size = { width = 250 height = 100 }
-						moveable = no
-						clipping = no
-						orientation = upper_left
+						position = { x = 0 y = 130 }
+						size = { width = 260 height = 120 }
 
 						containerWindowType = {
 							name = "portrait_window"
-							position = { x= -2 y = 10 }
+							position = { x = 0 y = 0 }
 							size = { width = 76 height = 90 }
-							moveable = no
 							clipping = yes
-							orientation = upper_left
 
 							buttonType = {
 								name = "leader_type_bg"
 								quadTextureSprite = "GFX_leader_bg_scientist"
-								position = { x = -4 y = 0 }
+								position = { x = 0 y = 0 }
 								scale = 0.25
-
 							}
 
 							buttonType = {
@@ -578,18 +917,28 @@ guiTypes = {
 
 						buttonType = {
 							name = "portrait_frame"
-							position = { x = -8 y = 5 }
+							position = { x = -5 y = -5 }
 							size = { x = 87 y = 101 }
 							spriteType = "GFX_empty_green_frame"
 							alwaystransparent = yes
 						}
 
 						instantTextBoxType = {
+							name = "leader_label"
+							font = "cg_16b"
+							text = "scientist"
+							position = { x = 90 y = 0 }
+							maxWidth = 202
+							maxHeight = 20
+							fixedSize = yes
+						}
+
+						instantTextBoxType = {
 							name = "leader_name"
 							font = "cg_16b"
 							text = "Leader Name"
-							position = { x = 92 y = 12 }
-							maxWidth = 185
+							position = { x = 90 y = 18 }
+							maxWidth = 202
 							maxHeight = 20
 							fixedSize = yes
 							Orientation = "UPPER_LEFT"
@@ -600,58 +949,29 @@ guiTypes = {
 							name = "status"
 							font = "cg_16b"
 							text = "STATUS"
-							position = { x = 92 y = 36 }
-							maxWidth = 185
-							maxHeight = 33
+							position = { x = 92 y = 52 }
+							maxWidth = 160
+							maxHeight = 60
 							fixedSize = yes
 							format = left
-							#alwaystransparent = yes
 						}
 
 						iconType = {
-							name = "name_underline"
-							spriteType = "GFX_line_short"
-							position = { x = 81 y = 22 }
-							alwaystransparent = yes
-						}
-
-						instantTextBoxType = {
-							name = "skill_label"
-							font = "cg_16b"
-							text = "SKILL"
-							position = { x = 92 y = 74 }
-							maxWidth = 185
-							maxHeight = 20
-							fixedSize = yes
-							Orientation = "UPPER_LEFT"
-						}
-
-						iconType = {
-							name ="skill"
+							name = "skill"
 							spriteType = "GFX_leader_skill"
-							position = { x= 150 y = 72 }
-							frame = 5
+							position = { x = 2 y = 66 }
 						}
 					}
+
 					containerWindowType = {
 						name = "no_leader_window"
-						position = { x= 8 y = 34 }
-						size = { width = 250 height = 100 }
-						moveable = no
-						clipping = no
-						orientation = upper_left
-
-						buttonType = {
-							name = "portrait"
-							spriteType = "GFX_species_portrait"
-							position = { x = -999 y = 5 }
-							scale = 1.0
-						}
+						position = { x = 0 y = 130 }
+						size = { width = 260 height = 120 }
 
 						containerWindowType = {
 							name = "leader_frame_box"
+							position = { x = -5 y = -5 }
 							size = { width = 87 height = 101 }
-							position = { x = -8 y = 5 }
 
 								background = {
 									name = "leader_frame"
@@ -667,7 +987,6 @@ guiTypes = {
 							maxWidth = 160
 							maxHeight = 20
 							fixedSize = yes
-							Orientation = "UPPER_LEFT"
 							text_color_code = "H"
 						}
 
@@ -676,50 +995,45 @@ guiTypes = {
 							font = "cg_16b"
 							text = "AV_NO_SCIENTIST_DESC"
 							position = { x = 92 y = 36 }
-							maxWidth = 215
+							maxWidth = 160
 							maxHeight = 100
 							fixedSize = yes
-							Orientation = "UPPER_LEFT"
 						}
 					}
 
 					containerWindowType = {
 						name = "progress_window"
-						position = { x= -227 y = -148 }
-						size = { width = 450 height = 50 }
-						moveable = no
-						clipping = yes
-						orientation = center_down
+						position = { x = 0 y = 294 }
+						size = { width = 490 height = 40 }
 
 						instantTextBoxType = {
 							name = "progress_label"
 							font = "cg_16b"
 							text = "ANOMALY_RESEARCH_PROGRESS"
-							position = { x = 9 y = 2 }
-							maxWidth = 160
+							position = { x = 0 y = 0 }
+							maxWidth = 180
 							maxHeight = 20
 							fixedSize = yes
 							Orientation = "UPPER_LEFT"
 							text_color_code = "H"
-						}
-
-						iconType = {
-							name = "progress_bar"
-							spriteType = "GFX_PV_GB_progressbar"
-							position = { x = 10 y = 24 }
 						}
 
 						instantTextBoxType = {
 							name = "progress_value"
 							font = "cg_16b"
 							text = "0%"
-							position = { x = 13 y = 4 }
-							maxWidth = 430
+							position = { x = 190 y = 0 }
+							maxWidth = 60
 							maxHeight = 20
 							fixedSize = yes
-							Orientation = "UPPER_LEFT"
 							text_color_code = "H"
 							format = right
+						}
+
+						iconType = {
+							name = "progress_bar"
+							spriteType = "GFX_situation_log_progressbar_research"
+							position = { x = 0 y = 24 }
 						}
 					}
 				}
@@ -727,11 +1041,9 @@ guiTypes = {
 				# select_leader_window
 				containerWindowType = {
 					name = "select_leader_window"
-					position = { x= -230 y = 190 }
-					size = { width = 462 height = 265 }
-					moveable = no
+					position = { x = 135 y = 190 }
+					size = { width = 418 height = 250 }
 					clipping = yes
-					orientation = center_up
 
 					background = {
 						name = "picture_background"
@@ -741,52 +1053,44 @@ guiTypes = {
 
 					smoothListBoxType = {
 						name = "list"
-						position = { x=11 y=13 }
-						orientation = upper_left
-						size = { x=430 y=240 }
-						borderSize = { x=0 y=0 }
+						position = { x = 11 y = 14 }
+						size = { x = 395 y = 224 }
 						scrollbartype = "standardlistbox_slider"
 						spacing = 5
 					}
 				}
 
-				# goto
+				# goto/move camera button (anomaly tab)
 				buttonType = {
 					name = "goto"
-					orientation = "LOWER_LEFT"
-					position = { x = 5 y = -63 }
-					quadTextureSprite = "GFX_standard_button_142_34_button"
-					font = "cg_16b"
-					text = "FOCUS"
+					orientation = "UPPER_RIGHT"
+					position = { x = -180 y = 9 }
+					spriteType = "GFX_fleetview_focus"
 					pdx_tooltip = "GOTO_HOMEPLANET"
-					borderSize = { x = 12 y = 12 }
-					multiline = yes
-					format = center
 					shortcut = "q"
 				}
-				# scientist
+
+				# change scientist button (anomaly tab)
 				buttonType = {
 					name = "scientist"
-					orientation = "CENTER_DOWN"
-					position = { x = -83 y = -63 }
+					orientation = "LOWER_RIGHT"
+					position = { x = -297 y = -86 }
 					quadTextureSprite = "GFX_standard_button_142_34_button"
 					font = "cg_16b"
-					borderSize = { x = 12 y = 12 }
-					multiline = yes
 					text = "ANOMALY_CHANGE_SCIENTIST"
-					format = center
+					multiline = yes
+					shortcut = "RETURN"
 				}
-				# research
+
+				# research button (anomaly tab)
 				buttonType = {
 					name = "research"
 					orientation = "LOWER_RIGHT"
-					position = { x = -171 y = -63 }
+					position = { x = -297 y = -46 }
 					quadTextureSprite = "GFX_standard_button_142_34_button"
 					font = "cg_16b"
-					borderSize = { x = 12 y = 12 }
-					multiline = yes
 					text = "RESEARCH"
-					format = center
+					multiline = yes
 					shortcut = "RETURN"
 				}
 			}
@@ -808,24 +1112,21 @@ guiTypes = {
 
 				containerWindowType = {
 					name = "picture_window"
-					position = { x = 367 y = 55 } # parent position = { x = 310 y = 45 }
-					size = { width = 448 height = 148 }
-					moveable = no
-					clipping = no
-					orientation = center_up
+					position = { x = 446 y = 87 }
+					size = { width = 693 height = 148 }
 
 					iconType = {
-						name ="picture"
+						name = "picture"
+						position = { x = 5 y = 4 }
 						quadTextureSprite = "GFX_evt_landing_ship"
-						position = { x = 10 y = 7 }
-						orientation = "UPPER_LEFT"
-						alwaystransparent = yes
+						scale = 0.9
 					}
+					
 					iconType = {
 						name = "picture_frame"
+						position = { x = 0 y = 0 }
 						quadTextureSprite = "GFX_event_frame"
-						position = { x = 4 y = 2 }
-						alwaystransparent = yes
+						scale = 0.9
 					}
 				}
 			}
@@ -836,110 +1137,93 @@ guiTypes = {
 		containerWindowType = {
 			name = "victories_window"
 			size = { width = 100% height = 100% }
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 5 }
 
 			containerWindowType = {
 				name = "entries"
 				position = { x = 6 y = 45 }
-				size = { width = 308 height = 820 }
-				
+				size = { width = 308 height = 840 }
+				dynamic_extra_height = @dynamic_extra_panel_left
+
 				background = {
 					name = "situation_log_entries_background_2"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
 					alwaysTransparent = yes
 				}
-				
+
 				smoothListBoxType = {
 					name = "list"
 					position = { x = 5 y = 10 }
-					size = { x = 285 y = 799 }
+					size = { x = 285 y = 820 }
+					spacing = -6
+					dynamic_extra_height = @dynamic_extra_panel_left
 					scrollbarType = "standardlistbox_slider"
 				}
 			}
 			containerWindowType = {
 				name = "currently_selected"
-				size = { width = 584 height = 510 }
+				size = { width = 693 height = 540 }
+				dynamic_extra_height = @dynamic_extra_panel_right
 				position = { x = 310 y = 45 }
-				
+
 				background = {
 					name = "situation_log_selected_background"
 					quadTextureSprite = "GFX_planet_bg_tile_frame"
 				}
-				
+
 				iconType = {
 					name = "project_picture"
 					quadTextureSprite = "GFX_evt_landing_ship"
-					position = { x = 67 y = 17 }
+					position = { x = 343 y = 114 }
+					centerPosition = yes
+					scale = 0.9
 				}
-				
+
 				iconType = {
 					name = "picture_frame"
 					quadTextureSprite = "GFX_event_frame"
-					position = { x = 61 y = 12 }
+					position = { x = 343 y = 114 }
+					centerPosition = yes
+					scale = 0.9
 				}
-				
-				iconType = {
-					name = "header_line"
-					spriteType = "GFX_line_center"
-					position = { x = 43 y = 220 }
-				}
-				
+
 				instantTextBoxType={
 					name = "title"
 					font = "malgun_goth_24"
 					text = "TITLE"
-					position = { x = 10 y = 200 }
-					maxWidth = 565
-					maxHeight = 40
-					fixedSize = yes
-					format = centre
-					#alwaysTransparent = yes
-				}
-				
-				instantTextBoxType={
-					name = "description"
-					font = "cg_16b"
-					text = "DESCRIPTION"
-					position = { x = 20 y = 250 }
-					maxWidth = 550
-					maxHeight = 280
+					position = { x = 0 y = 12 }
+					maxWidth = 690
+					maxHeight = 30
 					fixedSize = yes
 					format = center
-					text_color_code = "E"
-					alwaysTransparent = yes
-				}
-				
-				instantTextBoxType={
-					name = "progress_title"
-					font = "malgun_goth_24"
-					text = "PROGRESS"
-					position = { x = 10 y = 440 }
-					maxWidth = 565
-					maxHeight = 40
-					fixedSize = yes
-					format = centre
-					#alwaysTransparent = yes
-				}
-				
-				iconType = {
-					name = "progressbar"
-					spriteType = "GFX_infra_progressbar"
-					frame = 0
-					position = { x = 75 y = 475 }
-					#alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
+					name = "description"
+					position = { x = 0 y = 200 }
+					font = "cg_16b"
+					text = "DESCRIPTION"
+					maxWidth = 693
+					maxHeight = 230
+					dynamic_extra_height = @dynamic_extra_panel_right
+					format = center
+					text_color_code = "E"
+					scrollbartype = "standardtext_slider"
+				}
+
+				instantTextBoxType = {
 					name = "progress_desc"
 					font = "cg_16b"
 					text = "There are 132 independent left to conquer"
-					position = { x = 10 y = 472 }
-					maxWidth = 565
+					orientation = "LOWER_LEFT"
+					position = { x = 0 y = -35 }
+					maxWidth = 693
 					maxHeight = 40
 					fixedSize = yes
 					format = centre
-					#alwaysTransparent = yes
 				}
+
+				
 			}
 		}
 
@@ -947,12 +1231,12 @@ guiTypes = {
 		# THE TABS
 		########################
 
-		@tabheight = 213
-		
+		@tab_position = -92
+
 		buttonType = {
 			name = "tab_log"
 			quadTextureSprite = "GFX_tab_1_inactive"
-			position = { x= -20 y = @tabheight }
+			position = { x= -20 y = @tab_position }
 			font = "cg_16b"
 			buttonText = "SITUATION_LOG_HEADER"
 			buttonFont = "cg_16b"
@@ -961,10 +1245,11 @@ guiTypes = {
 			Orientation = "LOWER_LEFT"
 			oversound = no_sound
 		}
+
 		buttonType = {
 			name = "tab_log_active"
 			quadTextureSprite = "GFX_tab_1_active"
-			position = { x= -20 y = @tabheight }
+			position = { x= -20 y = @tab_position }
 			font = "cg_16b"
 			buttonText = "SITUATION_LOG_HEADER"
 			buttonFont = "cg_16b"
@@ -977,7 +1262,7 @@ guiTypes = {
 		buttonType = {
 			name = "tab_anomalies"
 			quadTextureSprite = "GFX_tab_2_inactive"
-			position = { x= 109 y = @tabheight }
+			position = { x= 109 y = @tab_position }
 			font = "cg_16b"
 			buttonText = "ANOMALIES"
 			buttonFont = "cg_16b"
@@ -986,10 +1271,11 @@ guiTypes = {
 			Orientation = "LOWER_LEFT"
 			oversound = no_sound
 		}
+
 		buttonType = {
 			name = "tab_anomalies_active"
 			quadTextureSprite = "GFX_tab_2_active"
-			position = { x= 109 y = @tabheight }
+			position = { x= 109 y =@tab_position }
 			font = "cg_16b"
 			buttonText = "ANOMALIES"
 			buttonFont = "cg_16b"
@@ -1002,7 +1288,7 @@ guiTypes = {
 		buttonType = {
 			name = "tab_victories"
 			quadTextureSprite = "GFX_tab_2_inactive"
-			position = { x= 238 y = @tabheight }
+			position = { x= 238 y = @tab_position }
 			font = "cg_16b"
 			buttonText = "VICTORIES"
 			buttonFont = "cg_16b"
@@ -1011,10 +1297,11 @@ guiTypes = {
 			Orientation = "LOWER_LEFT"
 			oversound = no_sound
 		}
+
 		buttonType = {
 			name = "tab_victories_active"
 			quadTextureSprite = "GFX_tab_2_active"
-			position = { x= 238 y = @tabheight }
+			position = { x= 238 y = @tab_position }
 			font = "cg_16b"
 			buttonText = "VICTORIES"
 			buttonFont = "cg_16b"
@@ -1024,12 +1311,11 @@ guiTypes = {
 			oversound = no_sound
 		}
 	}
-	
+
 	### SITUATION LOG ENTRY
 	containerWindowType = {
 		name = "situation_log_entry"
 		size = { width = 300 height = 48 }
-		
 
 		buttonType = {
 			name = "button"
@@ -1039,7 +1325,7 @@ guiTypes = {
 			clicksound = outliner_click_tab
 			oversound = no_sound
 		}
-		
+
 		iconType = {
 			name = "progressbar"
 			spriteType = "GFX_situation_log_progressbar"
@@ -1047,49 +1333,57 @@ guiTypes = {
 			position = { x = 14 y = 5 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "selected"
 			spriteType = "GFX_long_button_selected"
 			position = { x = 13 y = 5 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "cost_icon"
 			spriteType = "GFX_resource_physics"
 			position = { x = 263 y = 8 }
 			alwaysTransparent = yes
 		}
-		
+
+		iconType = {
+			name = "entry_icon_background"
+			spriteType = "GFX_invisible"
+			position = { x = 36 y = 25 }
+			alwaysTransparent = yes
+			centerPosition = yes
+		}
+
 		iconType = {
 			name = "entry_icon"
 			spriteType = "GFX_alert"
-			position = { x = 17 y = 6 }
+			position = { x = 36 y = 25 }
 			alwaysTransparent = yes
+			centerPosition = yes
 		}
-		
-		instantTextBoxType={
+
+		instantTextBoxType = {
 			name = "name"
 			font = "cg_16b"
 			text = "TITLE"
-			position = { x = -88 y = -16 }
-			maxWidth = 195
-			maxHeight = 33
+			position = { x = 62 y = 15 } # Set to "situation_log_situation_entry_name_position" for situation entries
+			maxWidth = 220
+			maxHeight = 20
 			fixedSize = yes
-			format = center
-			orientation = center
+			format = left
 			vertical_alignment = center
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "expand_button"
 			quadTextureSprite = "GFX_entry_expand"
 			position = { x = 255 y = 14 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "completed"
 			spriteType = "GFX_situation_log_tick"
@@ -1098,26 +1392,95 @@ guiTypes = {
 			alwaysTransparent = yes
 			scale = 0.8
 		}
-		
+
 		iconType = {
 			name = "tracked"
 			spriteType = "GFX_dot_orange_icon"
 			position = { x = 12 y = 4 }
 			tooltip = "SITUATION_LOG_TRACKED_TOOLTIP"
 		}
-		
+
 		smoothListBoxType = {
 			name = "subentries"
 			size = { x = 300 y = 1000 }
 			position = { x = 0 y = 40 }
 		}
+
+		# Dynamic element - See item with same name in situation_log.gui for documentation
+		containerWindowType = {
+			name = "situations_progress_subview"
+			position = { x = 20 y = 5 }
+			size = { width = 248 height = 100% }
+
+			iconType = {
+				name = "middle_indicator"
+				position = { x = 112 y = 21 }
+				spriteType = "GFX_situation_middle_indicator"
+				alwaystransparent = yes
+			}
+
+			containerWindowType = {
+				name = "situations_progress_bar_container_short" # The "_short" postfix makes the progress bar use short gfx variants
+				position = { x = 42 y = 20 }
+				size = { width = 140 height = 13 } # Used to position elements along the progress bar
+
+				iconType = {
+					name = "progress_bar_monodirectional"
+					position = { x = 0  y = 0 }
+					spriteType = "GFX_situation_event_progressbar_monodirectional_neutral_short" # Set in code
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "progress_bar_bidirectional_left"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_situation_event_progressbar_bidirectional_neutral_short_left" # Set in code
+					alwaystransparent = yes
+				}
+
+				iconType = {
+					name = "progress_bar_bidirectional_right"
+					position = { x = 71 y = 0 }
+					spriteType = "GFX_situation_event_progressbar_bidirectional_neutral_short_right" # Set in code
+					alwaystransparent = yes
+				}
+			}
+
+			iconType = {
+				name = "start_indicator"
+				position = { x = 42 y = 21 }
+				spriteType = "GFX_situation_start_indicator"
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "pin_icon"
+				position = { x = 205 y = 28 }
+				spriteType = "GFX_situation_progress_arrows" # Mirrored in code as needed
+				centerPosition = yes
+				alwaystransparent = yes
+			}
+
+			# Shows all numbers as positive. "pin_icon" indicates if it's negative or positive
+			instantTextBoxType = {
+				name = "monthly_change"
+				position = { x = 225 y = 20 }
+				font = "cg_16b"
+				maxWidth = 35
+				maxHeight = 15
+				format = left
+				vertical_alignment = center
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
 	}
-	
+
 	### SUB ENTRY
 	containerWindowType = {
 		name = "situation_log_subentry"
 		size = { width = 280 height = 48 }
-		
+
 		iconType = {
 			name = "first_branch"
 			spriteType = "GFX_situation_log_branches"
@@ -1125,7 +1488,7 @@ guiTypes = {
 			frame = 6
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "second_branch"
 			spriteType = "GFX_situation_log_branches"
@@ -1133,14 +1496,14 @@ guiTypes = {
 			frame = 6
 			alwaysTransparent = yes
 		}
-		
+
 		buttonType = {
 			name = "button"
 			quadTextureSprite = "GFX_short_button"
 			size = { x = 226 y = 40 }
 			position = { x = 30 y = 8 }
 		}
-		
+
 		iconType = {
 			name = "progressbar"
 			spriteType = "GFX_situation_log_progressbar_subentry"
@@ -1148,28 +1511,28 @@ guiTypes = {
 			position = { x = 35 y = 13 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "selected"
 			spriteType = "GFX_short_button_selected"
 			position = { x = 34 y = 13 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "cost_icon"
 			spriteType = "GFX_resource_physics"
 			position = { x = 263 y = 16 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "entry_icon"
 			spriteType = "GFX_alert"
 			position = { x = 39 y = 13 }
 			alwaysTransparent = yes
 		}
-		
+
 		instantTextBoxType={
 			name = "name"
 			font = "cg_16b"
@@ -1183,7 +1546,7 @@ guiTypes = {
 			vertical_alignment = center
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "completed"
 			spriteType = "GFX_situation_log_tick"
@@ -1192,33 +1555,120 @@ guiTypes = {
 			alwaysTransparent = yes
 			scale = 0.8
 		}
-		
+
 		iconType = {
 			name = "or"
 			spriteType = "GFX_situation_or_button"
 			position = { x = 153 y = -2 }
 		}
-		
+
 		iconType = {
 			name = "tracked"
 			spriteType = "GFX_dot_orange_icon"
 			position = { x = 33 y = 12 }
 			tooltip = "SITUATION_LOG_TRACKED_TOOLTIP"
 		}
+	}
 
+	### "Situations" Approach Button Entry
+	containerWindowType = {
+		name = "situation_approach_entry" # lives in situation_approach_grid
+		position = { x = 0 y = 0 }
+		size = { width = 100 height = 100 }
+		clipping = no
+
+		buttonType = {
+			name = "approach_button"
+			spriteType = "GFX_situation_approach_button"
+			position = { x = -3 y = -3 }
+		}
+
+		iconType = {
+			name = "selected"
+			position = { x = -3 y = -3 }
+			spriteType = "GFX_situation_approach_button_selected"
+		}
+
+		iconType = {
+			name = "approach_icon_bg"
+			position = { x = 47 y = 30 }
+			spriteType = "GFX_invisible" # Set in situation script
+			scale = 0.8
+			centerPosition = yes
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "approach_icon"
+			position = { x = 47 y = 30 }
+			spriteType = "GFX_invisible" # Set in situation script
+			scale = 0.8
+			centerPosition = yes
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "approach_text"
+			position = { x = 5 y = 45 }
+			font = "cg_16b"
+			format = center
+			multiline = yes
+			maxWidth = 83
+			maxHeight = 50
+			fixedSize = yes
+			vertical_alignment = center
+			alwaysTransparent = yes
+			text_color_code = "E"
+		}
+	}
+
+	### Situations Stage Entry
+	containerWindowType = { # Created dynamically in code
+		name = "situation_stage_entry"
+		# Position set in code
+		size = { width = 0 height = 32 } # Width set in code
+
+		buttonType = { # This is actually an icon, but icons can't scale so we're using a button
+			name = "stage_range"
+			position = { x = 0 y = -3 }
+			size = { x = 0 y = 5 } # Width set in code
+			quadTextureSprite = "GFX_situation_tile_range" # Postfixed with "_highlighted" to find highlight state gfx
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "stage_icon_background"
+			position = { x = 0 y = 15 } # X coordinate set in code
+			spriteType = "GFX_invisible"
+			scale = 0.65
+			centerPosition = yes
+		}
+
+		iconType = {
+			name = "stage_icon"
+			position = { x = 0 y = 15 } # X coordinate set in code
+			spriteType = "GFX_invisible"
+			scale = 0.75
+			centerPosition = yes
+		}
 	}
 
 	###
 	containerWindowType = {
 		name = "situation_log_event_chain_counter"
-		size = { width = 460 height = 20 }
-		
+		size = { width = 410 height = 32 }
+
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_tiles_light_area_cut_8"
+		}
+
 		instantTextBoxType={
 			name = "name"
 			font = "cg_16b"
 			text = ""
-			position = { x = 5 y = 0 }
-			maxWidth = 340
+			position = { x = 10 y = 7 }
+			maxWidth = 280
 			maxHeight = 20
 			fixedSize = yes
 			format = left
@@ -1228,8 +1678,8 @@ guiTypes = {
 			name = "value"
 			font = "cg_16b"
 			text = "0/0"
-			position = { x = 390 y = 0 }
-			maxWidth = 64
+			position = { x = 320 y = 7 }
+			maxWidth = 70
 			maxHeight = 20
 			fixedSize = yes
 			format = right
@@ -1240,7 +1690,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "situation_log_anomaly_item"
 		size = { width = 300 height = 48 }
-		
+
 		buttonType = {
 			name = "button"
 			quadTextureSprite = "GFX_long_button"
@@ -1256,39 +1706,39 @@ guiTypes = {
 			position = { x = 14 y = 5 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "selected"
 			spriteType = "GFX_long_button_selected"
 			position = { x = 13 y = 5 }
 			alwaysTransparent = yes
 		}
-		
+
 		iconType = {
 			name = "icon"
 			spriteType = "GFX_situation_log_anomaly_levels"
 			position = { x = 17 y = 6 }
 			alwaysTransparent = yes
 		}
-		
+
 		instantTextBoxType={
 			name = "name"
 			font = "cg_16b"
-			position = { x = 40 y = 10 }
+			position = { x = 62 y = 15 }
 			maxWidth = 220
-			maxHeight = 33
+			maxHeight = 20
 			fixedSize = yes
-			format = center
+			format = left
 			vertical_alignment = center
 			alwaysTransparent = yes
 		}
 	}
-	
+
 	### VICTORY CONDITION EMPIRE ITEM
 	containerWindowType = {
 		name = "victory_empire_item"
 		size = { width = 300 height = 48 }
-		
+
 		buttonType = {
 			name = "button"
 			quadTextureSprite = "GFX_long_button"
@@ -1297,32 +1747,32 @@ guiTypes = {
 			clicksound = outliner_click_tab
 			oversound = no_sound
 		}
-		
+
 		buttonType = {
 			name = "empire_flag"
 			quadTextureSprite = "GFX_empire_flag_32"
 			position = { x = 18 y = 10 }
-		}		
-				
+		}
+
 		iconType = {
 			name = "selected"
 			spriteType = "GFX_long_button_selected"
 			position = { x = 13 y = 5 }
 			alwaysTransparent = yes
 		}
-		
+
 		instantTextBoxType={
 			name = "name"
 			font = "cg_16b"
 			text = "TITLE"
 			position = { x = 55 y = 10 }
-			maxWidth = 200
+			maxWidth = 220
 			maxHeight = 10
 			fixedSize = yes
 			format = left
 			alwaysTransparent = yes
 		}
-		
+
 		instantTextBoxType={
 			name = "score"
 			font = "cg_16b"

@@ -3,7 +3,7 @@ guiTypes = {
 	# Box which holds all small icons, one for each war
 	containerWindowType = {
 		name = "waroverview_list"
-		position = { x = 61 y = -110 }
+		position = { x = 55 y = -120 }
 		size = { width = 80 height = 100 }
 		moveable = no
 		orientation = lower_right
@@ -13,7 +13,7 @@ guiTypes = {
 			position = { x = -295 y = -30 }
 			size = { x=245 y=100 }
 			format = right
-			spacing = 4
+			spacing = 10
 		}
 	}
 
@@ -890,7 +890,7 @@ guiTypes = {
 
 				iconType = {
 					name = "war_goal_icon"
-					position = { x = 23 y = 25 }
+					position = { x = 24 y = 25 }
 					centerPosition = yes
 					spriteType = "GFX_alliance_vote_status"
 					alwaysTransparent = yes
@@ -1035,7 +1035,7 @@ guiTypes = {
 
 				iconType = {
 					name = "war_goal_icon"
-					position = { x = 23 y = 25 }
+					position = { x = 24 y = 25 }
 					centerPosition = yes
 					spriteType = "GFX_alliance_vote_status"
 					alwaysTransparent = yes

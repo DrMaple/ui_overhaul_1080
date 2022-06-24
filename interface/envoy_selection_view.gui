@@ -1,11 +1,14 @@
+@dynamic_extra = 0.0
 guiTypes = {
 
 	### Envoy selection dialog
 	containerWindowType = {
 		name = "envoy_selection_dialog"
-		position = { x = -250 y = -340 }
+#		position = { x = 545 y = 548 }
 		size = { width = 545 height = 758 }
+		dynamic_extra_height = @dynamic_extra
 		orientation = center
+		origo = center
 		moveable = yes
 
 		background = {
@@ -110,6 +113,7 @@ guiTypes = {
 			position = { x = 20 y = 195 }
 			orientation = upper_left
 			size = { x = 495 y = 496 }
+			dynamic_extra_height = @dynamic_extra
 			borderSize = { x = 0 y = 0 }
 			scrollbartype = "standardlistbox_slider"
 			autohide_scrollbar = yes
@@ -180,6 +184,7 @@ guiTypes = {
 			background = {
 				name = "envoy_selection_entry_background"
 				quadTextureSprite = "GFX_tiles_frame_light"
+				alwaysTransparent = yes
 			}
 		}
 
@@ -228,7 +233,8 @@ guiTypes = {
 		iconType = {
 			name = "action_icon"
 			quadTextureSprite = "GFX_empire_flag_32"
-			position = { x= 70 y = 40  }
+			position = { x= 70 y = 40 }
+			scale = 0.85
 		}
 		
 		instantTextBoxType = {

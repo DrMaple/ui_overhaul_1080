@@ -1,14 +1,19 @@
+@dynamic_extra = 0.3
+@dynamic_extra_half = 0.15
+					
 guiTypes = {
 	# this controls the size of the 3d viewport ui element
 	positionType = {
-		name = "3d_view_size"
-		position = { x=992 y=635 } #mod
+		name = "ship_designer_3d_view_size"
+		position = { x=740 y=634 }
+		dynamic_extra_height = @dynamic_extra							   
 	}
 
 	#required slots are for instance FTL, combat computer, science lab
 	positionType = {
 		name = "required_slots_position"
-		position = { x=1200 y=374 } #mod
+		position = { x=945 y=374 }
+		dynamic_extra_height = @dynamic_extra_half									
 	}
 	positionType = {
 		name = "utilities_help_text_high_y"
@@ -30,10 +35,12 @@ guiTypes = {
 		position = { x = -1280 y = 40 }
 		show_position = { x = 35 y = 40 }
 		hide_position = { x = -1280 y = 40 }
-		animation_time = 100 #mod
+		animation_time = 100
 		animation_type = decelerated
-		size = { width = 1272 height = 945 } #mod
+		size = { width = 1011 height = 900 }
+		dynamic_extra_height = @dynamic_extra							   
 		Orientation = upper_left
+		show_sound = "interface"
 
 		background = {
 			name = "background"
@@ -45,14 +52,14 @@ guiTypes = {
 			quadTextureSprite = "GFX_dummy_3d_ship_view"
 			position = { x= 266 y = 40 }
 			size = { x=960 y=500 }
-			scale = 1.
+			scale = 1.0
 			oversound = no_sound
 		}
 
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 29 y = -12 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 
@@ -67,7 +74,7 @@ guiTypes = {
 			name = "design_name"
 			font = "malgun_goth_24"
 			text = "SHIPDESIGNER"
-			position = { x = 64 y = 5 }
+			position = { x = 35 y = 5 }
 			maxWidth = 400
 			maxHeight = 20
 			fixedsize = yes
@@ -93,21 +100,36 @@ guiTypes = {
 			vertical_alignment = center
 		}
 
+		containerWindowType = {
+			name = "list_dark_bg"
+			position = { x = 17 y = 38 }
+			size = { width = 231 height = 802 }
+			dynamic_extra_height = @dynamic_extra
+			background = {
+				name = "dark_bg"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+				alwaysTransparent = yes
+			}
+		}	
+		
 		smoothListBoxType = {
 			name ="designs_list"
 			position = { x=22 y=40 }
 			orientation = "UPPER_LEFT"
 			priority = 100
-			size = { x=210 y=870 } #mod
+			size = { x=210 y=798 }
+			dynamic_extra_height = @dynamic_extra							
 			borderSize = { x=0 y=0 }
+			spacing = -3
 			scrollbartype = "standardlistbox_slider"
+			autohide_scrollbar = no			  
 		}
 
 		instantTextBoxType={
 			name = "weapons_help_text"
 			font = "cg_16b"
 			text = "SHIP_DESIGN_WEAPONS_START_HELP"
-			position = { x= 401 y= 165 }
+			position = { x= 260 y= 165 }
 			maxWidth = 728
 			maxHeight = 20
 			fixedsize = yes
@@ -133,7 +155,7 @@ guiTypes = {
 			name = "utilities_help_text"
 			font = "cg_16b"
 			text = "SHIP_DESIGN_UTILITIES_START_HELP"
-			position = { x= 401 y= 535 }
+			position = { x= 260 y= 535 }
 			maxWidth = 728
 			maxHeight = 20
 			fixedsize = yes
@@ -166,16 +188,16 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "info"
-			position = { x=-174 y=30 }
+			position = { x=350 y=-225 }
 			size = { width = 170 height = 565 }
 			moveable = no
-			Orientation = upper_right
+			Orientation = lower_left
 
 
 			containerWindowType = {
 				name = "info_bg_box"
-				size = { width = 542 height = 230 }
-				position = { x = -833 y = 680 }
+				size = { width = 488 height = 190 }
+				position = { x = -81 y = 30 }
 
 					background = {
 						name = "info_bg_box"
@@ -185,8 +207,8 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "background_box_02"
-				size = { width = 244 height = 230 }
-				position = { x = -81 y = 680 }
+				size = { width = 244 height = 190 }
+				position = { x = 412 y = 30 }
 
 					background = {
 						name = "buttons_bg"
@@ -198,10 +220,10 @@ guiTypes = {
 				name = "ship_label"
 				font = "malgun_goth_24"
 				text = "SHIP_NAME_STATS"
-				position = { x = -833 y = 650 }
-				maxWidth = 400
+				position = { x = -72 y = 2 }
+				maxWidth = 200
 				maxHeight = 20
-				text_color_code = "H"
+				#text_color_code = "H"
 				fixedsize = yes
 			}
 
@@ -209,16 +231,14 @@ guiTypes = {
 				name = "ship_name_label"
 				font = "malgun_goth_24"
 				text = "SHIP_NAME_LABEL"
-				position = { x = -80 y = 650 }
+				position = { x = 420 y = 2 }
 				maxWidth = 270
 				maxHeight = 20
 				#text_color_code = "H"
 			}
 
-			@label_x = -820
-			@value_x = -720
-			@value_x2 = -400
-			@label_x2 = -540
+			@label_x = -72
+			@value_x = -10
 			
 			
 			containerWindowType = {
@@ -229,7 +249,7 @@ guiTypes = {
 					name = "production"
 					font = "malgun_goth_24"
 					text = "PRODUCTION_COST"
-					position = { x= -820 y= 680 }
+					position = { x= -72 y= 32 }
 					maxWidth = 230
 					maxHeight = 20
 					fixedsize = yes
@@ -241,8 +261,8 @@ guiTypes = {
 					name = "cost"
 					font = "cg_16b"
 					text = "SHIP_STAT_COST"
-					position = { x= @label_x y= 705 }
-					maxWidth = 95
+					position = { x= @label_x y= 100 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -252,11 +272,11 @@ guiTypes = {
 					name = "cost_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x y= 705 }
-					maxWidth = 165
-					maxHeight = 20
+					position = { x= @value_x y= 100 }
+					maxWidth = 160
+					maxHeight = 40
 					fixedsize = yes
-					format = left
+					format = right
 					text_color_code = "Y"
 				}
 
@@ -264,8 +284,8 @@ guiTypes = {
 					name = "build_time"
 					font = "cg_16b"
 					text = "SHIP_STAT_BUILD_TIME"
-					position = { x= @label_x y= 730 }
-					maxWidth = 95
+					position = { x= @label_x y= 60 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -275,11 +295,11 @@ guiTypes = {
 					name = "build_time_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x y= 730 }
-					maxWidth = 165
+					position = { x= @value_x y= 60 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 					text_color_code = "Y"
 				}
 
@@ -287,8 +307,8 @@ guiTypes = {
 					name = "upkeep"
 					font = "cg_16b"
 					text = "SHIP_STAT_ENERGY_MAINTENENCE"
-					position = { x= @label_x y= 755 }
-					maxWidth = 95
+					position = { x= @label_x y= 80 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -298,18 +318,22 @@ guiTypes = {
 					name = "upkeep_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x y= 755 }
-					maxWidth = 165
+					position = { x= @value_x y= 80 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
-				}				
-
+					format = right
+					text_color_code = "Y"
+				}
+				
+				@stats_x = 190
+				@statsv_x = 222
+				
 				instantTextBoxType={
 					name = "combat"
 					font = "malgun_goth_24"
 					text = "SHIP_STATS"
-					position = { x=-540 y= 680 }
+					position = { x= @stats_x y= 32 }
 					maxWidth = 230
 					maxHeight = 20
 					fixedsize = yes
@@ -321,8 +345,8 @@ guiTypes = {
 					name = "power"
 					font = "cg_16b"
 					text = "SHIP_STAT_POWER_USAGE"
-					position = { x= @label_x2 y= 705 }
-					maxWidth = 95
+					position = { x= @stats_x y= 60 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -332,19 +356,19 @@ guiTypes = {
 					name = "power_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 705 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 60 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "hitpoints"
 					font = "cg_16b"
 					text = "SHIP_STAT_HITPOINTS"
-					position = { x= @label_x2 y= 730 }
-					maxWidth = 95
+					position = { x= @stats_x y= 80 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -354,19 +378,19 @@ guiTypes = {
 					name = "hitpoints_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 730 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 80 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "armor"
 					font = "cg_16b"
 					text = "SHIP_STAT_ARMOR"
-					position = { x= @label_x2 y= 755 }
-					maxWidth = 95
+					position = { x= @stats_x y= 100 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -376,19 +400,19 @@ guiTypes = {
 					name = "armor_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 755 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 100 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "shields"
 					font = "cg_16b"
 					text = "SHIP_STAT_SHIELDS"
-					position = { x= @label_x2 y= 780 }
-					maxWidth = 95
+					position = { x= @stats_x y= 120 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -398,19 +422,19 @@ guiTypes = {
 					name = "shields_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 780 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 120 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "evasion"
 					font = "cg_16b"
 					text = "SHIP_STAT_EVASION"
-					position = { x= @label_x2 y= 805 }
-					maxWidth = 95
+					position = { x= @stats_x y= 140 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -420,19 +444,19 @@ guiTypes = {
 					name = "evasion_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 805 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 140 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "speed"
 					font = "cg_16b"
 					text = "SHIP_STAT_SPEED"
-					position = { x= @label_x2 y= 830 }
-					maxWidth = 95
+					position = { x= @stats_x y= 160 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -442,19 +466,19 @@ guiTypes = {
 					name = "speed_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 830 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 160 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "damage"
 					font = "cg_16b"
 					text = "SHIP_STAT_DAMAGE"
-					position = { x= @label_x2 y= 855 }
-					maxWidth = 95
+					position = { x= @stats_x y= 180 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
 					format = left
@@ -464,19 +488,19 @@ guiTypes = {
 					name = "damage_value"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 855 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 180 }
+					maxWidth = 160
 					maxHeight = 20
 					fixedsize = yes
-					format = left
+					format = right
 				}
 
 				instantTextBoxType={
 					name = "special"
 					font = "cg_16b"
 					text = "SHIP_STAT_SPECIAL"
-					position = { x= @label_x2 y= 880 }
-					maxWidth = 105
+					position = { x= @stats_x y= 200}
+					maxWidth = 200
 					maxHeight = 2000
 					fixedsize = yes
 					format = left
@@ -486,18 +510,18 @@ guiTypes = {
 					name = "special_values"
 					font = "cg_16b"
 					text = ""
-					position = { x= @value_x2 y= 880 }
-					maxWidth = 95
+					position = { x= @statsv_x y= 200 }
+					maxWidth = 160
 					maxHeight = 2000
 					fixedsize = yes
-					format = left
+					format = right
 				}
 			}
 		}
 
 		containerWindowType = {
 			name = "controls"
-			position = { x=265 y=650 }
+			position = { x=3 y=872 }
 			size = { width=495 height=60 }
 			moveable = yes
 			Orientation = upper_left
@@ -510,33 +534,33 @@ guiTypes = {
 			iconType = {
 				name ="ship_designer_rename_box"
 				spriteType = "GFX_ship_designer_rename_box"
-				position = { x= 788 y = 75 }
+				position = { x= 783 y = -155 }
 			}
 			
 			buttonType = {
 				name = "randomize_name"
-				position = { x= 957 y = 69 }
+				position = { x= 952 y = -161 }
 				spriteType = "GFX_button_randomize"
 				pdx_tooltip = "SHIP_DESIGN_NAME_RANDOMIZE_TOOLTIP"
 				clicksound = randomizer_click
-			}		
+			}				
 			
 			buttonType = {
 				name = "save"
 				quadTextureSprite = "GFX_standard_button_142_34_button"
-				position = { x= 790 y = 100 }
+				position = { x= 790 y = -135 }
 				Orientation = "UPPER_LEFT"
 				buttonFont = "cg_16b"
 				buttonText = "SAVE"
 				clicksound = confirm_click
 				oversound = no_sound
-			}
+			}		
 			
 			instantTextBoxType = {
 				name = "upgrade_ship_components_label"
 				font = "cg_16b"
 				text = "SHIP_COMPONENTS_AUTO_GENERATE"
-				position = { x = 907  y = -30 }
+				position = { x = 827  y = -70 }
 				maxWidth = 220
 				maxHeight = 30
 				Orientation = "LOWER_LEFT"
@@ -547,7 +571,7 @@ guiTypes = {
 			
 			checkboxType = {
 				name = "upgrade_ship_components"
-				position = { x = 877 y = -30 }
+				position = { x = 797 y = -70 }
 				quadTextureSprite = "GFX_checkbox_20_20_01"
 				Orientation = "LOWER_LEFT"
 			}
@@ -555,7 +579,7 @@ guiTypes = {
 			buttonType = {
 				name = "finish"
 				quadTextureSprite = "GFX_standard_button_142_34_button"
-				position = { x= 790 y = 100 }
+				position = { x= 790 y = -157 }
 				Orientation = "LOWER_LEFT"
 				buttonFont = "cg_16b"
 				buttonText = "FINISH_DESIGN"
@@ -564,20 +588,20 @@ guiTypes = {
 			buttonType = {
 				name = "clear_design"
 				quadTextureSprite = "GFX_standard_button_142_34_button"
-				position = { x= 790 y = 140 }
+				position = { x= 790 y = -119 }
 				Orientation = "LOWER_LEFT"
 				buttonFont = "cg_16b"
 				buttonText = "CLEAR_DESIGN"
 			}
 
 			editBoxType = { 	instantTextBoxType = yes #TODO for better font rendering remove "instantTextBoxType = no" and make a background with an icon
-				position = { x= 793 y = 80 }
+				position = { x= 793 y = -150 }
 				name = "rename_box"
 				font = "cg_16b"
 				size = { x=160 y=20 }
 				text = "select name"
 				orientation = "UPPER_LEFT"
-				cursor = { x = -1 y = -3 }
+				cursor = { x = -1 y = -5 }
 			}
 		}
 
@@ -595,7 +619,7 @@ guiTypes = {
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
 		}
-			}
+	}
 
 	# Ship Design Size Action menu
 	containerWindowType = {
@@ -632,7 +656,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "selector"
 		position = { x=-200 y=-150 }
-		size = { width=340 height=470 }
+		size = { width=340 height=420 }
 		moveable = yes
 		Orientation = center
 
@@ -665,7 +689,7 @@ guiTypes = {
 			position = { x=33 y=75 }
 			orientation = "UPPER_LEFT"
 			priority = 100
-			size = { x=268 y=380 }
+			size = { x=268 y=330 }
 			borderSize = { x=0 y=0 }
 			scrollbartype = "standardlistbox_slider"
 		}
@@ -724,7 +748,7 @@ guiTypes = {
 
 	positionType = {
 		name = "section_entries_per_row"
-		position = { x = 3 y = 0 }
+		position = { x = 2 y = 0 }
 	}
 	containerWindowType = {
 		name = "section_entry_row"
@@ -761,15 +785,15 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "section_entry"
-		position = { x=80 y=0 }
-		size = { width = 260 height = 275 }
+		position = { x=0 y=0 }
+		size = { width = 278 height = 275 }
 		moveable = no
 
 
 
 		containerWindowType = {
 			name = "section_entry_bg"
-			size = { width = 250 height = 275 }
+			size = { width = 280 height = 275 }
 			position = { x = 0 y = 0 }
 
 				background = {
@@ -783,7 +807,7 @@ guiTypes = {
 			font = "malgun_goth_24"
 			text = ""
 			position = { x= 0 y= 8 }
-			maxWidth = 260
+			maxWidth = 280
 			maxHeight = 30
 			fixedsize = yes
 			format = center
@@ -792,8 +816,8 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "setting_bg_box22"
-			size = { width = 220 height = 145 }
-			position = { x = 15 y = 30 }
+			size = { width = 220 height = 135 }
+			position = { x = 30 y = 35 }
 
 				background = {
 					name = "setting_bg_frame22"
@@ -805,22 +829,22 @@ guiTypes = {
 		iconType = {
 			name = "ship_part_bg_area"
 			spriteType = "GFX_ship_part_bg"
-			position = { x = 20 y = 45 }
+			position = { x = 35 y = 40 }
 			alwaysTransparent = yes
 		}
 
 		buttonType = {
 			name = "render_target"
 			quadTextureSprite = "GFX_dummy_3d_section_entry"
-			position = { x = 20 y = 35 }
-			size = { x = 210 y = 135 }
+			position = { x = 35 y = 40 }
+			size = { x = 210 y = 125 }
 		}
 
 		instantTextBoxType={
 			name = "weapons_label"
 			font = "cg_16b"
 			text = "SECTION_ENTRY_WEAPON_SLOTS"
-			position = { x= 0 y= 175 }
+			position = { x= 10 y= 175 }
 			maxWidth = 260
 			maxHeight = 30
 			fixedsize = yes
@@ -829,7 +853,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "weapon_slots"
-			position = { x = 5 y = 193 }
+			position = { x = 15 y = 193 }
 			size = { x = 260 y = 30 }
 			spacing = 0.0
 			format = center
@@ -839,7 +863,7 @@ guiTypes = {
 			name = "utility_label"
 			font = "cg_16b"
 			text = "SECTION_ENTRY_UTILITY_SLOTS"
-			position = { x= 0 y= 222 }
+			position = { x= 10 y= 222 }
 			maxWidth = 260
 			maxHeight = 30
 			fixedsize = yes
@@ -848,7 +872,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "utility_slots"
-			position = { x = 5 y = 240 }
+			position = { x = 15 y = 240 }
 			size = { x = 260 y = 30 }
 			spacing = 0.0
 			format = center
@@ -1075,7 +1099,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "component_slot"
-		position = { x=150 y=-5 }
+		position = { x=22 y=-5 }
 		size = { width = 54 height = 54 }
 		moveable = no
 
@@ -1116,54 +1140,49 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "ship_design_entry"
-		size = { width = 250 height = 60 }
+		size = { width = 158 height = 71 }
 
-		iconType = {
-			name = "bg"
-			spriteType = "GFX_ship_design_entry_bg"
-			position = { x = 3 y = 3 }
-		}
-		
-		OverlappingElementsBoxType = {
-			name = "icons"
-			position = { x = 180 y = -10 }
-			size = { x = 128 y = 24 }	#same position as 3d_view and same size as 3d_view_size
-			spacing = 10
-			format = left
-		}
+		#iconType = {
+		#	name = "bg"
+		#	spriteType = "GFX_ship_design_entry_bg"
+		#	position = { x = 3 y = 5 }
+		#}
 
 		buttonType = {
 			name = "render_target"
 			quadTextureSprite = "GFX_dummy_3d_design_entry"
-			position = { x = 4 y = 16 }
-			size = { x = 206 y = 70 }
-			position = { x = 70 y = 5 }
-			size = { x = 206 y = 65 }
-			scale = .77
+			position = { x = 3 y = 5 }
+			size = { x = 206 y = 62 }
 		}
 		buttonType = {
 			name = "button"
-			position = { x = -5 y = 0 }
+			position = { x = -3 y = 0 }
 			quadTextureSprite = "GFX_ship_design_entry_button"
 			oversound = no_sound
-			size = {x = 200 y = 65}
 		}
 		buttonType = {
 			name = "delete"
 			quadTextureSprite = "GFX_fleet_disband"
 			orientation = "UPPER_RIGHT"
-			position = { x = -60 y = 11 }
+			position = { x = 25 y = 12 }
+		}
+		OverlappingElementsBoxType = {
+			name = "icons"
+			position = { x = 10 y = 58 }
+			size = { x = 128 y = 24 }	#same position as 3d_view and same size as 3d_view_size
+			spacing = 10
+			format = left
 		}
 		instantTextBoxType = {
 			name = "label"
 			font = "cg_16b"
 			text = ""
 			text_color_code = "H"
-			position = { x= 6 y= 4}
-			maxWidth = 185
-			maxHeight = 40
+			position = { x= 13 y= 47}
+			maxWidth = 190
+			maxHeight = 15
 			fixedsize = yes
-			format = left
+			format = right
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
@@ -1171,7 +1190,7 @@ guiTypes = {
 			font = "cg_16b"
 			text = "AUTO_GENERATED_BEST"
 			text_color_code = "H"
-			position = { x= 6 y= 39 }
+			position = { x= 6 y= 8 }
 			maxWidth = 170
 			maxHeight = 40
 			fixedsize = yes
@@ -1182,26 +1201,26 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "new_ship_design_entry"
-		size = { width = 128 height = 50 }
+		size = { width = 128 height = 90 }
 
-		#iconType = {
-		#	name = "bg"
-		#	spriteType = "GFX_ship_design_entry_bg"
-		#	position = { x = 3 y = 1 }
-		#}
+		iconType = {
+			name = "bg"
+			spriteType = "GFX_ship_design_entry_bg"
+			position = { x = 3 y = 1 }
+		}
 		buttonType = {
 			name = "button"
-			position = { x = -5 y = 0 }
-			#quadTextureSprite = "GFX_ship_design_entry_button"
-			quadTextureSprite = "GFX_tiles_frame_light"
-			size = {x = 220 y = 50}
+			position = { x = -3 y = -3 }
+			quadTextureSprite = "GFX_ship_design_entry_button"
+			clicksound = confirm_click
+			oversound = no_sound
 		}
 
 		instantTextBoxType = {
 			name = "label"
 			font = "cg_16b"
 			text = "NAME HERE"
-			position = { x= 0 y= 17 }
+			position = { x= 0 y= 38 }
 			maxWidth = 206
 			maxHeight = 40
 			fixedsize = yes
@@ -1240,7 +1259,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "section_instance_entry"
-		size = { width = 162 height = 565 }
+		size = { width = 172 height = 565 }
+		dynamic_extra_height = @dynamic_extra							   
 
 		containerWindowType = {
 			name = "is_empty"
@@ -1251,7 +1271,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "section_cue_bg_box"
 				size = { width = 170 height = 40 }
-				position = { x = 158 y = 119 }
+				position = { x = 28 y = 119 }
 
 					background = {
 						name = "section_cue_bg"
@@ -1263,7 +1283,7 @@ guiTypes = {
 				name = "label"
 				font = "cg_16b"
 				text = "SELECT_SECTION"
-				position = { x= 40 y= 130 }
+				position = { x= -90 y= 130 }
 				maxWidth = 400
 				maxHeight = 120
 				fixedsize = yes
@@ -1278,7 +1298,7 @@ guiTypes = {
 		buttonType = {
 			name = "change_section"
 			quadTextureSprite = "GFX_button_164_24"
-			position = { x = 147 y = -29 }
+			position = { x = 18 y = -29	}
 			font = "cg_16b"
 			clicksound = confirm_click
 		}
@@ -1286,14 +1306,14 @@ guiTypes = {
 		iconType = {
 			name = "ship_designer_black_fade_upper"
 			spriteType = "GFX_ship_designer_black_fade_upper"
-			position = { x = 154 y = 10 }
+			position = { x = 25 y = 10 }
 			alwaystransparent = yes
 		}
 
 		iconType = {
 			name = "ship_designer_black_fade_lower"
 			spriteType = "GFX_ship_designer_black_fade_lower"
-			position = { x = 154 y = 459 }
+			position = { x = 25 y = 459 }
 			alwaystransparent = yes
 		}
 
@@ -1301,7 +1321,7 @@ guiTypes = {
 			name = "weapon_slots"
 			slotSize = { width = 56 height = 56 }
 			max_slots_horizontal = 3
-			max_slots_vertical = 6
+			max_slots_vertical = 5
 			format = "UPPER_LEFT"
 			size = { width = 12 height = 270 }
 			position = { x = 4 y = 15 }
@@ -1310,7 +1330,7 @@ guiTypes = {
 			name = "utility_slots"
 			slotSize = { width = 56 height = 56 }
 			max_slots_horizontal = 3
-			max_slots_vertical = 6
+			max_slots_vertical = 5
 			Orientation = "LOWER_LEFT"
 			format = "LOWER_LEFT"
 			size = { width = 162 height = 270 }
@@ -1320,28 +1340,28 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "section_select_window"
-		position = { x = 193 y = 80 }
-		size = { width = 788 height = 615 }
+		position = { x = 1048 y = 49 }
+		size = { width = 583 height = 891 }
 		moveable = yes
 	#	Orientation = "CENTER_UP"
 
 		background = {
 			name = "background"
-			quadTextureSprite = "GFX_tile_header_bg"
-			position = { x = 80 y = 0 }
+			quadTextureSprite = "GFX_tile_outliner_bg"
+			position = { x = 0 y = 0 }
 		}
 
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 75 y = -10 }
+			position = { x = -5 y = -10 }
 			alwaysTransparent = yes
 		}
 
 		iconType = {
 			name = "empire_header_line"
 			quadTextureSprite = "GFX_line"
-			position = { x = 91 y = 27 }
+			position = { x = 11 y = 27 }
 			alwaysTransparent = yes
 		}
 
@@ -1349,7 +1369,7 @@ guiTypes = {
 			name = "choose_section_label"
 			font = "malgun_goth_24"
 			text = "CHOOSE_SECTION"
-			position = { x = 107 y = 8 }
+			position = { x = 27 y = 8 }
 			maxWidth = 170
 			maxHeight = 20
 			Orientation = "UPPER_LEFT"
@@ -1360,8 +1380,8 @@ guiTypes = {
 
 		smoothListBoxType = {
 			name = "list"
-			position = { x = 92 y = 53 }
-			size = { x = 840 y = 550 }
+			position = { x = 12 y = 53 }
+			size = { x = 555 y = 825 }
 			scrollbartype = "standardlistbox_slider"
 		}
 
@@ -1369,7 +1389,7 @@ guiTypes = {
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
-			position = { x= -35 y = 16  } #modx=-35y=16
+			position = { x= -45 y = 16  }
 			Orientation = "UPPER_RIGHT"
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
@@ -1379,7 +1399,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "component_select_window"
 		position = { x = 0 y = 0  }
-		size = { width = 265 height = 942 }
+		size = { width = 265 height = 675 }
+		dynamic_extra_height = @dynamic_extra							   
 
 
 		moveable = no
@@ -1453,10 +1474,23 @@ guiTypes = {
 			format = left
 			vertical_alignment = center
 		}
+
+		containerWindowType = {
+			name = "list_dark_bg"
+			position = { x = 5 y = 149 }
+			size = { width = 250 height = 480 }
+			dynamic_extra_height = @dynamic_extra
+			background = {
+				name = "dark_bg"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+				alwaysTransparent = yes
+			}
+		}
 		smoothListBoxType = {
 			name = "list"
 			position = { x = 10 y = 150 }
-			size = { x = 240 y = 732 }
+			size = { x = 240 y = 485 }
+			dynamic_extra_height = @dynamic_extra							
 			scrollbartype = "standardlistbox_slider"
 		}
 
@@ -1473,7 +1507,7 @@ guiTypes = {
 		buttonType = {
 			name = "apply_on_empty"
 			quadTextureSprite = "GFX_standard_button_142_34_button"
-			position = { x= 5 y = 860 }
+			position = { x= 45 y = 626 }
 			Orientation = "UPPER_LEFT"
 			buttonFont = "cg_16b"
 			buttonText = "APPLY_ON_EMPTY"

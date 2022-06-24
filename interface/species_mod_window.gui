@@ -133,14 +133,20 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "current_traits_container"
-			size = { width = 292 height = 84 }
+			size = { width = 298 height = 84 }
 			verticalScrollbar = "right_vertical_slider"
 			position = { x = 17 y = 201 }
+			verticalScrollbar = "right_vertical_slider_s"
+
+			background = {
+				name = "current_traits_container_bg"
+				spriteType = "GFX_invisible"
+			}									
 
 			gridBoxType = {
 				name = "traits"
 				slotSize = { width = 42 height = 45 }
-				max_slots_horizontal = 6
+				max_slots_horizontal = 9
 				format = "UPPER_LEFT"
 			}
 		}
@@ -178,9 +184,14 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "planet_class_traits_container"
-			size = { width = 322 height = 45 }
-			verticalScrollbar = "right_vertical_slider"
+			size = { width = 389 height = 45 }
 			position = { x = 17 y = 276 }
+			verticalScrollbar = "right_vertical_slider_s"
+
+			background = {
+				name = "planet_class_traits_container_bg"
+				spriteType = "GFX_invisible"
+			}									
 
 			gridBoxType = {
 				name = "traits"
@@ -201,8 +212,8 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "possible_traits_frame_box"
-			size = { width = 395 height = 280 }
-			position = { x = 10 y = 345 }		
+			size = { width = 390 height = 280 }
+			position = { x = 10 y = 345 }
 
 			background = {
 				name = "possible_traits_frame"
@@ -213,8 +224,12 @@ guiTypes = {
 			name = "available_traits_container"
 			size = { width = 385 height = 270 }
 			verticalScrollbar = "right_vertical_slider"
-			position = { x = 17 y = 355 }
-
+			position = { x = 15 y = 350 }
+			background = {
+				name = "BG_available_traits"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 0 y = -4 }
+			}
 			gridBoxType = {
 				name = "traits"
 				slotSize = { width = 38 height = 36 }
@@ -226,7 +241,7 @@ guiTypes = {
 		buttonType = {
 			name = "create_new_template"
 			quadTextureSprite = "GFX_standard_button_142_34_button"
-			position = { x = 2 y = -60 }
+			position = { x = 5 y = -60 }
 			orientation = "LOWER_LEFT"
 			text = "CREATE_NEW_SPECIES_MOD_TEMPLATE_BUTTON"
 			font = "cg_16b"

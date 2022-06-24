@@ -1,9 +1,12 @@
+@dynamic_extra = 0.8
+
 guiTypes = {
 	@species_entry_info_height = 18
 
 	containerWindowType = {
 		name = "topbar_species_view"
 		size = { width = 1272 height = 940 } 
+		dynamic_extra_height = @dynamic_extra
 		
 		position = { x = -1270 y = 40 }
 		show_position = { x = 35 y = 40 }
@@ -24,7 +27,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 29 y = -12 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 		
@@ -39,7 +42,7 @@ guiTypes = {
 			name = "species_header"
 			font = "malgun_goth_24"
 			text = "topbar_button_species_name"
-			position = { x = 65 y = 5 }
+			position = { x = 35 y = 5 }
 			maxWidth = 300
 			maxHeight = 20
 			fixedSize = yes
@@ -49,7 +52,7 @@ guiTypes = {
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
-			position = { x = -41 y = 13 }
+			position = { x = -45 y = 16 }
 			orientation = upper_right
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
@@ -66,7 +69,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "info_box"
 				position = { x=11 y=59 }
-				size = { width = 400 height= 570 }
+				size = { width = 400 height= 870 }
 	        
 				background = {
 					name = "area51"
@@ -79,6 +82,7 @@ guiTypes = {
 				name = "empire_list"
 				position = { x=421 y=141 }
 				size = { width= 840 height= 788 }
+				dynamic_extra_height = @dynamic_extra
 	        
 				background = {
 					name = "area51"
@@ -234,7 +238,7 @@ guiTypes = {
 				name = "empire_or_galaxy_label"
 				font = "cg_16b"
 				maxWidth = 200
-				position = { x = 585 y = 68 }
+				position = { x = 580 y = 68 }
 				format = left
 				text = "SHOWING_SPECIES_HEADER"
 			}
@@ -270,7 +274,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_standard_button_200_24"
 				buttonText = "SPECIES_VIEW_SPECIES"
-				position = { x = 413 y = 105 }
+				position = { x = 410 y = 105 }
 				Orientation = UPPER_LEFT
 				pdx_tooltip = "SPECIES_VIEW_SORT_NAME"
 			}
@@ -280,7 +284,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_button_164_24"
 				buttonText = "SPECIES_VIEW_TYPE"
-				position = { x = 616 y = 98 }
+				position = { x = 615 y = 98 }
 				Orientation = UPPER_LEFT
 				pdx_tooltip = "SPECIES_VIEW_SORT_TYPE"
 			}
@@ -289,7 +293,7 @@ guiTypes = {
 				name = "population_button"
 				font = "cg_16b"
 				spriteType = "GFX_button_35_24"
-				position = { x = 783 y = @sort_button_height2 }
+				position = { x = 784 y = @sort_button_height2 }
 				Orientation = UPPER_LEFT
 				pdx_tooltip = "SPECIES_VIEW_SORT_POPULATION"
 			}
@@ -306,7 +310,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_galactic_object_button"
 				buttonText = "SPECIES_VIEW_TRAITS"
-				position = { x = 821 y = 105 }
+				position = { x = 824 y = 105 }
 				Orientation = UPPER_LEFT
 				pdx_tooltip = "SPECIES_VIEW_SORT_TRAITS"
 			}
@@ -316,14 +320,14 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_button_150_24"
 				buttonText = "SPECIES_VIEW_RIGHTS"
-				position = { x = 1093 y = 98 }
+				position = { x = 1097 y = 98 }
 				Orientation = UPPER_LEFT
 				pdx_tooltip = "SPECIES_VIEW_SORT_RIGHTS"
 			}		
 	        
 			containerWindowType = {
 				name = "species_window"
-				size = { width = 904 height = 230}
+				size = { width = 904 height = 530}
 				position = { x = 425 y =141 }
 				margin = { top = 5 bottom = 5 }
 	        
@@ -338,6 +342,7 @@ guiTypes = {
 					position = { x = 0 y = 0 }
 					backGround = ""
 					size = { x = 827 y = 780 }
+					dynamic_extra_height = @dynamic_extra
 					scrollbarType = "standardlistbox_slider"
 					borderSize = { x = 0 y = 0 }
 				}
@@ -390,6 +395,7 @@ guiTypes = {
 			name = "background"
 			spriteType = "GFX_tiles_frame_light"
 			size = { x = 832 y = 54 }
+			oversound = no_sound
 		}
 
 		buttonType ={
@@ -409,7 +415,7 @@ guiTypes = {
 			iconType = {
 				name = "species"
 				quadTextureSprite = "GFX_portrait_character"
-				position = { x = -10 y = 3 }
+				position = { x = -14 y = -3 }
 				scale = 0.12
 			}
 		}
@@ -696,7 +702,7 @@ guiTypes = {
 			alwaysTransparent = yes
 			text = "Species Right Name"
 			text_color_code = "E"
-
+			maxWidth = 410
 		}
 
 		iconType = {

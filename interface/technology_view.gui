@@ -36,7 +36,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 35 y = -7 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 		
@@ -55,7 +55,7 @@ guiTypes = {
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
-			position = { x = -41 y = 21 }
+			position = { x = -40 y = 21 }
 			orientation = upper_right
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
@@ -66,7 +66,7 @@ guiTypes = {
 			name = "header"
 			font = "malgun_goth_24"
 			text = "TECHNOLOGY"
-			position = { x = 70 y = 10 }
+			position = { x = 35 y = 10 }
 			maxWidth = 300
 			maxHeight = 20
 			fixedSize = yes
@@ -106,7 +106,7 @@ guiTypes = {
 					
 		#	show_position = { x = 570 y = 14 }
 		#	hide_position = { x = -570 y = 14 }
-		#	animation_time = 200
+		#	animation_time = 100
 		#	animation_type = decelerated
 		
 		#	fade_time = 100
@@ -117,7 +117,7 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "reserached_tech_bg_box"
-				size = { width = 490 height = 931 }
+				size = { width = 482 height = 896 }
 				position = { x = 0 y = 0 }
 				
 					background = {
@@ -129,7 +129,7 @@ guiTypes = {
 			buttonType = {
 				name = "close"
 				quadTextureSprite = "GFX_close"
-				position = { x = -38 y = 12 }
+				position = { x = -42 y = 16 }
 				orientation = upper_right
 				shortcut = "ESCAPE"
 				clicksound = "back_click"
@@ -177,7 +177,7 @@ guiTypes = {
 			smoothListBoxType = {
 				name = "list"
 				position = { x = 2 y= 135 }
-				size = { x = 472 y = 790 }
+				size = { x = 472 y = 757 }
 				scrollbartype = "standardlistbox_slider"
 				spacing = -6
 			}
@@ -191,26 +191,26 @@ guiTypes = {
 				alwaysTransparent = yes
 			}
 
-			buttonType={
-				name = "fade_bottom"
-				spriteType = "GFX_faded_border_bottom_tech"
-				#orientation = upper_left
-				size = { x = 472 y = 8 }
-				position = { x = 5 y = 918 }
-				alwaysTransparent = yes
-			}
+			#buttonType={
+			#	name = "fade_bottom"
+			#	spriteType = "GFX_faded_border_bottom_tech"
+			#	#orientation = upper_left
+			#	size = { x = 472 y = 8 }
+			#	position = { x = 5 y = 648 }
+			#	alwaysTransparent = yes
+			#}
 		}
 
 		containerWindowType = {
 			name = "researched_window"
-			size = { width=455 height=910 }
+			size = { width=455 height=810 }
 			position = { x = 604 y = 14 }
 			orientation = upper_left
 			moveable = no
 	
 			containerWindowType = {
 				name = "reserached_tech_bg_box"
-				size = { width = 490 height = 891 }
+				size = { width = 490 height = 791 }
 				position = { x = 0 y = 0 }
 				
 				background = {
@@ -265,10 +265,10 @@ guiTypes = {
 
 			smoothListBoxType = {
 				name = "list"
-				position = { x = 10 y= 60 }
+				position = { x = 10 y = 60 }
 				orientation = "UPPER_LEFT"
 				priority = 100
-				size = { x = 460 y = 830 }
+				size = { x = 460 y = 730 }
 				borderSize = { x=0 y=0 }
 				scrollbartype = "standardlistbox_slider"
 				spacing = 1
@@ -291,7 +291,7 @@ guiTypes = {
 			buttonType = {
 				name = "tab_physics_active"
 				quadTextureSprite = "GFX_tab_1_active"
-				position = { x= -20 y = @tabheight }
+				position = { x = -20 y = @tabheight }
 				font = "cg_16b"
 				buttonText = "PHYSICS"
 				buttonFont = "cg_16b"
@@ -303,7 +303,7 @@ guiTypes = {
 			buttonType = {
 				name = "tab_society"
 				quadTextureSprite = "GFX_tab_2_inactive"
-				position = { x= 109 y = @tabheight }
+				position = { x = 109 y = @tabheight }
 				font = "cg_16b"
 				buttonText = "SOCIETY"
 				buttonFont = "cg_16b"
@@ -352,7 +352,7 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "technology_view_area_window"
-		size = { width=600 height=210 }
+		size = { width = 600 height = 210 }
 		position = { x = 0 y = 0 }
 		orientation = upper_left
 		moveable = no
@@ -363,13 +363,13 @@ guiTypes = {
 		iconType = {
 			name ="topbar"
 			spriteType = "GFX_scientist_top_bar_physics"
-			position = { x= 130 y = 11 }
+			position = { x = 130 y = 11 }
 		}
 
 		iconType = {
 			name ="area_icon"
 			spriteType = "GFX_resource_engineering"
-			position = { x= 134 y = 14 }
+			position = { x = 134 y = 14 }
 		}
 
 		instantTextBoxType={
@@ -394,7 +394,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "scientist_background"
-			position = { x= 131 y = 42 }
+			position = { x = 131 y = 42 }
 			size = { x = 451 y = 35 }
 			spriteType = "GFX_tiles_dark_area_cut_8"	
 			alwaystransparent = yes
@@ -438,6 +438,16 @@ guiTypes = {
 			format = left
 			text_color_code = "G"
 			Orientation = "UPPER_RIGHT"
+		}
+
+		buttonType = {
+			name = "auto_research"
+			quadTextureSprite = "GFX_button_automate"
+			position = { x = -59 y = -44 }
+			orientation = "LOWER_RIGHT"
+			scale = 1
+			oversound = "no_sound"
+			clicksound = "select_click"
 		}
 
 		containerWindowType = {
@@ -580,7 +590,7 @@ guiTypes = {
 			iconType = {
 				name ="category_icon"
 				spriteType = "GFX_traits"
-				position = { x= 547 y = 112 }
+				position = { x= 551 y = 108 }
 				scale = 1.0
 			}
 
@@ -603,18 +613,18 @@ guiTypes = {
 				iconType = {
 					name = "progress"
 					spriteType = "GFX_tech_research_progressbar"
-					position = { x = 130 y = 163 }
+					position = { x = 10 y = 163 }
 				}
 
 				instantTextBoxType={
 					name = "eta"
 					font = "cg_16b"
 					text = "? days remaining"
-					position = { x = -230 y = -35 }
+					position = { x = -330 y = -36 }
 					maxWidth = 180
 					maxHeight = 20
 					fixedSize = yes
-					format = centre
+					format = left
 					orientation = "LOWER_RIGHT"
 				}
 			}
@@ -653,6 +663,7 @@ guiTypes = {
 				borderSize = { x=0 y=0 }
 				spacing = 1	
 				alwaystransparent = yes
+				scrollbarType = "standardtext_slider_small"							   
 			}				
 
 			iconType = {
@@ -662,12 +673,10 @@ guiTypes = {
 				orientation = "UPPER_LEFT"
 			}
 
-			
-
 			buttonType = {
 				name = "cancel_research"
 				quadTextureSprite = "GFX_button_update"
-				position = { x = -59 y = -44 }
+				position = { x = -94 y = -44 }
 				orientation = "LOWER_RIGHT"
 				scale = 1.0
 				clicksound = back_click
@@ -722,15 +731,13 @@ guiTypes = {
 		iconType = {
 			name ="category_icon"
 			spriteType = "GFX_traits"
-			position = { x= 430 y = 38 }
-			scale = 1.0
+			position = { x= 434 y = 40 }
 		}
 		
 		iconType = {
 			name ="gateway_icon"
 			spriteType = "GFX_tech_gateway"
 			position = { x= 430 y = 72 }
-			scale = 1.0
 		}
 
 		instantTextBoxType={
@@ -760,12 +767,11 @@ guiTypes = {
 
 		smoothListBoxType = {
 			name ="unlocks"
-			position = { x = 80 y = 41 }
-			size = { x = 350 y = 60 }
-			orientation = "UPPER_LEFT"
-			borderSize = { x=0 y=0 }
-			spacing = 1	
+			position = { x = 78 y = 40 }
+			size = { x = 372 y = 54 }
+			spacing = 0
 			alwaystransparent = yes
+			scrollbarType = "standardtext_slider_small"							  
 		}		
 
 		iconType = {
@@ -856,24 +862,25 @@ guiTypes = {
 			borderSize = { x=0 y=0 }
 			spacing = 1	
 			alwaystransparent = yes
+			scrollbarType = "standardtext_slider_small"								  
 		}													
 	}
 
 	containerWindowType = {
 		name = "technology_view_unlock_entry"
-		size = { width = 340 height = 60 } #Height will be changed by code according to requirements
+		size = { width = 360 height = 60 } #Height will be changed by code according to requirements
 		position = { x = 0 y = 0 }
-		clipping = yes
+		clipping = no
 
 		instantTextBoxType={
 			name = "desc"
 			font = "cg_16b"
 			text = ""
 			position = { x = 5 y = 0 } # Please don't move from (0,0)
-			maxWidth = 337
-			maxHeight = 60
+			maxWidth = 345
+			maxHeight = 90
 			format = left
-			fixedsize = yes
+			fixedsize = no
 		}						
 	}
 
@@ -891,7 +898,6 @@ guiTypes = {
 			maxWidth = 340
 			maxHeight = 60
 			format = left
-			fixedsize = yes
 		}
 
 		OverlappingElementsBoxType = {
@@ -1130,7 +1136,7 @@ guiTypes = {
 			position = { x = 125 y = 108 }
 			size = { x = 350 y = 60 }
 			orientation = "UPPER_LEFT"
-			borderSize = { x=0 y=0 }
+			borderSize = { x = 0 y = 0 }
 			spacing = 1	
 			alwaystransparent = yes
 		}
@@ -1139,7 +1145,7 @@ guiTypes = {
 			name = "researched_desc"
 			font = "cg_16b"
 			text = ""
-			position = { x = 57 y = 175 }
+			position = { x = 57 y = 162 }
 			maxWidth = 460
 			maxHeight = 100
 			fixedSize = yes

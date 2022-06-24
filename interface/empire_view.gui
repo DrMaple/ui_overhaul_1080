@@ -1,4 +1,5 @@
-@tabheight = 600
+@dynamic_extra = 0.8					
+@tabheight = 900
 
 @info_row_1 = 45
 @info_row_2 = 68
@@ -13,13 +14,15 @@ guiTypes = {
 		hide_position = { x = -1272 y = 40 }
 		animation_time = 100
 		animation_type = decelerated
-		size = { width=1272 height=925 }
+		size = { width=1272 height=625 }
+		dynamic_extra_height = @dynamic_extra							   
 		orientation = UPPER_LEFT
 		show_sound = "interface"
 
 		containerWindowType = {
 			name = "galaxy_view_background_box"
 			size = { width = 1272 height = 945 }
+			dynamic_extra_height = @dynamic_extra							
 			position = { x = 0 y = 0 }
 
 			background = {
@@ -31,7 +34,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 30 y = -12 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 
@@ -55,7 +58,7 @@ guiTypes = {
 			name = "heading"
 			font = "malgun_goth_24"
 			text = "PLANET_LIST"
-			position = { x = 65 y = 5 }
+			position = { x = 35 y = 5 }
 			maxWidth = 1035
 			maxHeight = 20
 			fixedSize = yes
@@ -65,16 +68,18 @@ guiTypes = {
 			containerWindowType = {
 				name = "empire_list"
 				position = { x=11 y=140 }
-				size = { width= 1250 height= 799 }
+				size = { width= 1250 height= 800 }
+				dynamic_extra_height = @dynamic_extra						 
 
 				background = {
 					name = "area51"
 					spriteType = "GFX_tiles_dark_area_cut_8"
 				}
 			}
+
 		containerWindowType = {
 			name = "shared_stockpile"
-			position = { x = 605 y = 0 }
+			position = { x = 605 y = 5 }
 			size = { width = 100%% height = 100% }
 
 			@labelWindowWidth = 142
@@ -175,7 +180,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "monthly_resources_transfer"
-				size = { width = 100 height = 100%% }
+				size = { width = 100 height = 100% }
 				position = { x = 340 y = 48 }
 
 				gridBoxType = {
@@ -190,7 +195,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "planets_window"
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = 10 }
 
 			@sort_button_height = 85
 
@@ -199,7 +204,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_button_95_24"
 				buttonText = "TYPE"
-				position = { x = 3 y = @sort_button_height }
+				position = { x = 8 y = @sort_button_height }
 				orientation = UPPER_LEFT
 				pdx_tooltip = "SPECIES_VIEW_SORT_TYPE"
 				oversound = mouse_over
@@ -210,7 +215,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_button_116_24"
 				buttonText = "NAME"
-				position = { x = 103 y = @sort_button_height }
+				position = { x = 108 y = @sort_button_height }
 				orientation = UPPER_LEFT
 				pdx_tooltip = "SORT_BY_NAME"
 				oversound = mouse_over
@@ -221,7 +226,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_galactic_object_button"
 				buttonText = "OUTPUT"
-				position = { x = 224 y = 92 }
+				position = { x = 229 y = 92 }
 				orientation = UPPER_LEFT
 				pdx_tooltip = "SORT_BY_OUTPUT"
 				oversound = mouse_over
@@ -232,7 +237,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_button_116_24"
 				buttonText = "governor"
-				position = { x = 497 y = @sort_button_height }
+				position = { x = 502 y = @sort_button_height }
 				orientation = UPPER_LEFT
 				pdx_tooltip = "SORT_BY_GOVERNOR"
 				oversound = mouse_over
@@ -243,7 +248,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_event_button_452"
 				buttonText = "POPS"
-				position = { x = 620 y = 93 }
+				position = { x = 623 y = 93 }
 				orientation = UPPER_LEFT
 				pdx_tooltip = "SORT_BY_POP"
 				oversound = mouse_over
@@ -263,8 +268,9 @@ guiTypes = {
 			smoothListboxType = {
 				id = "list"
 				name = "list"
-				position = { x = 16 y = 132 }
+				position = { x = 20 y = 138 }
 				size = { x= 1230 y = 800 }
+				dynamic_extra_height = @dynamic_extra						 
 				scrollbartype = "standardlistbox_slider"
 				spacing = 4
 				navUp = "create_sector"
@@ -367,6 +373,29 @@ guiTypes = {
 			alwaysTransparent = yes
 			text_color_code = "E"
 		}
+		instantTextBoxType = {
+			name = "char_upkeep_label"
+			font = "cg_16b"
+			text = "UPKEEP"
+			position = { x = -113 y = 43 }
+			maxWidth = 74
+			maxHeight = 20
+			orientation = "UPPER_RIGHT"
+			format = right
+		}
+		
+		instantTextBoxType = {
+			name = "leader_upkeep"
+			font = "cg_16b"
+			text = "-1"
+			position = { x = -62 y = 43 }
+			maxWidth = 50
+			maxHeight = 20
+			fixedSize = yes
+			format = right
+			orientation = "UPPER_RIGHT"
+			text_color_code = "H"
+		}				
 
 		instantTextBoxType = {
 			name = "char_age_label"
@@ -416,7 +445,7 @@ guiTypes = {
 			font = "cg_16b"
 			text = "STATUS"
 			position = { x = 13 y = 92 }
-			maxWidth = 180
+			maxWidth = 140
 			maxHeight = 40
 			fixedSize = yes
 			format = left
@@ -552,6 +581,7 @@ guiTypes = {
 			orientation = "UPPER_RIGHT"
 			text = "SECTOR_SETTINGS"
 			font = "cg_16b"
+			pdx_tooltip = "SECTOR_AUTOMATION_DESC"							 
 		}
 
 		gridBoxType = {
@@ -872,17 +902,17 @@ guiTypes = {
 				font = "cg_16b"
 				text = "LOCAL_SECTOR_STOCKPILE"
 				position = { x = 70 y = 22 }
-				maxWidth = 100
+				maxWidth = 110
 				maxHeight = 20
 				fixedSize = yes
-				format = center
+				format = left
 				text_color_code = "E"
 			}
 
 			containerWindowType = {
 				name = "amount_bg_box_1"
-				size = { width = 100 height = 35 }
-				position = { x = 170 y = 13 }
+				size = { width = 90 height = 35 }
+				position = { x = 180 y = 13 }
 				clipping = no
 
 				background = {
@@ -897,7 +927,7 @@ guiTypes = {
 				font = "cg_16b"
 				text = "XXXX"
 				position = { x = 170 y = 22 }
-				maxWidth = 100
+				maxWidth = 150
 				maxHeight = 20
 				fixedSize = yes
 				format = center
@@ -921,7 +951,7 @@ guiTypes = {
 			buttonFont = "cg_16b"
 		}
 		
-		buttonType = {		
+		buttonType = {
 			name = "create_vassal"
 			quadTextureSprite = "GFX_standard_button_200_34_button"
 			position = { x = 1005 y = 45 }

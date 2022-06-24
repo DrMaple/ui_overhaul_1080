@@ -1,8 +1,10 @@
+@dynamic_extra = 0.8
+
 guiTypes = {
 	containerWindowType = {
 		name = "topbar_leaders_view"
 		size = { width=1272 height=940 } 
-		
+		dynamic_extra_height = @dynamic_extra
 		position = { x = -1270 y = 40 }
 		show_position = { x = 35 y = 40 }
         hide_position = { x = -1270 y = 40 }
@@ -12,6 +14,7 @@ guiTypes = {
 		orientation = upper_left
 		moveable = no
 		clipping = no
+		show_sound = "interface"
 		
 		background = {
 			name = "background"
@@ -21,7 +24,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 30 y = -12 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 		
@@ -36,7 +39,7 @@ guiTypes = {
 			name = "leaders_header"
 			font = "malgun_goth_24"
 			text = "topbar_button_leaders_name"
-			position = { x = 65 y = 5 }
+			position = { x = 35 y = 5 }
 			maxWidth = 300
 			maxHeight = 20
 			fixedSize = yes
@@ -46,7 +49,7 @@ guiTypes = {
 		buttonType = {
 			name = "close"
 			quadTextureSprite = "GFX_close"
-			position = { x = -41 y = 13 }
+			position = { x = -45 y = 16 }
 			orientation = upper_right
 			shortcut = "ESCAPE"
 			clicksound = "back_click"
@@ -192,8 +195,9 @@ guiTypes = {
         
 		containerWindowType = {
 			name = "leader_frame_box2"
-			size = { width = 1252 height = 816 }
-			position = { x = 10 y = 113 }
+			size = { width = 1250 height = 816 }
+			dynamic_extra_height = @dynamic_extra
+			position = { x = 11 y = 113 }
         
 			background = {
 				name = "leader_frame2"
@@ -205,7 +209,8 @@ guiTypes = {
 		containerWindowType = {
 			name = "leader_frame_area_1"
 			size = { width = 313 height = 816 }
-			position = { x = 323 y = 113 }
+			dynamic_extra_height = @dynamic_extra
+			position = { x = 317 y = 113 }
         
 			background = {
 				name = "leader_frame2"
@@ -216,7 +221,8 @@ guiTypes = {
         
 		containerWindowType = {
 			name = "leader_frame_area_2"
-			size = { width = 313 height = 816 }
+			size = { width = 312 height = 816 }
+			dynamic_extra_height = @dynamic_extra
 			position = { x = 949 y = 113 }
         
 			background = {
@@ -229,8 +235,9 @@ guiTypes = {
 		# Governors list
 		smoothListboxType = {
 			name ="governors_list"
-			position = { x = 17 y = 113 }
+			position = { x = 10 y = 113 }
 			size = { x= 293 y = 816 }
+			dynamic_extra_height = @dynamic_extra
 			scrollbartype = "standardlistbox_slider"
 			spacing = -4
 		}
@@ -238,8 +245,9 @@ guiTypes = {
 		# Scientists list
 		smoothListboxType = {
 			name ="scientists_list"
-			position = { x = 331 y = 113 }
+			position = { x = 319 y = 113 }
 			size = { x= 293 y = 816 }
+			dynamic_extra_height = @dynamic_extra
 			scrollbartype = "standardlistbox_slider"
 			spacing = -4
 		}
@@ -247,8 +255,9 @@ guiTypes = {
 		# Admirals list
 		smoothListboxType = {
 			name ="admirals_list"
-			position = { x = 643 y = 113 }
+			position = { x = 630 y = 113 }
 			size = { x= 293 y = 816 }
+			dynamic_extra_height = @dynamic_extra
 			scrollbartype = "standardlistbox_slider"
 			spacing = -4
 		}
@@ -256,8 +265,9 @@ guiTypes = {
 		# Generals list
 		smoothListboxType = {
 			name ="generals_list"
-			position = { x = 957 y = 113 }
+			position = { x = 950 y = 113 }
 			size = { x= 293 y = 816 }
+			dynamic_extra_height = @dynamic_extra
 			scrollbartype = "standardlistbox_slider"
 			spacing = -4
 		}

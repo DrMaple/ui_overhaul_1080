@@ -84,6 +84,12 @@ guiTypes = {
 			Orientation = UPPER_LEFT
 		}
 
+		buttonType = {
+			name = "upkeep_button"
+			spriteType = "GFX_button_75_24"
+			position = { x = 643 y = 47 }
+			Orientation = UPPER_LEFT
+		}		
 		@text_y = 63
 		
 		instantTextBoxType = {
@@ -146,6 +152,17 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
+		instantTextBoxType = {
+			name = "leader_upkeep"
+			font = "cg_16b"
+			text = "UPKEEP"
+			position = { x = 652 y = @text_y }
+			maxWidth = 80
+			maxHeight = 40
+			fixedSize = yes
+			format = center
+			alwaystransparent = yes
+		}				
 		### list content ###
 
 		smoothListboxType = {
@@ -279,6 +296,17 @@ guiTypes = {
 			text_color_code = "H"
 		}
 
+		instantTextBoxType = {
+			name = "leader_upkeep"
+			font = "cg_16b"
+			text = "-1"
+			position = { x = 641 y = 38 }
+			maxWidth = 80
+			maxHeight = 20
+			fixedSize = yes
+			format = center
+			text_color_code = "H"
+		}				
 		### recruit button ###
 
 		buttonType = {

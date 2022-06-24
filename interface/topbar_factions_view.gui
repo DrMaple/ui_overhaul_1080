@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "topbar_factions_view"
-		size = { width = 1272 height = 945 } 
+		size = { width = 1272 height = 940 } 
 		
 		position = { x = -1270 y = 40 }
 		show_position = { x = 35 y = 40 }
@@ -12,6 +12,7 @@ guiTypes = {
 		orientation = upper_left
 		moveable = no
 		clipping = no
+		show_sound = "interface"
 		
 		background = {
 			name = "background"
@@ -35,7 +36,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 29 y = -12 }
+			position = { x = 5 y = -12 }
 			alwaysTransparent = yes
 		}
 		
@@ -50,7 +51,7 @@ guiTypes = {
 			name = "factions_header"
 			font = "malgun_goth_24"
 			text = "topbar_button_factions_name"
-			position = { x = 64 y = 5 }
+			position = { x = 35 y = 5 }
 			maxWidth = 300
 			maxHeight = 20
 			fixedSize = yes
@@ -89,7 +90,7 @@ guiTypes = {
 			text = "Klaxxagons liberation front"
 			position = { x = 64 y = 35 }
 			maxWidth = 250
-			maxHeight = 45
+			maxHeight = 35
 			fixedSize = no
 			format = left
 			vertical_alignment = center
@@ -156,7 +157,7 @@ guiTypes = {
 				name = "support_value"
 				font = "malgun_goth_24"
 				text = "0"
-				position = { x = 104 y = 5 }
+				position = { x = 120 y = 5 }
 				maxWidth = 90
 				maxHeight = 35
 				fixedSize = yes
@@ -279,7 +280,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "list_background"
-			size = { width = 930 height = 845 }
+			size = { width = 933 height = 844 }
 			position = { x = 328 y = 85 }
 	       
 			background = {
@@ -373,7 +374,7 @@ guiTypes = {
 			position = { x = 333 y = 90 }
 			size = { x = 905 y = 830 }
 			scrollbartype = "standardlistbox_slider"
-			spacing = 0
+			spacing = -6
 			autohide_scrollbar = no				
 		}
 		
@@ -753,7 +754,7 @@ guiTypes = {
 				name = "value"
 				font = "cg_16b"
 				text = "0"
-				position = { x = 7 y = 5 }
+				position = { x = 15 y = 5 }
 				maxWidth = 90
 				maxHeight = 35
 				fixedSize = yes
@@ -763,15 +764,29 @@ guiTypes = {
 			}
 		}
 			
-		instantTextBoxType={
-			name = "influence_label"
-			position = { x = 835 y = 15 }
-			orientation = "UPPER_LEFT"
-			font = "cg_16b"
-			text = "INFLUENCE_GAIN_FROM_FACTION"
-			maxWidth = 100
-			maxHeight = 30		
-		}		
+		containerWindowType = {
+			name = "influence_hitbox"
+			size = { width = 100 height = 30 }
+			position = { x = 800 y = 8 }
+			
+			background = {
+				name = "influence_hitbox"
+				spriteType = "GFX_invisible"
+				clicksound = "interface"
+			}
+
+			instantTextBoxType={
+				name = "influence_label"
+				position = { x = 35 y = 0 }
+				orientation = "UPPER_LEFT"
+				font = "cg_16b"
+				text = "INFLUENCE_GAIN_FROM_FACTION"
+				vertical_alignment = center
+				maxWidth = 65
+				maxHeight = 30
+				alwaysTransparent = yes
+			}		
+		}
 		
 		gridBoxType = {
 			name = "demands_list"
